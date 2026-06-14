@@ -1,40 +1,139 @@
-# Portfolio — Julien Duquesne
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>À propos — Julien Duquesne</title>
+<meta name="description" content="À propos de Julien Duquesne, alternant Logistique & Supply Chain (Bac+5 MOPL)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
 
-Portfolio professionnel de Julien Duquesne, alternant Logistique & Supply Chain (Bac+5 MOPL).
+<header data-nav data-page="a-propos"></header>
 
-Site statique en HTML / CSS / JavaScript, sans dépendance ni build — il fonctionne en ouvrant simplement `index.html`.
+<main data-screen-label="À propos">
 
-## Structure
+<!-- Page header -->
+<section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(2rem,4vw,3rem);">
+  <div class="container" style="position:relative;z-index:2;">
+    <p class="kicker" data-reveal>À propos</p>
+    <h1 class="display" data-reveal data-reveal-delay="1" style="font-size:var(--step-4);margin-top:1.2rem;max-width:16ch;">Un profil ancré dans le terrain.</h1>
+    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.4rem;">
+      Passionné de logistique depuis mes premiers pas en entrepôt, je construis une expertise
+      qui allie l'opérationnel à l'analyse — du quai au tableau de bord.
+    </p>
+  </div>
+  <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:32%;font-size:clamp(4.5rem,14vw,13rem);z-index:1;">ABOUT</div>
+</section>
 
-```
-.
-├── index.html          → Accueil
-├── a-propos.html       → À propos
-├── parcours.html       → Parcours (expériences & formation)
-├── competences.html    → Compétences
-├── realisations.html   → Réalisations / projets
-├── contact.html        → Contact
-└── assets/
-    ├── styles.css      → Tous les styles
-    ├── site.js         → Navigation, footer, animations, compteurs
-    ├── image-slot.js   → Composant d'image
-    ├── photo-julien.jpg
-    ├── badminton-action.jpg
-    ├── badminton-team.jpg
-    ├── projet-excel-reappro.png
-    ├── racks-harnais.jpg
-    ├── racks-vue.jpg
-    └── racks-charge.jpg
-```
+<!-- Intro + photo -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="grid-2 grid-2--asym" style="align-items:start;gap:clamp(2.5rem,5vw,5rem);">
 
-## Mise en ligne avec GitHub Pages
+      <div data-reveal class="stack">
+        <p class="kicker">01 — Qui suis-je ?</p>
+        <p style="font-family:var(--font-display);font-size:var(--step-2);line-height:1.3;margin-top:1rem;">
+          Étudiant en Bac+5 MOPL à l'ISTELI Wasquehal, en alternance chez LSI, sous-traitant de Texdecor
+          (Groupe Delquignies).
+        </p>
+        <p class="muted" style="margin-top:1rem;">
+          J'ai commencé préparateur de commandes avant d'évoluer vers la gestion de stocks,
+          l'optimisation des flux et l'amélioration continue. Cette progression m'a donné une lecture
+          à la fois pratique et analytique des opérations logistiques.
+        </p>
+        <p class="muted">
+          Rigoureux, organisé et à l'aise avec les outils data (Excel avancé, WMS Geode, IA
+          générative), j'aime concevoir des solutions concrètes qui font réellement gagner du temps et
+          de la fiabilité sur le terrain.
+        </p>
+        <a class="btn btn--ghost" href="parcours.html" style="margin-top:0.5rem;">Voir mon parcours <span class="arrow">→</span></a>
+      </div>
 
-1. Pousser ces fichiers à la racine du dépôt `PortfolioDuquesneJulien`.
-2. Dans le dépôt : **Settings → Pages**.
-3. Source : **Deploy from a branch**, branche `main`, dossier `/ (root)`.
-4. Le site sera disponible à l'adresse `https://<utilisateur>.github.io/PortfolioDuquesneJulien/`.
+      <div data-reveal data-reveal-delay="1" style="position:relative;">
+        <image-slot id="photo-apropos" shape="rounded" radius="10" src="assets/photo-julien.jpg"
+          style="width:100%;height:clamp(380px,40vw,500px);background:var(--paper-2);"
+          placeholder="Photo portrait"></image-slot>
+      </div>
 
-## À compléter
+    </div>
+  </div>
+</section>
 
-- **CV** : ajouter le fichier `assets/cv-julien-duquesne.pdf` pour activer le bouton « Télécharger mon CV ».
-- **LinkedIn** : remplacer le lien `#` par l'URL réelle dans `assets/site.js` (pied de page) et `contact.html`.
+<!-- Valeurs -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker">02 — Ce qui me définit</p>
+      <h2 class="h2">Trois valeurs au cœur de mon approche.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card" data-reveal>
+        <p class="kicker kicker--plain" style="font-size:var(--step-3);color:var(--accent);font-family:var(--font-display);">01</p>
+        <h3 class="h4" style="margin-top:1rem;">Rigueur opérationnelle</h3>
+        <p class="muted" style="margin-top:0.7rem;">
+          Chaque détail compte en entrepôt. Précision des données, respect des procédures et
+          sens du suivi font partie de mon ADN professionnel.
+        </p>
+      </div>
+      <div class="card" data-reveal data-reveal-delay="1">
+        <p class="kicker kicker--plain" style="font-size:var(--step-3);color:var(--accent);font-family:var(--font-display);">02</p>
+        <h3 class="h4" style="margin-top:1rem;">Esprit d'amélioration</h3>
+        <p class="muted" style="margin-top:0.7rem;">
+          Je ne me satisfais pas du statu quo. Lean Six Sigma Green Belt, je cherche en permanence
+          comment réduire les gaspillages et gagner en efficacité.
+        </p>
+      </div>
+      <div class="card" data-reveal data-reveal-delay="2">
+        <p class="kicker kicker--plain" style="font-size:var(--step-3);color:var(--accent);font-family:var(--font-display);">03</p>
+        <h3 class="h4" style="margin-top:1rem;">Adaptabilité</h3>
+        <p class="muted" style="margin-top:0.7rem;">
+          Du chariot élévateur à Excel VBA, en passant par les IA génératives, j'adopte rapidement
+          les outils qui font gagner en performance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Centres d'intérêt -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+
+      <div data-reveal>
+        <p class="kicker">03 — En dehors du travail</p>
+        <h2 class="h2" style="margin-top:1.3rem;max-width:18ch;">Le badminton comme terrain d'entraînement à la rigueur.</h2>
+        <p class="muted" style="margin-top:1.2rem;max-width:48ch;">
+          Pratiquant régulier de badminton, j'y retrouve les mêmes exigences qu'en logistique :
+          anticipation, précision, adaptation rapide et esprit d'équipe.
+        </p>
+        <div class="tl-tags" style="margin-top:1.4rem;">
+          <span class="chip chip--accent">Badminton</span>
+          <span class="chip chip--accent">Amélioration continue</span>
+          <span class="chip">Lecture technique</span>
+          <span class="chip">Veille supply chain</span>
+        </div>
+      </div>
+
+      <div data-reveal data-reveal-delay="1">
+        <image-slot id="photo-badminton" shape="rounded" radius="10" src="assets/badminton-action.jpg"
+          style="width:100%;height:clamp(280px,32vw,420px);background:var(--paper-2);"
+          placeholder="Photo badminton"></image-slot>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-footer></footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
