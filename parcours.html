@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Julien Duquesne</title>
+<meta name="description" content="Contactez Julien Duquesne, alternant Logistique & Supply Chain." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header data-nav data-page="contact"></header>
+
+<main data-screen-label="Contact">
+
+<!-- Page header -->
+<section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(1.5rem,3vw,2.5rem);">
+  <div class="container" style="position:relative;z-index:2;">
+    <p class="kicker" data-reveal>Contact</p>
+    <h1 class="display" data-reveal data-reveal-delay="1" style="font-size:var(--step-4);margin-top:1.2rem;max-width:16ch;">Restons en contact.</h1>
+    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.4rem;">
+      Pour en savoir plus sur mon parcours ou mes projets, le plus simple reste l'email ou le téléphone — je réponds rapidement et avec plaisir.
+    </p>
+  </div>
+  <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:32%;font-size:clamp(4.5rem,14vw,13rem);z-index:1;">CONTACT</div>
+</section>
+
+<!-- Contenu -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="card" data-reveal style="padding:0;overflow:hidden;">
+      <div class="contact-split">
+
+        <!-- Coordonnées -->
+        <div style="padding:clamp(1.8rem,3.5vw,3rem);">
+          <a class="contact-row" href="mailto:julienduq59@gmail.com">
+            <span class="contact-row__label">Email</span>
+            <span class="contact-row__value" style="word-break:break-word;">julienduq59@gmail.com</span>
+          </a>
+          <a class="contact-row" href="tel:+33781755879">
+            <span class="contact-row__label">Téléphone</span>
+            <span class="contact-row__value">07 81 75 58 79</span>
+          </a>
+          <a class="contact-row" href="#" target="_blank" rel="noopener">
+            <span class="contact-row__label">LinkedIn</span>
+            <span class="contact-row__value">linkedin.com/in/julien-duquesne <span class="arrow" style="display:inline-block;">↗</span></span>
+          </a>
+          <div class="contact-row" style="cursor:default;">
+            <span class="contact-row__label">Localisation</span>
+            <span class="contact-row__value">Lys-lez-Lannoy</span>
+            <span class="muted" style="font-size:var(--step--1);">Hauts-de-France · mobile sur la métropole lilloise</span>
+          </div>
+        </div>
+
+        <!-- Panneau d'action -->
+        <div style="background:var(--dark-bg);color:var(--dark-ink);padding:clamp(1.8rem,3.5vw,3rem);display:flex;flex-direction:column;justify-content:space-between;gap:2rem;">
+          <div>
+            <p class="kicker" style="color:var(--accent);">Me contacter</p>
+            <p class="h4" style="margin-top:1rem;font-family:var(--font-display);max-width:18ch;">N'hésitez pas à me joindre pour échanger sur mon parcours.</p>
+          </div>
+          <div class="stack-sm" style="display:flex;flex-direction:column;gap:0.8rem;">
+            <a class="btn btn--primary" href="mailto:julienduq59@gmail.com" style="justify-content:center;">M'écrire un email <span class="arrow">→</span></a>
+            <a class="btn btn--ghost" href="assets/cv-julien-duquesne.pdf" download style="justify-content:center;border-color:var(--dark-line);color:var(--dark-ink);">Télécharger mon CV <span class="arrow">↓</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer data-footer></footer>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
