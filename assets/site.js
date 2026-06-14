@@ -101,7 +101,7 @@
             '<h4>Contact</h4>' +
             '<a href="mailto:julienduq59@gmail.com">julienduq59@gmail.com</a>' +
             '<a href="tel:+33781755879">07 81 75 58 79</a>' +
-            '<a href="#" target="_blank" rel="noopener">LinkedIn</a>' +
+            '<a href="https://www.linkedin.com/in/julien-duquesne-75b246226/" target="_blank" rel="noopener">LinkedIn</a>' +
           '</div>' +
           '<div class="footer__col">' +
             '<h4>Navigation</h4>' +
