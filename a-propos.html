@@ -4,61 +4,54 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>À propos — Julien Duquesne</title>
-<meta name="description" content="À propos de Julien Duquesne, alternant Logistique & Supply Chain (Bac+5 MOPL)." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-
 <header data-nav data-page="a-propos"></header>
 
-<main data-screen-label="À propos">
+<main>
 
 <!-- Page header -->
-<section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(2rem,4vw,3rem);">
+<section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(1.5rem,3vw,2.5rem);">
   <div class="container" style="position:relative;z-index:2;">
     <p class="kicker" data-reveal>À propos</p>
-    <h1 class="display" data-reveal data-reveal-delay="1" style="font-size:var(--step-4);margin-top:1.2rem;max-width:16ch;">Un profil ancré dans le terrain.</h1>
-    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.4rem;">
-      Passionné de logistique depuis mes premiers pas en entrepôt, je construis une expertise
-      qui allie l'opérationnel à l'analyse — du quai au tableau de bord.
+    <h1 class="display" data-reveal data-reveal-delay="1" style="margin-top:1.2rem;max-width:14ch;">Julien Duquesne</h1>
+    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.8rem;">
+      Alternant Logistique &amp; Supply Chain, passionné par l'optimisation des flux et l'amélioration continue. Du terrain à l'analyse, je construis une expertise complète.
     </p>
   </div>
-  <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:32%;font-size:clamp(4.5rem,14vw,13rem);z-index:1;">ABOUT</div>
+  <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:20%;font-size:clamp(4.5rem,14vw,13rem);z-index:1;">PROFIL</div>
 </section>
 
-<!-- Intro + photo -->
+<!-- Biographie -->
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="grid-2 grid-2--asym" style="align-items:start;gap:clamp(2.5rem,5vw,5rem);">
-
-      <div data-reveal class="stack">
-        <p class="kicker">01 — Qui suis-je ?</p>
-        <p style="font-family:var(--font-display);font-size:var(--step-2);line-height:1.3;margin-top:1rem;">
-          Étudiant en Bac+5 MOPL à l'ISTELI Wasquehal, en alternance chez LSI, sous-traitant de Texdecor
-          (Groupe Delquignies).
-        </p>
-        <p class="muted" style="margin-top:1rem;">
-          J'ai commencé préparateur de commandes avant d'évoluer vers la gestion de stocks,
-          l'optimisation des flux et l'amélioration continue. Cette progression m'a donné une lecture
-          à la fois pratique et analytique des opérations logistiques.
-        </p>
-        <p class="muted">
-          Rigoureux, organisé et à l'aise avec les outils data (Excel avancé, WMS Geode, IA
-          générative), j'aime concevoir des solutions concrètes qui font réellement gagner du temps et
-          de la fiabilité sur le terrain.
-        </p>
-        <a class="btn btn--ghost" href="parcours.html" style="margin-top:0.5rem;">Voir mon parcours <span class="arrow">→</span></a>
+      <div data-reveal>
+        <image-slot src="assets/photo-julien.jpg" shape="rounded" radius="10"
+          style="width:100%;height:clamp(380px,42vw,520px);"
+          placeholder="Photo professionnelle de Julien Duquesne"></image-slot>
       </div>
-
-      <div data-reveal data-reveal-delay="1" style="position:relative;">
-        <image-slot id="photo-apropos" shape="rounded" radius="10" src="assets/photo-julien.jpg"
-          style="width:100%;height:clamp(380px,40vw,500px);background:var(--paper-2);"
-          placeholder="Photo portrait"></image-slot>
+      <div class="stack" data-reveal data-reveal-delay="1">
+        <p class="kicker">Qui suis-je ?</p>
+        <h2 class="h3" style="margin-top:0.5rem;">De l'entrepôt au management des opérations logistiques</h2>
+        <p>
+          Né à Roubaix, je vis à Lys-lez-Lannoy dans les Hauts-de-France. Après plusieurs années en environnement entrepôt — préparateur de commandes, cariste, agent logistique — j'ai décidé de formaliser et d'approfondir mon expertise en intégrant un Bac+5 Management des Opérations et de la Performance Logistique (MOPL) à l'ISTELI de Wasquehal.
+        </p>
+        <p>
+          En alternance depuis 2024 chez LSI (Groupe Delquignies), sous-traitant de Texdecor, je concilie la réalité du terrain avec une démarche analytique : identifier les gisements de productivité, structurer les processus, piloter la performance par les données.
+        </p>
+        <p>
+          Ce qui me motive ? Rendre les entrepôts plus efficaces, les équipes plus autonomes, et les flux plus fiables — sans jamais perdre de vue la dimension humaine du métier.
+        </p>
+        <div class="eyebrow-row" style="margin-top:1rem;gap:0.8rem;">
+          <a class="btn btn--primary" href="parcours.html">Mon parcours <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="contact.html">Me contacter <span class="arrow">→</span></a>
+        </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -67,64 +60,74 @@
 <section class="section section--dark">
   <div class="container">
     <div class="section-head" data-reveal>
-      <p class="kicker">02 — Ce qui me définit</p>
-      <h2 class="h2">Trois valeurs au cœur de mon approche.</h2>
+      <p class="kicker">Mes valeurs</p>
+      <h2 class="h2">Ce qui guide ma façon de travailler.</h2>
     </div>
-    <div class="grid-3">
-      <div class="card" data-reveal>
-        <p class="kicker kicker--plain" style="font-size:var(--step-3);color:var(--accent);font-family:var(--font-display);">01</p>
-        <h3 class="h4" style="margin-top:1rem;">Rigueur opérationnelle</h3>
-        <p class="muted" style="margin-top:0.7rem;">
-          Chaque détail compte en entrepôt. Précision des données, respect des procédures et
-          sens du suivi font partie de mon ADN professionnel.
-        </p>
+    <div class="grid-3" data-reveal data-reveal-delay="1">
+      <div class="card card--hover">
+        <div class="skill-cat__icon" style="margin-bottom:1.2rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="h4">Amélioration continue</h3>
+        <p class="muted" style="margin-top:0.7rem;">Toujours chercher le pourquoi d'un dysfonctionnement, mesurer l'impact d'une action, itérer. Le Kaizen comme état d'esprit, pas comme méthode.</p>
       </div>
-      <div class="card" data-reveal data-reveal-delay="1">
-        <p class="kicker kicker--plain" style="font-size:var(--step-3);color:var(--accent);font-family:var(--font-display);">02</p>
-        <h3 class="h4" style="margin-top:1rem;">Esprit d'amélioration</h3>
-        <p class="muted" style="margin-top:0.7rem;">
-          Je ne me satisfais pas du statu quo. Lean Six Sigma Green Belt, je cherche en permanence
-          comment réduire les gaspillages et gagner en efficacité.
-        </p>
+      <div class="card card--hover">
+        <div class="skill-cat__icon" style="margin-bottom:1.2rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="h4">Esprit d'équipe</h3>
+        <p class="muted" style="margin-top:0.7rem;">La logistique est un sport collectif. Communiquer clairement, écouter les opérateurs, construire des solutions ensemble — la performance vient du groupe.</p>
       </div>
-      <div class="card" data-reveal data-reveal-delay="2">
-        <p class="kicker kicker--plain" style="font-size:var(--step-3);color:var(--accent);font-family:var(--font-display);">03</p>
-        <h3 class="h4" style="margin-top:1rem;">Adaptabilité</h3>
-        <p class="muted" style="margin-top:0.7rem;">
-          Du chariot élévateur à Excel VBA, en passant par les IA génératives, j'adopte rapidement
-          les outils qui font gagner en performance.
-        </p>
+      <div class="card card--hover">
+        <div class="skill-cat__icon" style="margin-bottom:1.2rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="h4">Fiabilité</h3>
+        <p class="muted" style="margin-top:0.7rem;">Tenir ses engagements, respecter les délais, produire un travail soigné. La confiance se construit par la régularité, pas par les coups d'éclat.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Centres d'intérêt -->
+<!-- Loisirs / Badminton -->
 <section class="section">
   <div class="container">
-    <div class="grid-2" style="align-items:start;">
-
+    <div class="grid-2" style="align-items:center;">
       <div data-reveal>
-        <p class="kicker">03 — En dehors du travail</p>
-        <h2 class="h2" style="margin-top:1.3rem;max-width:18ch;">Le badminton comme terrain d'entraînement à la rigueur.</h2>
-        <p class="muted" style="margin-top:1.2rem;max-width:48ch;">
-          Pratiquant régulier de badminton, j'y retrouve les mêmes exigences qu'en logistique :
-          anticipation, précision, adaptation rapide et esprit d'équipe.
+        <p class="kicker">En dehors du travail</p>
+        <h2 class="h3" style="margin-top:0.8rem;">Le badminton, une école de rigueur et de réactivité.</h2>
+        <p class="lede" style="margin-top:1.2rem;">
+          Pratiquant de badminton depuis plusieurs années, ce sport m'a appris la précision des gestes, la lecture rapide des situations et la gestion de l'effort sur la durée — des qualités directement transférables à la logistique.
         </p>
-        <div class="tl-tags" style="margin-top:1.4rem;">
-          <span class="chip chip--accent">Badminton</span>
-          <span class="chip chip--accent">Amélioration continue</span>
-          <span class="chip">Lecture technique</span>
-          <span class="chip">Veille supply chain</span>
-        </div>
+        <p class="muted" style="margin-top:1rem;">
+          Le badminton, c'est aussi savoir anticiper, adapter sa stratégie en temps réel et garder son calme sous pression. Autant de réflexes utiles sur un quai de chargement ou dans une réunion d'amélioration de processus.
+        </p>
       </div>
-
       <div data-reveal data-reveal-delay="1">
-        <image-slot id="photo-badminton" shape="rounded" radius="10" src="assets/badminton-action.jpg"
-          style="width:100%;height:clamp(280px,32vw,420px);background:var(--paper-2);"
+        <image-slot src="assets/badminton-action.jpg" shape="rounded" radius="10"
+          style="width:100%;height:clamp(280px,34vw,420px);"
           placeholder="Photo badminton"></image-slot>
       </div>
+    </div>
+  </div>
+</section>
 
+<!-- Chiffres clés -->
+<section class="section section--tight" style="background:var(--paper-2);">
+  <div class="container">
+    <div class="kpi-grid kpi-grid--3">
+      <div class="kpi" data-reveal>
+        <span class="kpi__num"><span data-count="3">0</span><span class="suffix">+</span></span>
+        <span class="kpi__label">Années en environnement entrepôt &amp; supply chain</span>
+      </div>
+      <div class="kpi" data-reveal data-reveal-delay="1">
+        <span class="kpi__num"><span data-count="3">0</span></span>
+        <span class="kpi__label">CACES obtenus — 3 · 5 · 6</span>
+      </div>
+      <div class="kpi" data-reveal data-reveal-delay="2">
+        <span class="kpi__num"><span data-count="7">0</span></span>
+        <span class="kpi__label">Projets d'optimisation menés</span>
+      </div>
     </div>
   </div>
 </section>
@@ -132,7 +135,6 @@
 </main>
 
 <footer data-footer></footer>
-
 <script src="assets/image-slot.js"></script>
 <script src="assets/site.js"></script>
 </body>
