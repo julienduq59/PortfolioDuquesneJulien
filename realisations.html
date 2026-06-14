@@ -4,258 +4,221 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Réalisations — Julien Duquesne</title>
+<meta name="description" content="Projets et réalisations d'optimisation logistique de Julien Duquesne chez LSI (Groupe Delquignies) : contexte, objectif, actions, résultats." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
+
 <header data-nav data-page="realisations"></header>
 
-<main>
+<main data-screen-label="Réalisations">
 
 <!-- Page header -->
-<section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(1.5rem,3vw,2.5rem);">
+<section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(2rem,4vw,3rem);">
   <div class="container" style="position:relative;z-index:2;">
     <p class="kicker" data-reveal>Réalisations</p>
-    <h1 class="display" data-reveal data-reveal-delay="1" style="margin-top:1.2rem;max-width:16ch;">Projets &amp; résultats.</h1>
-    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.8rem;">
-      Des projets d'optimisation logistique concrets : objectifs, actions menées et résultats mesurables.
+    <h1 class="display" data-reveal data-reveal-delay="1" style="font-size:var(--step-4);margin-top:1.2rem;max-width:16ch;">Des projets et résultats.</h1>
+    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.4rem;">
+      Des chantiers d'optimisation menés chez LSI (Groupe Delquignies), prestataire logistique de Texdecor —
+      contexte, objectif, actions et résultats.
     </p>
   </div>
-  <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:20%;font-size:clamp(3.5rem,10vw,10rem);z-index:1;">PROJETS</div>
+  <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:34%;font-size:clamp(4.5rem,14vw,13rem);z-index:1;">PROJETS</div>
 </section>
 
-<!-- Projet 1 : Réorganisation entrepôt -->
+<!-- Projet phare -->
 <section class="section" style="padding-top:0;">
   <div class="container">
-    <div class="grid-2 grid-2--asym" style="align-items:start;gap:clamp(2.5rem,5vw,5rem);">
-      <div data-reveal>
-        <p class="kicker kicker--plain">Projet 01</p>
-        <h2 class="h3" style="margin-top:0.8rem;">Réorganisation du stockage entrepôt</h2>
-        <p class="lede" style="margin-top:1.2rem;">
-          Repenser l'implantation des zones de stockage pour réduire les temps de trajet, améliorer la sécurité et faciliter les inventaires.
-        </p>
+    <article class="card" data-reveal style="padding:clamp(1.6rem,3.5vw,2.8rem);">
+      <div class="eyebrow-row" style="justify-content:space-between;">
+        <span class="kicker kicker--plain" style="color:var(--accent);">Réapprovisionnement</span>
+        <span class="tl-date">LSI — Groupe Delquignies</span>
+      </div>
+      <h2 class="h3" style="margin-top:1.2rem;max-width:24ch;">Application Excel de réapprovisionnement du picking</h2>
 
-        <div style="margin-top:2rem;" class="stack">
+      <div style="display:grid;grid-template-columns:1.25fr 0.75fr;gap:clamp(1.8rem,4vw,3rem);margin-top:1.8rem;align-items:start;">
+        <div class="stack">
           <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Contexte</p>
-            <p class="muted">Entrepôt LSI souffrant d'une implantation historique non optimisée : allées encombrées, produits mal classifiés, temps de préparation élevés et risques de collision engins/piétons.</p>
+            <p class="kicker kicker--plain" style="color:var(--accent);margin-bottom:0.4rem;">Contexte</p>
+            <p class="muted">Dans l'entrepôt de bobines de tissu, les préparateurs descendaient manuellement les bobines du stock haut (LR15) vers la zone de picking (LR04). Une étape chronophage qui pesait directement sur la productivité de la préparation de commandes.</p>
           </div>
           <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Actions</p>
-            <ul style="padding-left:1.2rem;list-style:disc;color:var(--muted);">
-              <li>Analyse des flux de circulation et cartographie des zones</li>
-              <li>Classification ABC des références par fréquence de sortie</li>
-              <li>Redéfinition des zones de picking et de masse</li>
-              <li>Mise en place du système de racks harnais et racks vue</li>
-              <li>Formation des opérateurs au nouveau plan d'implantation</li>
+            <p class="kicker kicker--plain" style="color:var(--accent);margin-bottom:0.4rem;">Objectif</p>
+            <p class="muted">Anticiper et automatiser le réapprovisionnement du picking afin de réduire les descentes de palettes inutiles, fiabiliser la disponibilité des références et libérer du temps aux préparateurs.</p>
+          </div>
+          <div>
+            <p class="kicker kicker--plain" style="color:var(--accent);margin-bottom:0.4rem;">Actions</p>
+            <ul class="stack-sm muted">
+              <li>• Conception d'une application Excel pilotée par fonctions et macros.</li>
+              <li>• Analyse du stock et de la prévision de la demande pour chaque article.</li>
+              <li>• Génération d'un fichier indiquant les bobines à descendre du LR15 vers le LR04.</li>
+              <li>• Tests, ajustements et prise en main par les équipes.</li>
             </ul>
           </div>
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Résultats</p>
-            <div class="kpi-grid kpi-grid--3" style="margin-top:0.8rem;">
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="20">0</span><span class="suffix">%</span></span>
-                <span class="kpi__label">Réduction temps de trajet</span>
-              </div>
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="30">0</span><span class="suffix">%</span></span>
-                <span class="kpi__label">Gain de surface exploitable</span>
-              </div>
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="0" data-dec="0">0</span></span>
-                <span class="kpi__label">Incident sécurité post-réorg.</span>
-              </div>
+          <div class="tl-tags">
+            <span class="chip">Excel avancé</span>
+            <span class="chip">Macros</span>
+            <span class="chip">Prévision de la demande</span>
+            <span class="chip">Gestion des stocks</span>
+          </div>
+        </div>
+
+        <div>
+          <a href="assets/projet-excel-reappro.png" target="_blank" rel="noopener" style="display:block;">
+            <img src="assets/projet-excel-reappro.png" alt="Aperçu de l'application Excel de réapprovisionnement : liste des bobines à descendre au sol ou en hauteur"
+              loading="lazy" decoding="async"
+              style="width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff;" />
+          </a>
+          <p class="kicker kicker--plain" style="margin-top:0.7rem;color:var(--muted);font-size:var(--step--1);">APERÇU DE L'OUTIL</p>
+          <div style="border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1.4rem;">
+            <p class="kicker kicker--plain" style="color:var(--muted);margin-bottom:1.1rem;">Résultat</p>
+            <div class="kpi">
+              <span class="kpi__num" style="font-size:var(--step-3);"><span data-count="50">0</span><span class="suffix">%</span></span>
+              <span class="kpi__label">de descentes LR15 en moins (de 50 à 25 / jour)</span>
             </div>
           </div>
         </div>
-
-        <div class="tl-tags" style="margin-top:1.5rem;">
-          <span class="chip chip--accent">Optimisation</span>
-          <span class="chip chip--accent">Implantation</span>
-          <span class="chip">Lean 5S</span>
-          <span class="chip">Sécurité</span>
-          <span class="chip">Analyse flux</span>
-        </div>
       </div>
-
-      <div data-reveal data-reveal-delay="1" class="stack">
-        <image-slot src="assets/racks-harnais.jpg" shape="rounded" radius="8"
-          style="width:100%;height:clamp(200px,22vw,280px);"
-          placeholder="Racks harnais"></image-slot>
-        <div class="grid-2" style="gap:1rem;">
-          <image-slot src="assets/racks-vue.jpg" shape="rounded" radius="8"
-            style="width:100%;height:clamp(160px,16vw,200px);"
-            placeholder="Racks vue"></image-slot>
-          <image-slot src="assets/racks-charge.jpg" shape="rounded" radius="8"
-            style="width:100%;height:clamp(160px,16vw,200px);"
-            placeholder="Racks charge"></image-slot>
-        </div>
-      </div>
-    </div>
+    </article>
   </div>
 </section>
 
-<hr class="divider" style="max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);" />
-
-<!-- Projet 2 : Fichier Excel réapprovisionnement -->
-<section class="section">
-  <div class="container">
-    <div class="grid-2" style="align-items:start;gap:clamp(2.5rem,5vw,5rem);">
-      <div data-reveal data-reveal-delay="1">
-        <image-slot src="assets/projet-excel-reappro.png" shape="rounded" radius="8"
-          style="width:100%;height:clamp(260px,28vw,360px);"
-          placeholder="Fichier Excel réapprovisionnement"></image-slot>
-      </div>
-      <div data-reveal>
-        <p class="kicker kicker--plain">Projet 02</p>
-        <h2 class="h3" style="margin-top:0.8rem;">Fichier Excel de réapprovisionnement automatisé</h2>
-        <p class="lede" style="margin-top:1.2rem;">
-          Création d'un outil Excel sur mesure pour automatiser le calcul des besoins de réapprovisionnement et éliminer les ruptures de stock.
-        </p>
-
-        <div style="margin-top:2rem;" class="stack">
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Contexte</p>
-            <p class="muted">Processus de réapprovisionnement manuel et peu fiable : ruptures fréquentes, surstock sur certaines références, perte de temps pour les gestionnaires de stock.</p>
-          </div>
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Actions</p>
-            <ul style="padding-left:1.2rem;list-style:disc;color:var(--muted);">
-              <li>Analyse des données historiques de consommation sur 12 mois</li>
-              <li>Calcul des points de commande et des quantités économiques de commande (QEC)</li>
-              <li>Développement d'un fichier Excel avec formules conditionnelles et tableaux croisés dynamiques</li>
-              <li>Mise en place d'alertes visuelles (mise en forme conditionnelle) pour les seuils critiques</li>
-              <li>Formation des équipes à l'utilisation du fichier</li>
-            </ul>
-          </div>
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Résultats</p>
-            <div class="kpi-grid kpi-grid--3" style="margin-top:0.8rem;">
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="85">0</span><span class="suffix">%</span></span>
-                <span class="kpi__label">Réduction des ruptures</span>
-              </div>
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="2">0</span><span class="suffix">h</span></span>
-                <span class="kpi__label">Temps gagné / semaine</span>
-              </div>
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="15">0</span><span class="suffix">%</span></span>
-                <span class="kpi__label">Réduction du surstock</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tl-tags" style="margin-top:1.5rem;">
-          <span class="chip chip--accent">Excel avancé</span>
-          <span class="chip chip--accent">Réapprovisionnement</span>
-          <span class="chip">TCD</span>
-          <span class="chip">Gestion des stocks</span>
-          <span class="chip">Automatisation</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider" style="max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter);" />
-
-<!-- Projet 3 : Gestion des stocks -->
-<section class="section">
-  <div class="container">
-    <div class="grid-2 grid-2--asym" style="align-items:start;gap:clamp(2.5rem,5vw,5rem);">
-      <div data-reveal>
-        <p class="kicker kicker--plain">Projet 03</p>
-        <h2 class="h3" style="margin-top:0.8rem;">Amélioration de la fiabilité des stocks</h2>
-        <p class="lede" style="margin-top:1.2rem;">
-          Mise en place d'un processus d'inventaire tournant pour améliorer la précision des stocks et réduire les écarts entre système et physique.
-        </p>
-
-        <div style="margin-top:2rem;" class="stack">
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Contexte</p>
-            <p class="muted">Écarts de stock fréquents entre le WMS et le physique, générant des retards de livraison et des ajustements coûteux lors des inventaires annuels.</p>
-          </div>
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Actions</p>
-            <ul style="padding-left:1.2rem;list-style:disc;color:var(--muted);">
-              <li>Analyse des causes d'écarts (erreurs de scan, dépôt en mauvais emplacement, etc.)</li>
-              <li>Définition d'un planning d'inventaire tournant par zone</li>
-              <li>Création de fiches de comptage et procédures de correction</li>
-              <li>Suivi hebdomadaire du taux de fiabilité par zone</li>
-              <li>Communication des résultats aux équipes et management</li>
-            </ul>
-          </div>
-          <div>
-            <p class="kicker kicker--plain" style="font-size:var(--step--1);margin-bottom:0.5rem;">Résultats</p>
-            <div class="kpi-grid kpi-grid--3" style="margin-top:0.8rem;">
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="97">0</span><span class="suffix">%</span></span>
-                <span class="kpi__label">Taux de fiabilité stock atteint</span>
-              </div>
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="60">0</span><span class="suffix">%</span></span>
-                <span class="kpi__label">Réduction des écarts</span>
-              </div>
-              <div class="kpi">
-                <span class="kpi__num"><span data-count="3">0</span></span>
-                <span class="kpi__label">Mois pour stabiliser le processus</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="tl-tags" style="margin-top:1.5rem;">
-          <span class="chip chip--accent">Inventaire tournant</span>
-          <span class="chip chip--accent">Fiabilité stock</span>
-          <span class="chip">WMS</span>
-          <span class="chip">Processus</span>
-          <span class="chip">KPI</span>
-        </div>
-      </div>
-
-      <div data-reveal data-reveal-delay="1">
-        <div class="card" style="background:var(--paper-2);">
-          <p class="kicker kicker--plain" style="margin-bottom:1.2rem;">Méthodologie utilisée</p>
-          <div class="timeline">
-            <div class="tl-item">
-              <span class="tl-date">Étape 1</span>
-              <p style="margin-top:0.3rem;font-weight:600;">Diagnostic</p>
-              <p class="muted" style="font-size:var(--step--1);margin-top:0.3rem;">Analyse des données d'écart, identification des zones critiques</p>
-            </div>
-            <div class="tl-item">
-              <span class="tl-date">Étape 2</span>
-              <p style="margin-top:0.3rem;font-weight:600;">Plan d'action</p>
-              <p class="muted" style="font-size:var(--step--1);margin-top:0.3rem;">Définition du planning, outils de suivi, responsabilités</p>
-            </div>
-            <div class="tl-item">
-              <span class="tl-date">Étape 3</span>
-              <p style="margin-top:0.3rem;font-weight:600;">Déploiement</p>
-              <p class="muted" style="font-size:var(--step--1);margin-top:0.3rem;">Mise en oeuvre avec les équipes, ajustements en continu</p>
-            </div>
-            <div class="tl-item">
-              <span class="tl-date">Étape 4</span>
-              <p style="margin-top:0.3rem;font-weight:600;">Pérennisation</p>
-              <p class="muted" style="font-size:var(--step--1);margin-top:0.3rem;">Standardisation du processus, tableau de bord mensuel</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
+<!-- Maintenance des racks -->
 <section class="section section--dark">
-  <div class="container" style="text-align:center;">
-    <p class="kicker" style="justify-content:center;" data-reveal>Intéressé(e) ?</p>
-    <h2 class="h3" style="margin-top:0.8rem;max-width:24ch;margin-inline:auto;" data-reveal data-reveal-delay="1">Échangeons sur ces projets et sur la façon dont je peux contribuer à votre organisation.</h2>
-    <div class="eyebrow-row" style="justify-content:center;margin-top:2rem;gap:0.9rem;" data-reveal data-reveal-delay="2">
-      <a class="btn btn--primary" href="contact.html">Me contacter <span class="arrow">→</span></a>
-      <a class="btn btn--ghost" href="assets/cv-julien-duquesne.pdf" download style="border-color:var(--dark-line);color:var(--dark-ink);">Télécharger mon CV <span class="arrow">↓</span></a>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker">Sécurité &amp; gestion de prestataires</p>
+      <h2 class="h2" style="max-width:22ch;">Maintenance et réparation du parc de racks</h2>
+    </div>
+
+    <div class="grid-2 grid-2--asym" style="align-items:start;gap:clamp(2rem,4vw,3.5rem);">
+      <div class="stack" data-reveal>
+        <p class="lede">
+          Les racks de stockage subissent au quotidien des chocs de chariots élévateurs : échelles enfoncées,
+          lisses pliées, longerons fragilisés. Or un rayonnage endommagé, c'est un risque d'effondrement —
+          donc un enjeu de sécurité majeur pour les équipes et pour la marchandise.
+        </p>
+        <div>
+          <p class="kicker kicker--plain" style="color:var(--accent);margin-bottom:0.4rem;">Mon rôle</p>
+          <p class="muted">
+            J'ai pris en charge le suivi complet de la maintenance du parc de rayonnages. J'inspecte
+            régulièrement les structures, je repère les éléments abîmés par les caristes et je décide
+            des suites à donner : réparation immédiate, mise en sécurité de la travée ou remplacement.
+          </p>
+        </div>
+        <div>
+          <p class="kicker kicker--plain" style="color:var(--accent);margin-bottom:0.4rem;">Ce que je gère seul</p>
+          <p class="muted">
+            Je réalise moi-même les interventions courantes : remplacement de lisses et d'échelles,
+            redressage et remise en conformité, en travaillant en hauteur avec harnais et équipements
+            de protection, dans le respect strict des consignes de sécurité.
+          </p>
+        </div>
+        <div>
+          <p class="kicker kicker--plain" style="color:var(--accent);margin-bottom:0.4rem;">Quand je fais appel à un prestataire</p>
+          <p class="muted">
+            Certaines réparations lourdes dépassent ce que je peux faire seul. Je sollicite alors une
+            entreprise extérieure spécialisée — mais c'est moi qui pilote l'ensemble : diagnostic,
+            hiérarchisation des réparations par niveau de criticité, planification
+            des délais et coordination de l'intervention pour limiter l'impact sur l'activité de l'entrepôt.
+          </p>
+        </div>
+        <div class="tl-tags">
+          <span class="chip">Sécurité entrepôt</span>
+          <span class="chip">Travail en hauteur</span>
+          <span class="chip">Gestion de prestataires</span>
+          <span class="chip">Planification</span>
+          <span class="chip">Priorisation</span>
+        </div>
+      </div>
+
+      <div class="stack" data-reveal data-reveal-delay="1">
+        <figure style="margin:0;">
+          <img src="assets/racks-harnais.jpg" alt="Intervention en hauteur sur un rack, avec harnais de sécurité"
+            loading="lazy" decoding="async"
+            style="width:100%;height:clamp(320px,38vw,440px);object-fit:cover;object-position:center;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);" />
+        </figure>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <figure style="margin:0;">
+            <img src="assets/racks-vue.jpg" alt="Vue d'ensemble du parc de racks de l'entrepôt LSI"
+              loading="lazy" decoding="async"
+              style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);" />
+          </figure>
+          <figure style="margin:0;">
+            <img src="assets/racks-charge.jpg" alt="Rack avec plaque de charges maximales et stockage de bobines"
+              loading="lazy" decoding="async"
+              style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Autres projets -->
+<section class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker">Autres réalisations</p>
+      <h2 class="h2">L'amélioration continue, au quotidien.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;">
+
+      <article class="card card--hover" data-reveal>
+        <span class="tl-date">Aménagement · Sécurité</span>
+        <h3 class="h4" style="margin-top:0.5rem;">Réaménagement des allées Z</h3>
+        <p class="muted" style="margin-top:0.8rem;">Conception de nouveaux plans de stockage validés par LSI et par le client Texdecor. Supervision de l'implémentation sur 6 jours avec le prestataire Negostock, pour gagner en capacité palettes et réduire le poids des palettes en hauteur.</p>
+        <div class="tl-tags"><span class="chip">Plan d'entrepôt</span><span class="chip">Sécurité</span><span class="chip">Gestion de projet</span></div>
+      </article>
+
+      <article class="card card--hover" data-reveal data-reveal-delay="1">
+        <span class="tl-date">Pilotage · Data</span>
+        <h3 class="h4" style="margin-top:0.5rem;">Tableau de bord de productivité</h3>
+        <p class="muted" style="margin-top:0.8rem;">Construction d'un tableau de bord Excel (tableaux croisés dynamiques) suivant la préparation et le rangement par personne et par zone. Il dimensionne l'équipe au chariot selon les lignes à préparer et alimente un feedback quotidien avec l'équipe.</p>
+        <div class="tl-tags"><span class="chip">Tableaux croisés dynamiques</span><span class="chip">KPI</span><span class="chip">Management</span></div>
+      </article>
+
+      <article class="card card--hover" data-reveal>
+        <span class="tl-date">Formation</span>
+        <h3 class="h4" style="margin-top:0.5rem;">Guides de formation préparation &amp; rangement</h3>
+        <p class="muted" style="margin-top:0.8rem;">Rédaction de guides et de process, et mise en place d'un parcours d'intégration avec mentor pour les intérimaires, afin d'accélérer la montée en autonomie et d'homogénéiser les bonnes pratiques.</p>
+        <div class="tl-tags"><span class="chip">Onboarding</span><span class="chip">Process</span><span class="chip">Standardisation</span><span class="chip">Mentorat</span></div>
+      </article>
+
+      <article class="card card--hover" data-reveal data-reveal-delay="1">
+        <span class="tl-date">Transport · Outils</span>
+        <h3 class="h4" style="margin-top:0.5rem;">Déploiement d'un TMS</h3>
+        <p class="muted" style="margin-top:0.8rem;">Participation à l'installation et à la mise en service d'un TMS (Transport Management System) pour fiabiliser la gestion des livraisons, suivre les expéditions et réduire les erreurs de transport.</p>
+        <div class="tl-tags"><span class="chip">TMS</span><span class="chip">Transport</span><span class="chip">Fiabilité livraison</span></div>
+      </article>
+
+      <article class="card card--hover" data-reveal>
+        <span class="tl-date">Opérations · Management</span>
+        <h3 class="h4" style="margin-top:0.5rem;">Gestion du déstockage</h3>
+        <p class="muted" style="margin-top:0.8rem;">Coordination d'une équipe lors des opérations de déstockage : organisation du planning, communication avec les opérateurs et pilotage de la partie informatique pour assurer un déroulement fluide.</p>
+        <div class="tl-tags"><span class="chip">Coordination d'équipe</span><span class="chip">Organisation</span><span class="chip">Communication</span></div>
+      </article>
+
+      <article class="card card--hover" data-reveal data-reveal-delay="1">
+        <span class="tl-date">Pilotage · Data</span>
+        <h3 class="h4" style="margin-top:0.5rem;">Taux d'occupation de l'entrepôt automatisé</h3>
+        <p class="muted" style="margin-top:0.8rem;">Création d'un outil Excel automatique calculant le taux d'occupation du stockage en temps réel. Il offre une vision claire de l'espace disponible et saturé, pour mieux anticiper les arrivages et optimiser le rangement.</p>
+        <div class="tl-tags"><span class="chip">Excel avancé</span><span class="chip">Automatisation</span><span class="chip">Pilotage capacité</span></div>
+      </article>
+
+    </div>
+
+    <!-- Contexte mémoire -->
+    <div class="card" data-reveal style="margin-top:1.4rem;border-style:dashed;border-color:var(--line);background:transparent;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <p class="kicker kicker--plain" style="color:var(--accent);">Mémoire de fin d'études — BUT MLT</p>
+        <h3 class="h4" style="margin-top:0.4rem;max-width:30ch;">« En quoi l'amélioration de la productivité des préparateurs impacte la performance de LSI ? »</h3>
+        <p class="muted" style="margin-top:0.4rem;max-width:52ch;">Ces réalisations s'inscrivent dans mon mémoire, qui analyse la baisse de productivité (de 50 à 26 bobines / heure entre 2013 et 2023) et propose des leviers concrets pour l'inverser.</p>
+      </div>
+      <a class="btn btn--ghost" href="contact.html">Me contacter <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -263,6 +226,7 @@
 </main>
 
 <footer data-footer></footer>
+
 <script src="assets/image-slot.js"></script>
 <script src="assets/site.js"></script>
 </body>
