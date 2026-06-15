@@ -68,14 +68,28 @@
       '</div>';
 
     var burger = mount.querySelector(".nav__burger");
-    burger.addEventListener("click", function () { mount.classList.toggle("is-open"); });
+    burger.addEventListener("click", function () {
+      var opening = !mount.classList.contains("is-open");
+      mount.classList.toggle("is-open");
+      /* Quand le menu s'ouvre : forcer is-solid pour que la barre soit
+         opaque et les liens sombres, même tout en haut de la page.
+         Quand il se ferme : remettre l'état normal selon la position. */
+      if (opening) {
+        mount.classList.add("is-solid");
+      } else {
+        if (window.scrollY <= 24) mount.classList.remove("is-solid");
+      }
+    });
     mount.querySelectorAll(".nav__link").forEach(function (l) {
-      l.addEventListener("click", function () { mount.classList.remove("is-open"); });
+      l.addEventListener("click", function () {
+        mount.classList.remove("is-open");
+        if (window.scrollY <= 24) mount.classList.remove("is-solid");
+      });
     });
 
     function onScroll() {
       if (window.scrollY > 24) mount.classList.add("is-solid");
-      else mount.classList.remove("is-solid");
+      else if (!mount.classList.contains("is-open")) mount.classList.remove("is-solid");
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
