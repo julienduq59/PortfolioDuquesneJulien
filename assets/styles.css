@@ -381,6 +381,129 @@ image-slot:hover img { transform: scale(1.04); }
   image-slot img, .chip, .footer__cta { transition: none; }
 }
 
+/* ---------- Display Cards (cartes empilées — Réalisations) ---------- */
+.display-cards-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+.display-cards-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+.display-cards-layout__text { flex: 1; min-width: 240px; }
+
+.display-cards {
+  display: grid;
+  grid-template-areas: 'stack';
+  place-items: start;
+  position: relative;
+  width: clamp(20rem, 38vw, 26rem);
+  height: 17rem;
+  flex: 0 0 auto;
+}
+.display-card {
+  grid-area: stack;
+  position: relative;
+  width: clamp(17rem, 30vw, 22rem);
+  height: 8.8rem;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--dark-line);
+  background: oklch(0.265 0.018 66 / 0.85);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: skewY(-8deg);
+  transition: transform .65s cubic-bezier(.2,.8,.2,1),
+              border-color .4s ease,
+              filter .5s ease;
+  filter: grayscale(80%);
+  overflow: hidden;
+  cursor: default;
+}
+/* Fade en dégradé sur la droite */
+.display-card::after {
+  content: '';
+  position: absolute; right: -1px; top: -5%;
+  height: 110%; width: 50%;
+  background: linear-gradient(to left, var(--dark-bg), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+/* Overlay semi-opaque sur les cartes du fond */
+.display-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: var(--radius-lg);
+  background: var(--dark-bg);
+  opacity: 0.4;
+  transition: opacity .5s;
+  z-index: 0;
+}
+/* Positions empilées */
+.display-card:nth-child(2) {
+  transform: skewY(-8deg) translate(3.5rem, 2.2rem);
+}
+.display-card:nth-child(3) {
+  transform: skewY(-8deg) translate(7rem, 4.4rem);
+  filter: none;
+}
+/* Hover : la carte de fond remonte, celle du milieu se soulève légèrement, la frontale glisse vers le bas */
+.display-card:nth-child(1):hover {
+  transform: skewY(-8deg) translateY(-2.2rem);
+  filter: none; border-color: var(--accent);
+}
+.display-card:nth-child(1):hover::before { opacity: 0; }
+.display-card:nth-child(2):hover {
+  transform: skewY(-8deg) translate(3.5rem, 1.2rem);
+  filter: none; border-color: var(--accent);
+}
+.display-card:nth-child(2):hover::before { opacity: 0; }
+.display-card:nth-child(3):hover {
+  transform: skewY(-8deg) translate(7rem, 5.5rem);
+  border-color: var(--accent);
+}
+
+/* Contenus des cartes */
+.dc-top, .dc-mid, .dc-bot {
+  display: flex; align-items: center; gap: 0.55rem;
+  position: relative; z-index: 1;
+}
+.dc-icon {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center; flex: 0 0 auto;
+}
+.dc-label {
+  font-family: var(--font-mono); font-size: var(--step--1);
+  font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dc-title {
+  font-family: var(--font-display); font-size: var(--step-1);
+  color: var(--dark-ink); white-space: nowrap; line-height: 1.1;
+}
+.dc-stat {
+  font-family: var(--font-mono); font-size: 0.7rem;
+  color: var(--dark-muted); letter-spacing: 0.04em;
+}
+
+@media (max-width: 680px) {
+  .display-cards { width: 16rem; height: 14rem; }
+  .display-card { width: 15rem; height: 7.6rem; }
+  .display-card:nth-child(2) { transform: skewY(-8deg) translate(2.5rem, 1.6rem); }
+  .display-card:nth-child(3) { transform: skewY(-8deg) translate(5rem, 3.2rem); }
+  .display-card:nth-child(1):hover { transform: skewY(-8deg) translateY(-1.6rem); }
+  .display-card:nth-child(2):hover { transform: skewY(-8deg) translate(2.5rem, 0.8rem); }
+  .display-card:nth-child(3):hover { transform: skewY(-8deg) translate(5rem, 4rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .display-card { transition: none; filter: none; }
+  .display-card::before { opacity: 0; }
+}
+
 /* ---------- Misc ---------- */
 .eyebrow-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .divider { height: 1px; background: var(--line); border: 0; }
