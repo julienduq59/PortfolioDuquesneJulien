@@ -313,6 +313,74 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
   html { scroll-behavior: auto; }
 }
 
+/* ---------- Scroll progress bar ---------- */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  height: 2px; width: 0%;
+  background: var(--accent);
+  pointer-events: none;
+  transition: width .08s linear;
+}
+
+/* ---------- Hero photo float ---------- */
+@keyframes jd-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-9px); }
+}
+.anim-float { animation: jd-float 6s ease-in-out infinite; }
+
+/* ---------- Timeline dot pulse (poste en cours) ---------- */
+@keyframes jd-pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 4px var(--accent-soft); }
+  50%       { box-shadow: 0 0 0 10px oklch(0.635 0.155 47 / 0.05); }
+}
+.tl-item.is-current::before { animation: jd-pulse-ring 2.8s ease-in-out infinite; }
+
+/* ---------- KPI pop-in ---------- */
+@keyframes jd-kpi-pop {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.93); }
+  65%  { transform: translateY(-1px) scale(1.015); }
+  100% { opacity: 1; transform: none; }
+}
+.kpi[data-reveal].is-in .kpi__num {
+  animation: jd-kpi-pop .62s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* ---------- image-slot hover zoom ---------- */
+image-slot { overflow: hidden; }
+image-slot img { transition: transform .75s cubic-bezier(.2,.8,.2,1); }
+image-slot:hover img { transform: scale(1.04); }
+
+/* ---------- Chip micro-interaction ---------- */
+.chip {
+  transition: transform .18s cubic-bezier(.2,.8,.2,1),
+              border-color .18s, color .18s, background .18s;
+}
+.chip:hover { transform: translateY(-1px); }
+
+/* ---------- Footer CTA underline animée ---------- */
+.footer__cta {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: background-size .5s cubic-bezier(.2,.8,.2,1);
+  padding-bottom: 3px;
+}
+.footer__cta:hover { background-size: 100% 1.5px; }
+
+/* ---------- Card hover accent border ---------- */
+.card--hover { border-color: var(--line-soft); }
+.card--hover:hover { border-color: var(--accent-soft); }
+
+/* ---------- Reduced motion overrides ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .anim-float,
+  .tl-item.is-current::before,
+  .kpi[data-reveal].is-in .kpi__num { animation: none; }
+  image-slot img, .chip, .footer__cta { transition: none; }
+}
+
 /* ---------- Misc ---------- */
 .eyebrow-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .divider { height: 1px; background: var(--line); border: 0; }

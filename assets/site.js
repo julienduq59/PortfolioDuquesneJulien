@@ -270,13 +270,66 @@
     window.parent.postMessage({ type: "__edit_mode_available" }, "*");
   }
 
+  /* ---------- Barre de progression de lecture ---------- */
+  function initScrollProgress() {
+    var bar = document.createElement("div");
+    bar.id = "scroll-progress";
+    document.body.appendChild(bar);
+    function update() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    }
+    window.addEventListener("scroll", update, { passive: true });
+  }
+
+  /* ---------- Parallaxe sur les mots fantômes ---------- */
+  function initParallax() {
+    var ghosts = document.querySelectorAll(".ghost-word");
+    if (!ghosts.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    function update() {
+      ghosts.forEach(function (g) {
+        var rect = g.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+        var center = rect.top + rect.height / 2 - window.innerHeight / 2;
+        g.style.transform = "translateY(" + (center * 0.07) + "px)";
+      });
+    }
+    window.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+
+  /* ---------- Cascade automatique des grilles ---------- */
+  function initAutoStagger() {
+    var grids = document.querySelectorAll(".grid-3, .grid-4, .skill-cat");
+    grids.forEach(function (grid) {
+      if (grid.hasAttribute("data-reveal")) return;
+      Array.prototype.forEach.call(grid.children, function (el, i) {
+        if (el.hasAttribute("data-reveal")) return;
+        el.setAttribute("data-reveal", "");
+        var d = Math.min(i + 1, 4);
+        if (d > 0) el.setAttribute("data-reveal-delay", String(d));
+      });
+    });
+  }
+
+  /* ---------- Animation flottante photo hero ---------- */
+  function initHeroFloat() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var photo = document.getElementById("photo-hero");
+    if (photo) photo.classList.add("anim-float");
+  }
+
   function initAll() {
     buildNav();
     buildFooter();
+    initScrollProgress();
+    initAutoStagger();   /* avant initReveal pour que les nouveaux [data-reveal] soient observés */
     initReveal();
     initCounters();
     initGauges();
     initForm();
+    initParallax();
+    initHeroFloat();
     buildTweaks();
   }
   if (document.readyState === "loading") {
