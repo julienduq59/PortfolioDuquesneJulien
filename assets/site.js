@@ -449,9 +449,109 @@
     if (photo) photo.classList.add("anim-float");
   }
 
+  /* ---------- Lien canonique (SEO) ---------- */
+  function initCanonical() {
+    if (document.querySelector('link[rel="canonical"]')) return;
+    var og = document.querySelector('meta[property="og:url"]');
+    if (!og) return;
+    var link = document.createElement("link");
+    link.rel = "canonical";
+    link.href = og.getAttribute("content");
+    document.head.appendChild(link);
+  }
+
+  /* ---------- Bouton « Retour en haut » ---------- */
+  function initBackToTop() {
+    var btn = document.createElement("button");
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Retour en haut de la page");
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>';
+    document.body.appendChild(btn);
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    function onScroll() {
+      btn.classList.toggle("is-visible", window.scrollY > window.innerHeight * 0.6);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ---------- Lightbox images ---------- */
+  function initLightbox() {
+    var imgs = document.querySelectorAll(
+      "figure img, a[href$='.png'] img, a[href$='.jpg'] img, a[href$='.jpeg'] img, a[href$='.webp'] img"
+    );
+    if (!imgs.length) return;
+
+    var box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("aria-hidden", "true");
+    box.innerHTML =
+      '<button class="lightbox__close" aria-label="Fermer">&times;</button>' +
+      '<img class="lightbox__img" alt="" />';
+    document.body.appendChild(box);
+    var boxImg = box.querySelector(".lightbox__img");
+    var closeBtn = box.querySelector(".lightbox__close");
+
+    function open(src, alt) {
+      boxImg.src = src;
+      boxImg.alt = alt || "";
+      box.classList.add("is-open");
+      box.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      box.classList.remove("is-open");
+      box.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+    closeBtn.addEventListener("click", close);
+    box.addEventListener("click", function (e) { if (e.target === box) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+    imgs.forEach(function (img) {
+      var parentLink = img.closest("a");
+      var src = parentLink && /\.(png|jpe?g|webp)$/i.test(parentLink.getAttribute("href") || "")
+        ? parentLink.getAttribute("href")
+        : img.src;
+      img.classList.add("is-zoomable");
+      var trigger = parentLink || img;
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        open(src, img.alt);
+      });
+    });
+  }
+
+  /* ---------- Copier email / téléphone ---------- */
+  function initCopyContact() {
+    if (!navigator.clipboard) return;
+    var rows = document.querySelectorAll(".contact-row[href^='mailto:'], .contact-row[href^='tel:']");
+    rows.forEach(function (row) {
+      var href = row.getAttribute("href");
+      var value = href.replace(/^mailto:/, "").replace(/^tel:/, "");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "copy-btn";
+      btn.setAttribute("aria-label", "Copier");
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        navigator.clipboard.writeText(value).then(function () {
+          btn.classList.add("is-copied");
+          setTimeout(function () { btn.classList.remove("is-copied"); }, 1600);
+        });
+      });
+      row.appendChild(btn);
+    });
+  }
+
   function initAll() {
     buildNav();
     buildFooter();
+    initCanonical();
     initScrollProgress();
     initAutoStagger();   /* avant initReveal pour que les nouveaux [data-reveal] soient observés */
     initReveal();
@@ -461,6 +561,9 @@
     initForm();
     initParallax();
     initHeroFloat();
+    initBackToTop();
+    initLightbox();
+    initCopyContact();
     buildTweaks();
   }
   if (document.readyState === "loading") {
