@@ -216,18 +216,45 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
 
 @media (max-width: 1024px) {
   .nav__burger { display: flex; }
-  .nav__cta { display: none; }
   .nav__links {
     position: fixed; inset: 76px 0 auto 0;
-    flex-direction: column; align-items: flex-start; gap: 0;
-    background: var(--paper); padding: 1rem var(--gutter) 2rem;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--paper);
+    padding: 0.5rem var(--gutter) 1.6rem;
     border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-lg);
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
     transform: translateY(-12px); opacity: 0; pointer-events: none;
     transition: transform .3s, opacity .3s;
   }
   .nav.is-open .nav__links { transform: none; opacity: 1; pointer-events: auto; }
-  .nav__link { font-size: 1rem; padding: 1rem 0; width: 100%; border-bottom: 1px solid var(--line-soft); }
+  .nav__link {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 1.05rem 0; width: 100%;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav__link:hover, .nav__link.is-active { color: var(--accent); }
+  .nav__link.is-active { font-weight: 600; }
   .nav__link::after { display: none; }
+  .nav__cta {
+    display: inline-flex; justify-content: center;
+    margin-top: 1.2rem;
+  }
+
+  /* Quand le menu est ouvert : barre opaque + texte sombre lisible,
+     même par-dessus un hero sombre */
+  .nav.is-open {
+    background: var(--nav-bg);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border-bottom-color: var(--line-soft);
+  }
+  .nav--on-dark.is-open .nav__burger span { background: var(--ink); }
+  .nav--on-dark.is-open .nav__brand { color: var(--ink); }
 }
 
 /* ---------- Footer ---------- */
@@ -419,6 +446,17 @@ main { animation: jd-page-enter .5s cubic-bezier(.2,.8,.2,1) both; }
 .stack-sm > * + * { margin-top: 1rem; }
 .stack > * + * { margin-top: 1.5rem; }
 .pad-top-nav { padding-top: 76px; }
+
+/* ---------- Grilles de cartes responsives ---------- */
+.card-grid { display: grid; gap: 1.4rem; }
+.card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 820px) { .card-grid--3 { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .card-grid--2 { grid-template-columns: 1fr; } }
+
+/* Bloc projet phare (texte + visuel) */
+.project-split { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(1.8rem, 4vw, 3rem); margin-top: 1.8rem; align-items: start; }
+@media (max-width: 760px) { .project-split { grid-template-columns: 1fr; } }
 
 /* ---------- Form ---------- */
 .field { display: flex; flex-direction: column; gap: 0.5rem; }
