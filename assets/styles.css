@@ -381,127 +381,162 @@ image-slot:hover img { transform: scale(1.04); }
   image-slot img, .chip, .footer__cta { transition: none; }
 }
 
-/* ---------- Display Cards (cartes empilées — Réalisations) ---------- */
-.display-cards-section {
-  padding-block: clamp(3rem, 6vw, 5rem);
-}
-.display-cards-layout {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(2.5rem, 6vw, 6rem);
-}
-.display-cards-layout__text { flex: 1; min-width: 240px; }
-
-.display-cards {
+/* ---------- Display Cards — fidèle au composant React d'origine ----------
+   Tailwind → CSS : h-36=9rem, w-[22rem]=22rem, translate-x-16=4rem,
+   translate-y-10=2.5rem, translate-x-32=8rem, translate-y-20=5rem,
+   -translate-y-10=-2.5rem, -translate-y-1=-0.25rem, translate-y-10=+2.5rem
+   -------------------------------------------------------------------- */
+.dc-wrapper {
   display: grid;
-  grid-template-areas: 'stack';
-  place-items: start;
-  position: relative;
-  width: clamp(20rem, 38vw, 26rem);
-  height: 17rem;
-  flex: 0 0 auto;
+  grid-template-areas: 'stack';  /* [grid-template-areas:'stack'] */
+  place-items: center;           /* place-items-center */
+  animation: dc-fadein .7s ease both; /* animate-in fade-in-0 duration-700 */
+  /* taille du conteneur pour accueillir la pile décalée */
+  width: 34rem;
+  min-height: 17rem;
+  overflow: visible;
 }
-.display-card {
-  grid-area: stack;
+@keyframes dc-fadein { from { opacity: 0; } to { opacity: 1; } }
+
+/* Carte de base -------------------------------------------------- */
+.dc-card {
+  grid-area: stack;              /* [grid-area:stack] */
   position: relative;
-  width: clamp(17rem, 30vw, 22rem);
-  height: 8.8rem;
-  border-radius: var(--radius-lg);
-  border: 1.5px solid var(--dark-line);
-  background: oklch(0.265 0.018 66 / 0.85);
-  backdrop-filter: blur(8px);
-  padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transform: skewY(-8deg);
-  transition: transform .65s cubic-bezier(.2,.8,.2,1),
-              border-color .4s ease,
-              filter .5s ease;
-  filter: grayscale(80%);
-  overflow: hidden;
-  cursor: default;
+  height: 9rem;                  /* h-36 */
+  width: 22rem;                  /* w-[22rem] */
+  transform: skewY(-8deg);       /* -skew-y-[8deg] */
+  user-select: none;
+  border-radius: 0.75rem;        /* rounded-xl */
+  border: 2px solid oklch(0.95 0.008 78 / 0.15); /* border-2 */
+  background: oklch(0.265 0.018 66 / 0.7);        /* bg-muted/70 */
+  backdrop-filter: blur(4px);    /* backdrop-blur-sm */
+  padding: 0.75rem 1rem;         /* py-3 px-4 */
+  transition: all .7s;           /* transition-all duration-700 */
 }
-/* Fade en dégradé sur la droite */
-.display-card::after {
+/* [&>*]:flex [&>*]:items-center [&>*]:gap-2 */
+.dc-card > * { display: flex; align-items: center; gap: 0.5rem; }
+
+/* after: dégradé de fondu à droite */
+/* after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem]
+   after:bg-gradient-to-l after:from-background after:to-transparent */
+.dc-card::after {
   content: '';
-  position: absolute; right: -1px; top: -5%;
-  height: 110%; width: 50%;
+  position: absolute;
+  right: -1px; top: -5%;
+  height: 110%; width: 20rem;
   background: linear-gradient(to left, var(--dark-bg), transparent);
   pointer-events: none;
-  z-index: 0;
 }
-/* Overlay semi-opaque sur les cartes du fond */
-.display-card::before {
+/* hover:border-white/20 hover:bg-muted */
+.dc-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: oklch(0.265 0.018 66);
+}
+
+/* Carte 1 — fond (back) ----------------------------------------- */
+/* [grid-area:stack] hover:-translate-y-10
+   grayscale-[100%] hover:grayscale-0
+   before: overlay + outline-border */
+.dc-card:nth-child(1) {
+  filter: grayscale(100%);
+  transition: transform .7s, filter .7s, border-color .7s, background .7s;
+}
+.dc-card:nth-child(1)::before {
   content: '';
   position: absolute; inset: 0;
-  border-radius: var(--radius-lg);
-  background: var(--dark-bg);
-  opacity: 0.4;
-  transition: opacity .5s;
-  z-index: 0;
+  border-radius: 0.75rem;
+  outline: 1px solid oklch(0.95 0.008 78 / 0.15);
+  background: oklch(0.225 0.018 66 / 0.5);
+  background-blend-mode: overlay;
+  transition: opacity .7s;
+  pointer-events: none;
 }
-/* Positions empilées */
-.display-card:nth-child(2) {
-  transform: skewY(-8deg) translate(3.5rem, 2.2rem);
+.dc-card:nth-child(1):hover {
+  transform: skewY(-8deg) translateY(-2.5rem); /* hover:-translate-y-10 */
+  filter: grayscale(0%);
 }
-.display-card:nth-child(3) {
-  transform: skewY(-8deg) translate(7rem, 4.4rem);
-  filter: none;
+.dc-card:nth-child(1):hover::before { opacity: 0; }
+
+/* Carte 2 — milieu ---------------------------------------------- */
+/* [grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1
+   grayscale-[100%] hover:grayscale-0
+   before: overlay + outline-border */
+.dc-card:nth-child(2) {
+  transform: skewY(-8deg) translate(4rem, 2.5rem); /* translate-x-16 translate-y-10 */
+  filter: grayscale(100%);
+  transition: transform .7s, filter .7s, border-color .7s, background .7s;
 }
-/* Hover : la carte de fond remonte, celle du milieu se soulève légèrement, la frontale glisse vers le bas */
-.display-card:nth-child(1):hover {
-  transform: skewY(-8deg) translateY(-2.2rem);
-  filter: none; border-color: var(--accent);
+.dc-card:nth-child(2)::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 0.75rem;
+  outline: 1px solid oklch(0.95 0.008 78 / 0.15);
+  background: oklch(0.225 0.018 66 / 0.5);
+  background-blend-mode: overlay;
+  transition: opacity .7s;
+  pointer-events: none;
 }
-.display-card:nth-child(1):hover::before { opacity: 0; }
-.display-card:nth-child(2):hover {
-  transform: skewY(-8deg) translate(3.5rem, 1.2rem);
-  filter: none; border-color: var(--accent);
+.dc-card:nth-child(2):hover {
+  transform: skewY(-8deg) translate(4rem, -0.25rem); /* hover:-translate-y-1 */
+  filter: grayscale(0%);
 }
-.display-card:nth-child(2):hover::before { opacity: 0; }
-.display-card:nth-child(3):hover {
-  transform: skewY(-8deg) translate(7rem, 5.5rem);
-  border-color: var(--accent);
+.dc-card:nth-child(2):hover::before { opacity: 0; }
+
+/* Carte 3 — avant-plan (front) ---------------------------------- */
+/* [grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10 */
+.dc-card:nth-child(3) {
+  transform: skewY(-8deg) translate(8rem, 5rem); /* translate-x-32 translate-y-20 */
+  transition: transform .7s, border-color .7s, background .7s;
+}
+.dc-card:nth-child(3):hover {
+  transform: skewY(-8deg) translate(8rem, 7.5rem); /* hover:translate-y-10 */
 }
 
-/* Contenus des cartes */
-.dc-top, .dc-mid, .dc-bot {
-  display: flex; align-items: center; gap: 0.55rem;
-  position: relative; z-index: 1;
+/* Éléments internes des cartes ---------------------------------- */
+/* Icon wrapper: rounded-full bg-blue-800 p-1 */
+.dc-icon-wrap {
+  display: inline-flex;
+  border-radius: 9999px;
+  background: oklch(0.35 0.16 258); /* bg-blue-800 */
+  padding: 0.25rem;
+  flex: 0 0 auto;
 }
-.dc-icon {
-  width: 26px; height: 26px; border-radius: 50%;
-  background: var(--accent-soft); color: var(--accent);
-  display: grid; place-items: center; flex: 0 0 auto;
+/* Icon: text-blue-300 */
+.dc-icon-wrap svg { color: oklch(0.72 0.12 258); } /* text-blue-300 */
+
+/* Title: text-lg font-medium [titleClassName=text-blue-500] */
+.dc-card-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: oklch(0.58 0.16 258); /* text-blue-500 */
 }
-.dc-label {
-  font-family: var(--font-mono); font-size: var(--step--1);
-  font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--accent);
+/* Description: whitespace-nowrap text-lg */
+.dc-card-desc {
+  white-space: nowrap;
+  font-size: 1.125rem;
+  color: var(--dark-ink);
 }
-.dc-title {
-  font-family: var(--font-display); font-size: var(--step-1);
-  color: var(--dark-ink); white-space: nowrap; line-height: 1.1;
-}
-.dc-stat {
-  font-family: var(--font-mono); font-size: 0.7rem;
-  color: var(--dark-muted); letter-spacing: 0.04em;
+/* Date: text-muted-foreground */
+.dc-card-date { color: var(--dark-muted); font-size: var(--step--1); }
+
+/* Section conteneur */
+.dc-section {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 680px) {
-  .display-cards { width: 16rem; height: 14rem; }
-  .display-card { width: 15rem; height: 7.6rem; }
-  .display-card:nth-child(2) { transform: skewY(-8deg) translate(2.5rem, 1.6rem); }
-  .display-card:nth-child(3) { transform: skewY(-8deg) translate(5rem, 3.2rem); }
-  .display-card:nth-child(1):hover { transform: skewY(-8deg) translateY(-1.6rem); }
-  .display-card:nth-child(2):hover { transform: skewY(-8deg) translate(2.5rem, 0.8rem); }
-  .display-card:nth-child(3):hover { transform: skewY(-8deg) translate(5rem, 4rem); }
+@media (max-width: 780px) {
+  .dc-wrapper { transform: scale(0.8) translateX(-3rem); transform-origin: left center; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .display-card { transition: none; filter: none; }
-  .display-card::before { opacity: 0; }
+  .dc-card, .dc-card:nth-child(1), .dc-card:nth-child(2), .dc-card:nth-child(3) {
+    transition: none; filter: none; animation: none;
+  }
+  .dc-card::before { display: none; }
 }
 
 /* ---------- Misc ---------- */
