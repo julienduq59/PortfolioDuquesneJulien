@@ -558,7 +558,14 @@
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
+        if (en.isIntersecting) {
+          var target = en.target;
+          io.unobserve(target);
+          /* Double rAF garantit que le navigateur a peint scaleY(0) avant d'ajouter is-in */
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () { target.classList.add("is-in"); });
+          });
+        }
       });
     }, { threshold: 0.12 });
     tls.forEach(function (t) { io.observe(t); });
