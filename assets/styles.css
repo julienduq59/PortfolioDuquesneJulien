@@ -264,6 +264,12 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
   }
   .nav--on-dark.is-open .nav__burger span { background: var(--ink); }
   .nav--on-dark.is-open .nav__brand { color: var(--ink); }
+  /* Forcer les liens en sombre quand le menu est ouvert sur le hero,
+     sinon ils héritent de la couleur claire (invisibles sur fond clair
+     tant que la nav n'est pas solidifiée par le scroll) */
+  .nav--on-dark.is-open .nav__link { color: var(--ink); }
+  .nav--on-dark.is-open .nav__link:hover,
+  .nav--on-dark.is-open .nav__link.is-active { color: var(--accent); }
 }
 
 /* ---------- Footer ---------- */
