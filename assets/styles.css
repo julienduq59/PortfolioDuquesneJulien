@@ -344,6 +344,15 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
 /* ---------- Timeline ---------- */
 .timeline { position: relative; }
 .timeline::before { content: ""; position: absolute; left: 0; top: 0.6rem; bottom: 0.6rem; width: 1px; background: var(--line); }
+/* Trait de la frise qui se dessine au scroll */
+.timeline::after {
+  content: ""; position: absolute; left: 0; top: 0.6rem; width: 1px;
+  height: calc(100% - 1.2rem);
+  background: var(--accent);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 1.1s cubic-bezier(.2,.8,.2,1);
+}
+.timeline.is-in::after { transform: scaleY(1); }
 .tl-item { position: relative; padding-left: 2.5rem; padding-bottom: clamp(2rem, 4vw, 3.2rem); }
 .tl-item:last-child { padding-bottom: 0; }
 .tl-item::before {
@@ -471,6 +480,20 @@ image-slot:hover img { transform: scale(1.04); }
   to   { opacity: 1; transform: none; }
 }
 main { animation: jd-page-enter .5s cubic-bezier(.2,.8,.2,1) both; }
+
+/* Fondu de sortie lors du changement de page */
+body.is-leaving { opacity: 0; transition: opacity .24s ease; }
+@media (prefers-reduced-motion: reduce) {
+  body.is-leaving { opacity: 1; transition: none; }
+}
+
+/* ---------- Focus clavier visible (accessibilité) ---------- */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
 
 /* ---------- Skill domain header ---------- */
 .domain-head { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 1.6rem; }

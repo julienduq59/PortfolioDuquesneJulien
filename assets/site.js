@@ -548,6 +548,45 @@
     });
   }
 
+  /* ---------- Animation de la frise (timeline) ---------- */
+  function initTimeline() {
+    var tls = document.querySelectorAll(".timeline");
+    if (!tls.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      tls.forEach(function (t) { t.classList.add("is-in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    tls.forEach(function (t) { io.observe(t); });
+  }
+
+  /* ---------- Transitions douces entre les pages ---------- */
+  function initPageTransitions() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    /* Retour arrière (bfcache) : retirer le fondu de sortie */
+    window.addEventListener("pageshow", function () {
+      document.body.classList.remove("is-leaving");
+    });
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a");
+      if (!a) return;
+      var href = a.getAttribute("href");
+      if (!href) return;
+      if (a.target === "_blank" || a.hasAttribute("download")) return;
+      if (/^(#|mailto:|tel:|javascript:)/i.test(href)) return;
+      /* Lien externe : laisser le comportement normal */
+      if (/^https?:\/\//i.test(href) && a.host !== location.host) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+      document.body.classList.add("is-leaving");
+      setTimeout(function () { window.location.href = href; }, 230);
+    });
+  }
+
   function initAll() {
     buildNav();
     buildFooter();
@@ -564,6 +603,8 @@
     initBackToTop();
     initLightbox();
     initCopyContact();
+    initTimeline();
+    initPageTransitions();
     buildTweaks();
   }
   if (document.readyState === "loading") {
