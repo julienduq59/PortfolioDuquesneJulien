@@ -4,6 +4,11 @@
 (function () {
   "use strict";
 
+  /* Empêcher le navigateur de restaurer la position de scroll :
+     chaque page s'ouvre bien tout en haut (barre transparente sur le hero) */
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.addEventListener("load", function () { window.scrollTo(0, 0); });
+
   var PAGES = [
     { id: "index",        label: "Accueil",      href: "index.html" },
     { id: "a-propos",     label: "À propos",     href: "a-propos.html" },
