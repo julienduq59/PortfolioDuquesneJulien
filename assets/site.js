@@ -7,7 +7,17 @@
   /* Empêcher le navigateur de restaurer la position de scroll :
      chaque page s'ouvre bien tout en haut (barre transparente sur le hero) */
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-  window.addEventListener("load", function () { window.scrollTo(0, 0); });
+  function scrollTop() {
+    var html = document.documentElement;
+    var prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto"; /* instantané, pas d'animation */
+    window.scrollTo(0, 0);
+    html.style.scrollBehavior = prev;
+  }
+  scrollTop();
+  window.addEventListener("load", scrollTop);
+  window.JD = window.JD || {};
+  window.JD._scrollTop = scrollTop;
 
   var PAGES = [
     { id: "index",        label: "Accueil",      href: "index.html" },
