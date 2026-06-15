@@ -202,6 +202,34 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
 .nav__link:hover::after, .nav__link.is-active::after { width: 100%; }
 .nav__link.is-active { color: var(--ink); }
 .nav__cta { display: inline-flex; }
+.nav__actions { display: flex; align-items: center; gap: 0.3rem; }
+
+/* Bouton soleil/lune */
+.nav__theme-toggle {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  color: var(--ink-soft);
+  transition: color .2s, background .2s, transform .2s;
+  position: relative;
+}
+.nav__theme-toggle:hover { color: var(--ink); background: var(--line-soft); transform: scale(1.08); }
+.nav__theme-toggle .icon-sun,
+.nav__theme-toggle .icon-moon {
+  position: absolute;
+  transition: opacity .25s, transform .35s cubic-bezier(.2,.8,.2,1);
+}
+/* Mode clair → afficher soleil, cacher lune */
+.nav__theme-toggle .icon-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
+.nav__theme-toggle .icon-moon { opacity: 0; transform: rotate(-30deg) scale(0.7); }
+/* Mode sombre → afficher lune, cacher soleil */
+.nav__theme-toggle.is-dark .icon-sun  { opacity: 0; transform: rotate(30deg) scale(0.7); }
+.nav__theme-toggle.is-dark .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* Sur hero sombre (nav transparente) */
+.nav--on-dark:not(.is-solid) .nav__theme-toggle { color: oklch(0.95 0.008 78 / 0.7); }
+.nav--on-dark:not(.is-solid) .nav__theme-toggle:hover { color: var(--dark-ink); background: oklch(1 0 0 / 0.08); }
+
 .nav__burger { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
 .nav__burger span { width: 22px; height: 1.6px; background: var(--ink); transition: transform .3s, opacity .3s; }
 .nav.is-open .nav__burger span:nth-child(1) { transform: translateY(6.6px) rotate(45deg); }
@@ -216,6 +244,8 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
 
 @media (max-width: 1024px) {
   .nav__burger { display: flex; }
+  /* Sur mobile le toggle est toujours visible, mais plus petit */
+  .nav__theme-toggle { width: 36px; height: 36px; }
   .nav__links {
     position: fixed; inset: 76px 0 auto 0;
     flex-direction: column; align-items: stretch; gap: 0;
