@@ -94,7 +94,7 @@
           '<div class="footer__col">' +
             '<h4>Julien Duquesne</h4>' +
             '<p>Alternant Logistique &amp; Supply Chain</p>' +
-            '<p>Bac+5 MOPL — ISTELI Wasquehal</p>' +
+            '<p>Bac+5 MOPL · ISTELI Wasquehal</p>' +
             '<p>Lys-lez-Lannoy, Hauts-de-France</p>' +
           '</div>' +
           '<div class="footer__col">' +
@@ -110,7 +110,7 @@
         '</div>' +
         '<div class="footer__bottom">' +
           '<span>© ' + new Date().getFullYear() + ' Julien Duquesne</span>' +
-          '<span>Portfolio — Logistique & Supply Chain</span>' +
+          '<span>Portfolio · Logistique & Supply Chain</span>' +
         '</div>' +
       '</div>';
   }
