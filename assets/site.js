@@ -61,12 +61,65 @@
   window.JD = window.JD || {};
   window.JD.applyAccent = function (n) { applyAccent(n); localStorage.setItem("jd_accent", n); };
   window.JD.applyDisplayFont = function (n) { applyDisplayFont(n); localStorage.setItem("jd_font", n); };
-  window.JD.applyTheme = function (n) { applyTheme(n); localStorage.setItem("jd_theme", n); };
+  window.JD.applyTheme = function (n) {
+    applyTheme(n);
+    localStorage.setItem("jd_theme", n);
+    /* Mise à jour de theme-color pour la barre du navigateur mobile */
+    var tc = document.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute("content", n === "dark" ? "#1e1c19" : "#f7f4ee");
+  };
+
+  /* ---------- Injections <head> dynamiques ---------- */
+  (function () {
+    /* theme-color : barre du navigateur mobile */
+    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    var tc = document.createElement("meta");
+    tc.name = "theme-color";
+    tc.content = dark ? "#1e1c19" : "#f7f4ee";
+    document.head.appendChild(tc);
+
+    /* JSON-LD schema.org/Person */
+    var ld = document.createElement("script");
+    ld.type = "application/ld+json";
+    ld.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Julien Duquesne",
+      "jobTitle": "Alternant Logistique & Supply Chain",
+      "description": "Étudiant en Bac+5 MOPL à l'ISTELI Wasquehal, en alternance chez LSI (Groupe Delquignies). Optimisation du stockage et des process logistiques.",
+      "email": "julienduq59@gmail.com",
+      "telephone": "+33781755879",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lys-lez-Lannoy",
+        "addressRegion": "Hauts-de-France",
+        "addressCountry": "FR"
+      },
+      "sameAs": ["https://www.linkedin.com/in/julien-duquesne-75b246226/"],
+      "url": "https://julienduq59.github.io/PortfolioDuquesneJulien/",
+      "image": "https://julienduq59.github.io/PortfolioDuquesneJulien/assets/photo-julien.jpg",
+      "alumniOf": [
+        { "@type": "EducationalOrganization", "name": "ISTELI Wasquehal" },
+        { "@type": "EducationalOrganization", "name": "IUT de Tourcoing · Université de Lille" }
+      ],
+      "knowsAbout": ["Logistique", "Supply Chain", "Gestion d'entrepôt", "Amélioration continue", "WMS", "Excel", "Lean Six Sigma"]
+    });
+    document.head.appendChild(ld);
+  })();
 
   /* ---------- Injection nav ---------- */
   function buildNav() {
     var mount = document.querySelector("[data-nav]");
     if (!mount) return;
+
+    /* Skip link accessibilité : navigation clavier */
+    var mainEl = document.querySelector("main");
+    if (mainEl && !mainEl.id) mainEl.id = "main-content";
+    var skip = document.createElement("a");
+    skip.href = "#main-content";
+    skip.className = "skip-link";
+    skip.textContent = "Aller au contenu";
+    document.body.insertBefore(skip, document.body.firstChild);
     var current = mount.getAttribute("data-page") || "index";
     var onDark = mount.hasAttribute("data-on-dark");
     var links = PAGES.map(function (p) {

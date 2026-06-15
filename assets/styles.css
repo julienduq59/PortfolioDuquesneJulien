@@ -68,6 +68,16 @@
   --dark-bg-2:  oklch(0.315 0.022 66);
 }
 
+/* ---------- Skip link (accessibilité clavier) ---------- */
+.skip-link {
+  position: fixed; top: -100%; left: 1rem; z-index: 9999;
+  background: var(--accent); color: var(--on-accent);
+  font-family: var(--font-mono); font-size: var(--step--1);
+  padding: 0.6em 1.2em; border-radius: var(--radius);
+  transition: top .2s;
+}
+.skip-link:focus { top: 1rem; }
+
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }

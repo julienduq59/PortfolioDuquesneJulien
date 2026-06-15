@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://julienduq59.github.io/PortfolioDuquesneJulien/sitemap.xml
