@@ -246,6 +246,15 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.8rem; }
     margin-top: 1.2rem;
   }
 
+  /* Pastille sombre derrière le burger tant qu'on est en haut du hero :
+     garantit le contraste des 3 barres claires quel que soit le fond
+     (évite le « blanc sur blanc » lors du rebond de scroll sur mobile) */
+  .nav--on-dark:not(.is-solid):not(.is-open) .nav__burger {
+    background: oklch(0.20 0.018 66 / 0.55);
+    border-radius: 9px;
+    backdrop-filter: blur(4px);
+  }
+
   /* Quand le menu est ouvert : barre opaque + texte sombre lisible,
      même par-dessus un hero sombre */
   .nav.is-open {
