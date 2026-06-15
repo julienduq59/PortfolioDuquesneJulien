@@ -606,7 +606,7 @@ a.contact-row:hover .contact-row__value { color: var(--accent); }
 
 /* ---------- Bouton retour en haut ---------- */
 .back-to-top {
-  position: fixed; right: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem);
+  position: fixed; left: clamp(1rem, 3vw, 2rem); bottom: clamp(1rem, 3vw, 2rem);
   z-index: 90; width: 46px; height: 46px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: var(--accent); color: var(--on-accent);
