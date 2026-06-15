@@ -312,6 +312,35 @@
     });
   }
 
+  /* ---------- Dots de compétences en cascade ---------- */
+  function initSkillDots() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var skillCards = document.querySelectorAll(".skill-cat .card");
+    if (!skillCards.length) return;
+    skillCards.forEach(function (card) {
+      card.querySelectorAll(".skill-line").forEach(function (line) {
+        line.classList.add("pre-anim");
+        line.querySelectorAll(".lvl i.on").forEach(function (dot) { dot.classList.add("pre-anim"); });
+      });
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var lines = en.target.querySelectorAll(".skill-line.pre-anim");
+        lines.forEach(function (line, idx) {
+          setTimeout(function () {
+            line.classList.remove("pre-anim");
+            line.querySelectorAll(".lvl i.on.pre-anim").forEach(function (dot, j) {
+              setTimeout(function () { dot.classList.remove("pre-anim"); }, j * 80 + 80);
+            });
+          }, idx * 65);
+        });
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.15 });
+    skillCards.forEach(function (c) { io.observe(c); });
+  }
+
   /* ---------- Animation flottante photo hero ---------- */
   function initHeroFloat() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -327,6 +356,7 @@
     initReveal();
     initCounters();
     initGauges();
+    initSkillDots();
     initForm();
     initParallax();
     initHeroFloat();
