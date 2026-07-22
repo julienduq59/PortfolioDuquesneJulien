@@ -102,7 +102,7 @@
         { "@type": "EducationalOrganization", "name": "ISTELI Wasquehal" },
         { "@type": "EducationalOrganization", "name": "IUT de Tourcoing · Université de Lille" }
       ],
-      "knowsAbout": ["Logistique", "Supply Chain", "Gestion d'entrepôt", "Amélioration continue", "WMS", "Excel", "Lean Six Sigma"]
+      "knowsAbout": ["Logistique", "Supply Chain", "Gestion d'entrepôt", "Amélioration continue", "WMS", "Excel", "Lean", "Green Belt Lean"]
     });
     document.head.appendChild(ld);
   })();
