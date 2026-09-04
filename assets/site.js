@@ -85,8 +85,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Julien Duquesne",
-      "jobTitle": "Alternant Logistique & Supply Chain",
-      "description": "Étudiant en Bac+5 MOPL à l'ISTELI Wasquehal, en alternance chez LSI (Groupe Delquignies). Optimisation du stockage et des process logistiques.",
+      "jobTitle": "Logisticien · Supply Chain",
+      "description": "Diplômé d'un Bac+5 MOPL à l'ISTELI Wasquehal, formé en alternance chez LSI (Groupe Delquignies). Optimisation du stockage et des process logistiques.",
       "email": "julienduq59@gmail.com",
       "telephone": "+33781755879",
       "address": {
@@ -194,8 +194,8 @@
         '<div class="footer__grid">' +
           '<div class="footer__col">' +
             '<h4>Julien Duquesne</h4>' +
-            '<p>Alternant Logistique &amp; Supply Chain</p>' +
-            '<p>Bac+5 MOPL · ISTELI Wasquehal</p>' +
+            '<p>Logistique &amp; Supply Chain</p>' +
+            '<p>Bac+5 MOPL · ISTELI Wasquehal · Diplômé 2026</p>' +
             '<p>Lys-lez-Lannoy, Hauts-de-France</p>' +
           '</div>' +
           '<div class="footer__col">' +
