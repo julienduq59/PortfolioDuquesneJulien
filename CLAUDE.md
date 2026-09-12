@@ -24,6 +24,14 @@ Arrivée le 21 septembre 2026 à 9h00, demander François Dascotte à l'accueil.
 Proposition d'embauche confirmée par Léna San Juan (RH Texdecor) le 11/09/2026.
 Profil à créer sur la plateforme interne TEXTALENT et pièces administratives à fournir.
 
+**Confidentialité — à respecter strictement :**
+- **Ne jamais afficher la rémunération**, nulle part (portfolio, CV, Canva, dépôt).
+  Elle n'est volontairement pas consignée ici, le dépôt étant public.
+- **Ne rien publier sur ce poste dans le portfolio ni sur les CV pour l'instant.**
+  Ces informations sont ici uniquement pour mémoire. Le portfolio reste en l'état
+  (« Ouvert aux opportunités ») tant que Julien n'a pas explicitement demandé la mise
+  à jour.
+
 Mission : piloter les projets de déménagement d'activités du service logistique, du
 diagnostic initial jusqu'à la mise en route sur le nouveau site, en garantissant la
 continuité de service, la fiabilité des flux et le respect des délais, coûts et qualité.
