@@ -17,9 +17,12 @@ ligne). En cas de doute sur une information, poser la question plutôt que de co
 
 ### Poste actuel
 
-**Chef de projet logistique — Texdecor**, en **CDD** (recruté, prise de poste le
-**21 septembre 2026**). Durée du CDD non communiquée à ce jour.
+**Chef de Projet Logistique H/F — Texdecor**, en **CDD du 21/09/2026 au 31/03/2027**.
+Statut : technicien. Organisation du travail : forfait jours.
 Rattachement hiérarchique : Direction Supply Chain (François Dascotte).
+Arrivée le 21 septembre 2026 à 9h00, demander François Dascotte à l'accueil.
+Proposition d'embauche confirmée par Léna San Juan (RH Texdecor) le 11/09/2026.
+Profil à créer sur la plateforme interne TEXTALENT et pièces administratives à fournir.
 
 Mission : piloter les projets de déménagement d'activités du service logistique, du
 diagnostic initial jusqu'à la mise en route sur le nouveau site, en garantissant la
