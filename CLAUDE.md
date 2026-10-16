@@ -95,3 +95,6 @@ Designs Canva correspondants :
 - `assets/site.js` injecte la navigation, le footer et le JSON-LD, et gère les
   animations de révélation (`data-reveal`, IntersectionObserver)
 - Vocabulaire : en logistique on écrit **implantation**, jamais « implémentation ».
+- Cache : les pages chargent `assets/styles.css`, `site.js` et `image-slot.js` avec un
+  paramètre `?v=AAAAMMJJ`. **À chaque modification de ces fichiers, mettre à jour la date
+  dans toutes les pages**, sinon les visiteurs gardent l'ancienne version en cache.
