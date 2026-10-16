@@ -30,10 +30,11 @@
 
   /* ---------- Thème & accent persistés ---------- */
   var ACCENTS = {
-    argile:  { "--accent": "oklch(0.635 0.155 47)",  "--accent-ink": "oklch(0.30 0.10 47)",  "--accent-soft": "oklch(0.635 0.155 47 / 0.12)" },
-    bleu:    { "--accent": "oklch(0.58 0.16 255)",   "--accent-ink": "oklch(0.34 0.12 255)", "--accent-soft": "oklch(0.58 0.16 255 / 0.12)" },
-    foret:   { "--accent": "oklch(0.55 0.12 158)",   "--accent-ink": "oklch(0.33 0.09 158)", "--accent-soft": "oklch(0.55 0.12 158 / 0.12)" },
-    prune:   { "--accent": "oklch(0.52 0.16 348)",   "--accent-ink": "oklch(0.34 0.13 348)", "--accent-soft": "oklch(0.52 0.16 348 / 0.12)" }
+    // -l : fonds clairs, -d : fonds sombres (contraste AA vérifié pour chaque ton)
+    argile:  { "--accent-l": "oklch(0.54 0.15 45)",  "--accent-d": "oklch(0.72 0.14 45)",  "--accent-ink-l": "oklch(0.30 0.10 47)", "--accent-ink-d": "oklch(0.86 0.07 45)",  "--accent-soft": "oklch(0.54 0.15 45 / 0.12)" },
+    bleu:    { "--accent-l": "oklch(0.52 0.16 255)", "--accent-d": "oklch(0.74 0.12 255)", "--accent-ink-l": "oklch(0.34 0.12 255)", "--accent-ink-d": "oklch(0.88 0.06 255)", "--accent-soft": "oklch(0.52 0.16 255 / 0.12)" },
+    foret:   { "--accent-l": "oklch(0.49 0.11 158)", "--accent-d": "oklch(0.74 0.12 158)", "--accent-ink-l": "oklch(0.33 0.09 158)", "--accent-ink-d": "oklch(0.88 0.06 158)", "--accent-soft": "oklch(0.49 0.11 158 / 0.12)" },
+    prune:   { "--accent-l": "oklch(0.50 0.16 348)", "--accent-d": "oklch(0.74 0.13 348)", "--accent-ink-l": "oklch(0.34 0.13 348)", "--accent-ink-d": "oklch(0.88 0.06 348)", "--accent-soft": "oklch(0.50 0.16 348 / 0.12)" }
   };
   function applyAccent(name) {
     var a = ACCENTS[name] || ACCENTS.argile;
@@ -298,10 +299,10 @@
   /* ---------- Panneau Tweaks (protocole hôte) ---------- */
   function buildTweaks() {
     var accents = [
-      { id: "argile", c: "oklch(0.635 0.155 47)" },
-      { id: "bleu",   c: "oklch(0.58 0.16 255)" },
-      { id: "foret",  c: "oklch(0.55 0.12 158)" },
-      { id: "prune",  c: "oklch(0.52 0.16 348)" }
+      { id: "argile", c: "oklch(0.54 0.15 45)" },
+      { id: "bleu",   c: "oklch(0.52 0.16 255)" },
+      { id: "foret",  c: "oklch(0.49 0.11 158)" },
+      { id: "prune",  c: "oklch(0.50 0.16 348)" }
     ];
     var fonts = ["Instrument Serif", "Libre Caslon Display", "Archivo"];
     var fontShort = { "Instrument Serif": "Serif", "Libre Caslon Display": "Caslon", "Archivo": "Sans" };
@@ -486,6 +487,9 @@
 
     var box = document.createElement("div");
     box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Image agrandie");
     box.setAttribute("aria-hidden", "true");
     box.innerHTML =
       '<button class="lightbox__close" aria-label="Fermer">&times;</button>' +
@@ -493,19 +497,28 @@
     document.body.appendChild(box);
     var boxImg = box.querySelector(".lightbox__img");
     var closeBtn = box.querySelector(".lightbox__close");
+    var returnFocus = null;
 
     function open(src, alt) {
+      returnFocus = document.activeElement;
       boxImg.src = src;
       boxImg.alt = alt || "";
       box.classList.add("is-open");
       box.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      closeBtn.focus();
     }
     function close() {
+      if (!box.classList.contains("is-open")) return;
       box.classList.remove("is-open");
       box.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      if (returnFocus && returnFocus.focus) returnFocus.focus();
     }
+    // Seul contrôle du dialogue : Tab reste sur le bouton Fermer
+    box.addEventListener("keydown", function (e) {
+      if (e.key === "Tab") { e.preventDefault(); closeBtn.focus(); }
+    });
     closeBtn.addEventListener("click", close);
     box.addEventListener("click", function (e) { if (e.target === box) close(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
@@ -517,6 +530,14 @@
         : img.src;
       img.classList.add("is-zoomable");
       var trigger = parentLink || img;
+      if (!parentLink) {
+        img.setAttribute("tabindex", "0");
+        img.setAttribute("role", "button");
+        img.setAttribute("aria-label", "Agrandir : " + (img.alt || "image"));
+        img.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(src, img.alt); }
+        });
+      }
       trigger.addEventListener("click", function (e) {
         e.preventDefault();
         open(src, img.alt);
