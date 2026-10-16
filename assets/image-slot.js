@@ -75,6 +75,12 @@
 
   function load() {
     if (loadP) return loadP;
+    // Hors de l'éditeur, le sidecar n'existe pas : on évite une requête 404.
+    if (!window.omelette) {
+      loaded = true;
+      loadP = Promise.resolve();
+      return loadP;
+    }
     loadP = fetch(STATE_FILE)
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {

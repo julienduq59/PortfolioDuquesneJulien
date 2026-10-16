@@ -544,7 +544,12 @@
           setTimeout(function () { btn.classList.remove("is-copied"); }, 1600);
         });
       });
-      row.appendChild(btn);
+      btn.setAttribute("aria-label", row.getAttribute("href").indexOf("mailto:") === 0 ? "Copier l'adresse email" : "Copier le numéro de téléphone");
+      var wrap = document.createElement("div");
+      wrap.className = "contact-copywrap";
+      row.parentNode.insertBefore(wrap, row);
+      wrap.appendChild(row);
+      wrap.appendChild(btn);
     });
   }
 
