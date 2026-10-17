@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Parcours · Julien Duquesne</title>
 <meta name="description" content="Expériences professionnelles et formation de Julien Duquesne en logistique et supply chain." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Libre+Caslon+Display&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="fr_FR" />
@@ -18,7 +16,7 @@
 <meta property="og:description" content="Expériences professionnelles et formation de Julien Duquesne en logistique et supply chain." />
 <meta property="og:image" content="https://julienduq59.github.io/PortfolioDuquesneJulien/assets/og-banner.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="assets/styles.css?v=20261016" />
+<link rel="stylesheet" href="assets/styles.css?v=20261017-2" />
 </head>
 <body>
 
@@ -29,8 +27,7 @@
 <!-- Page header -->
 <section class="section pad-top-nav" style="position:relative;overflow:hidden;padding-bottom:clamp(2rem,4vw,3rem);">
   <div class="container" style="position:relative;z-index:2;">
-    <p class="kicker" data-reveal>Parcours</p>
-    <h1 class="display" data-reveal data-reveal-delay="1" style="font-size:var(--step-4);margin-top:1.2rem;max-width:16ch;">Expériences &amp; formation.</h1>
+    <h1 class="display" style="font-size:var(--step-4);margin-top:1.2rem;max-width:16ch;">Expériences &amp; formation.</h1>
   </div>
   <div aria-hidden="true" class="ghost-word" style="position:absolute;right:-1vw;top:34%;font-size:clamp(5rem,15vw,14rem);z-index:1;">RÉSUMÉ</div>
 </section>
@@ -38,95 +35,94 @@
 <!-- Expériences -->
 <section class="section" style="padding-top:0;">
   <div class="container">
-    <div class="section-head" data-reveal>
-      <h2 class="kicker">01 · Expériences professionnelles</h2>
+    <div class="section-head">
+      <h2 class="kicker">Expériences professionnelles</h2>
     </div>
-    <div class="stack" style="--stack-gap:2rem;display:flex;flex-direction:column;gap:1.6rem;">
+    <div class="xp-board">
 
       <!-- LSI alternance -->
-      <article class="card card--hover" data-reveal>
-        <div class="eyebrow-row" style="justify-content:space-between;align-items:flex-start;">
-          <div>
-            <span class="tl-date">2022 à 2026</span>
-            <h3 class="h4" style="margin-top:0.4rem;">Logisticien en alternance</h3>
-            <p class="tl-org">LSI (Groupe Delquignies) · Leers</p>
+      <article class="xp">
+        <div class="xp__row">
+          <span class="tl-date">2022 à 2026</span>
+          <div class="xp__dest">
+            <h3 class="xp__title">Logisticien en alternance</h3>
+            <p class="xp__via">LSI (Groupe Delquignies) · Leers</p>
           </div>
-          <span class="chip chip--accent">Alternance</span>
+          <span class="line-badge line-badge--alternance">Alternance</span>
         </div>
-        <hr class="divider" style="margin:1.4rem 0;" />
-        <div>
-          <div>
-            <p class="kicker kicker--plain" style="color:var(--muted);margin-bottom:0.7rem;">Missions &amp; actions</p>
-            <ul class="stack-sm muted" style="--bullet:1;">
-              <li>• Conception d'une application Excel de réapprovisionnement du picking (fonctions et macros) pour réduire les descentes de palettes inutiles.</li>
-              <li>• Réaménagement des allées : proposition de nouveaux plans de stockage, validés par LSI et le client Texdecor, et supervision de l'implantation avec un prestataire.</li>
-              <li>• Création de tableaux de bord sous Excel (tableaux croisés dynamiques) : suivi de la productivité — préparation et rangement par personne et par zone — et suivi de la qualité.</li>
-              <li>• Développement d'un outil de calcul automatique du taux d'occupation du stockage.</li>
-              <li>• Rédaction de guides et de process, et mise en place d'un parcours d'intégration avec mentor pour les intérimaires.</li>
-              <li>• Participation au déploiement d'un TMS et coordination d'équipe lors des opérations de déstockage.</li>
-              <li>• Suivi de la maintenance et de la réparation du parc de racks : inspections, interventions et pilotage des prestataires.</li>
-              <li>• Gestion des stocks : suivi des consommables, définition et mise à jour des classes de rotation, et analyse des données de stock pour ajuster les implantations.</li>
-              <li>• Respect des normes de sécurité et conduite d'engins (cariste).</li>
-            </ul>
-            <div class="tl-tags">
-              <span class="chip">Excel avancé</span>
-              <span class="chip">VBA &amp; macros</span>
-              <span class="chip">Tableaux de bord</span>
-              <span class="chip">Qualité</span>
-              <span class="chip">Gestion des stocks</span>
-              <span class="chip">Classes de rotation</span>
-              <span class="chip">Optimisation des flux</span>
-              <span class="chip">Gestion de prestataires</span>
-              <span class="chip">Sécurité</span>
-              <span class="chip">CACES 3 · 5 · 6</span>
-            </div>
+        <div class="xp__detail">
+          <p class="kicker kicker--plain">Missions &amp; actions</p>
+          <ul class="xp__list">
+            <li>• Conception d'une application Excel de réapprovisionnement du picking (fonctions et macros) pour réduire les descentes de palettes inutiles.</li>
+            <li>• Réaménagement des allées : proposition de nouveaux plans de stockage, validés par LSI et le client Texdecor, et supervision de l'implantation avec un prestataire.</li>
+            <li>• Création de tableaux de bord sous Excel (tableaux croisés dynamiques) : suivi de la productivité — préparation et rangement par personne et par zone — et suivi de la qualité.</li>
+            <li>• Développement d'un outil de calcul automatique du taux d'occupation du stockage.</li>
+            <li>• Rédaction de guides et de process, et mise en place d'un parcours d'intégration avec mentor pour les intérimaires.</li>
+            <li>• Participation au déploiement d'un TMS et coordination d'équipe lors des opérations de déstockage.</li>
+            <li>• Suivi de la maintenance et de la réparation du parc de racks : inspections, interventions et pilotage des prestataires.</li>
+            <li>• Gestion des stocks : suivi des consommables, définition et mise à jour des classes de rotation, et analyse des données de stock pour ajuster les implantations.</li>
+            <li>• Respect des normes de sécurité et conduite d'engins (cariste).</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="chip">Excel avancé</span>
+            <span class="chip">VBA &amp; macros</span>
+            <span class="chip">Tableaux de bord</span>
+            <span class="chip">Qualité</span>
+            <span class="chip">Gestion des stocks</span>
+            <span class="chip">Classes de rotation</span>
+            <span class="chip">Optimisation des flux</span>
+            <span class="chip">Gestion de prestataires</span>
+            <span class="chip">Sécurité</span>
+            <span class="chip">CACES 3 · 5 · 6</span>
           </div>
         </div>
       </article>
 
       <!-- Proditex -->
-      <article class="card card--hover" data-reveal data-reveal-delay="1">
-        <div class="eyebrow-row" style="justify-content:space-between;align-items:flex-start;">
-          <div>
-            <span class="tl-date">2021 · 6 semaines</span>
-            <h3 class="h4" style="margin-top:0.4rem;">Stage · Opérateur logistique</h3>
-            <p class="tl-org">Proditex · Leers</p>
+      <article class="xp">
+        <div class="xp__row">
+          <span class="tl-date">2021 · 6 semaines</span>
+          <div class="xp__dest">
+            <h3 class="xp__title">Stage · Opérateur logistique</h3>
+            <p class="xp__via">Proditex · Leers</p>
           </div>
-          <span class="chip">Stage</span>
+          <span class="line-badge line-badge--stage">Stage</span>
         </div>
-        <hr class="divider" style="margin:1.4rem 0;" />
-        <p class="muted" style="max-width:60ch;">
-          Immersion sur l'ensemble du cycle entrepôt : préparation de commandes, inventaire,
-          expédition, réception, contrôle qualité et contact avec les chauffeurs.
-        </p>
-        <div class="tl-tags">
-          <span class="chip">Préparation</span>
-          <span class="chip">Inventaire</span>
-          <span class="chip">Réception</span>
-          <span class="chip">Contrôle qualité</span>
-          <span class="chip">Expédition</span>
+        <div class="xp__detail">
+          <p class="xp__text">
+            Immersion sur l'ensemble du cycle entrepôt : préparation de commandes, inventaire,
+            expédition, réception, contrôle qualité et contact avec les chauffeurs.
+          </p>
+          <div class="tl-tags">
+            <span class="chip">Préparation</span>
+            <span class="chip">Inventaire</span>
+            <span class="chip">Réception</span>
+            <span class="chip">Contrôle qualité</span>
+            <span class="chip">Expédition</span>
+          </div>
         </div>
       </article>
 
       <!-- LSI agent -->
-      <article class="card card--hover" data-reveal data-reveal-delay="2">
-        <div class="eyebrow-row" style="justify-content:space-between;align-items:flex-start;">
-          <div>
-            <span class="tl-date">2021</span>
-            <h3 class="h4" style="margin-top:0.4rem;">Agent logistique</h3>
-            <p class="tl-org">LSI (Groupe Delquignies) · Leers</p>
+      <article class="xp">
+        <div class="xp__row">
+          <span class="tl-date">2021</span>
+          <div class="xp__dest">
+            <h3 class="xp__title">Agent logistique</h3>
+            <p class="xp__via">LSI (Groupe Delquignies) · Leers</p>
           </div>
-          <span class="chip">Intérimaire</span>
+          <span class="line-badge line-badge--interim">Intérimaire</span>
         </div>
-        <hr class="divider" style="margin:1.4rem 0;" />
-        <p class="muted" style="max-width:60ch;">
-          Premier poste opérationnel : préparation de commande, colisage et expédition.
-          La base terrain sur laquelle s'appuie aujourd'hui ma vision de l'optimisation.
-        </p>
-        <div class="tl-tags">
-          <span class="chip">Préparation</span>
-          <span class="chip">Colisage</span>
-          <span class="chip">Expédition</span>
+        <div class="xp__detail">
+          <p class="xp__text">
+            Premier poste opérationnel : préparation de commande, colisage et expédition.
+            La base terrain sur laquelle s'appuie aujourd'hui ma vision de l'optimisation.
+          </p>
+          <div class="tl-tags">
+            <span class="chip">Préparation</span>
+            <span class="chip">Colisage</span>
+            <span class="chip">Expédition</span>
+          </div>
         </div>
       </article>
 
@@ -137,12 +133,12 @@
 <!-- Formation -->
 <section class="section section--dark">
   <div class="container">
-    <div class="section-head" data-reveal>
-      <p class="kicker">02 · Formation</p>
+    <div class="section-head">
+      <p class="kicker">Formation</p>
       <h2 class="h2">Un cursus tourné vers le pilotage des opérations.</h2>
     </div>
     <div class="timeline" style="max-width:760px;">
-      <div class="tl-item" data-reveal>
+      <div class="tl-item">
         <span class="tl-date">Juin 2026</span>
         <h3 class="tl-title">Green Belt Lean</h3>
         <p class="tl-org">XL Groupe · « Animer des chantiers et ateliers Lean »</p>
@@ -152,25 +148,25 @@
           Voir l'attestation <span class="arrow">↗</span>
         </a>
       </div>
-      <div class="tl-item" data-reveal>
+      <div class="tl-item">
         <span class="tl-date">2024 à 2026</span>
         <h3 class="tl-title">Bac+5 · Manager des Organisations et Processus Logistiques (MOPL)</h3>
         <p class="tl-org">ISTELI Wasquehal</p>
         <p class="tl-body">Pilotage des opérations, optimisation des processus, management de la performance supply chain.</p>
         <div class="tl-tags"><span class="chip chip--accent">Diplôme obtenu</span></div>
       </div>
-      <div class="tl-item" data-reveal>
+      <div class="tl-item">
         <span class="tl-date">2021 à 2024</span>
         <h3 class="tl-title">BUT Management de la Logistique &amp; des Transports · Parcours Connecté</h3>
         <p class="tl-org">Université de Lille · IUT de Tourcoing</p>
         <p class="tl-body">Gestion d'entrepôt, transport, organisation des flux et outils de pilotage.</p>
       </div>
-      <div class="tl-item" data-reveal>
+      <div class="tl-item">
         <span class="tl-date">Novembre 2023</span>
         <h3 class="tl-title">CACES 3 · 5 · 6</h3>
         <p class="tl-org">Certification · Conduite d'engins de manutention</p>
       </div>
-      <div class="tl-item" data-reveal>
+      <div class="tl-item">
         <span class="tl-date">2021</span>
         <h3 class="tl-title">Baccalauréat</h3>
         <p class="tl-org">Lycée Charles Baudelaire · Roubaix</p>
@@ -192,7 +188,7 @@
 
 <footer data-footer></footer>
 
-<script src="assets/image-slot.js?v=20261016"></script>
-<script src="assets/site.js?v=20261016"></script>
+<script src="assets/image-slot.js?v=20261017-2"></script>
+<script src="assets/site.js?v=20261017-2"></script>
 </body>
 </html>

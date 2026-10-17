@@ -4,26 +4,28 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Page introuvable · Julien Duquesne</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="assets/fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-<link rel="stylesheet" href="assets/styles.css?v=20261016" />
+<link rel="stylesheet" href="assets/styles.css?v=20261017-2" />
 </head>
 <body>
 
-<header data-nav data-page=""></header>
+<header data-nav data-page="none"></header>
 
-<main data-screen-label="404" style="min-height:80vh;display:flex;align-items:center;">
-<section class="section pad-top-nav" style="width:100%;position:relative;overflow:hidden;">
+<main data-screen-label="404">
+<section class="section pad-top-nav" style="width:100%;position:relative;overflow:hidden;border-bottom:0;padding-bottom:clamp(3rem,7vw,5.5rem);">
   <div class="container" style="position:relative;z-index:2;">
-    <p class="kicker" data-reveal>Erreur 404</p>
-    <h1 class="display" data-reveal data-reveal-delay="1" style="font-size:var(--step-4);margin-top:1.2rem;max-width:18ch;">Page introuvable.</h1>
-    <p class="lede" data-reveal data-reveal-delay="2" style="margin-top:1.4rem;max-width:46ch;">
+    <h1 class="display" style="font-size:var(--step-4);margin-top:1.2rem;max-width:18ch;">Page introuvable.</h1>
+    <p class="lede" style="margin-top:1.4rem;max-width:46ch;">
       Cette page n'existe pas ou a été déplacée. Retournez à l'accueil pour retrouver le portfolio.
     </p>
-    <div class="eyebrow-row" data-reveal data-reveal-delay="3" style="margin-top:2.2rem;gap:0.9rem;">
+    <table class="departures departures--poster" style="margin-top:2rem;max-width:760px;">
+      <caption class="sr-only">État de la page demandée</caption>
+      <thead><tr><th scope="col">Départ</th><th scope="col">Destination</th><th scope="col">État</th></tr></thead>
+      <tbody><tr><td>—</td><td>Page introuvable</td><td class="state"><span class="state--cancelled">Annulé</span></td></tr></tbody>
+    </table>
+    <div class="eyebrow-row" style="margin-top:2.2rem;gap:0.9rem;">
       <a class="btn btn--primary" href="index.html">Retour à l'accueil <span class="arrow">→</span></a>
       <a class="btn btn--ghost" href="contact.html">Me contacter</a>
     </div>
@@ -34,7 +36,7 @@
 
 <footer data-footer></footer>
 
-<script src="assets/image-slot.js?v=20261016"></script>
-<script src="assets/site.js?v=20261016"></script>
+<script src="assets/image-slot.js?v=20261017-2"></script>
+<script src="assets/site.js?v=20261017-2"></script>
 </body>
 </html>

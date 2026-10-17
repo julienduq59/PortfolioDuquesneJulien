@@ -121,12 +121,11 @@
     skip.className = "skip-link";
     skip.textContent = "Aller au contenu";
     document.body.insertBefore(skip, document.body.firstChild);
-    var current = mount.getAttribute("data-page") || "index";
-    var onDark = mount.hasAttribute("data-on-dark");
+    var current = mount.hasAttribute("data-page") ? mount.getAttribute("data-page") : "index";
     var links = PAGES.map(function (p) {
       return '<a class="nav__link' + (p.id === current ? " is-active" : "") + '" href="' + p.href + '">' + p.label + "</a>";
     }).join("");
-    mount.className = "nav" + (onDark ? " nav--on-dark" : "");
+    mount.className = "nav";
     mount.innerHTML =
       '<div class="container nav__inner">' +
         '<a class="nav__brand" href="index.html"><span class="mark">JD</span>Julien Duquesne</a>' +
@@ -134,11 +133,12 @@
           '<a class="btn btn--primary nav__cta" href="contact.html">Me contacter</a>' +
         '</nav>' +
         '<div class="nav__actions">' +
+          '<time class="nav__clock" data-clock aria-label="Heure locale">--:--</time>' +
           '<button class="nav__theme-toggle" aria-label="Basculer le thème" title="Mode clair / sombre">' +
             '<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>' +
             '<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>' +
           '</button>' +
-          '<button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>' +
+          '<button class="nav__burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div>' +
       '</div>';
 
@@ -159,141 +159,23 @@
     burger.addEventListener("click", function () {
       var opening = !mount.classList.contains("is-open");
       mount.classList.toggle("is-open");
-      /* Quand le menu s'ouvre : forcer is-solid pour que la barre soit
-         opaque et les liens sombres, même tout en haut de la page.
-         Quand il se ferme : remettre l'état normal selon la position. */
-      if (opening) {
-        mount.classList.add("is-solid");
-      } else {
-        if (window.scrollY <= 24) mount.classList.remove("is-solid");
-      }
+      burger.setAttribute("aria-expanded", opening ? "true" : "false");
     });
     mount.querySelectorAll(".nav__link").forEach(function (l) {
       l.addEventListener("click", function () {
         mount.classList.remove("is-open");
-        if (window.scrollY <= 24) mount.classList.remove("is-solid");
       });
     });
 
-    function onScroll() {
-      if (window.scrollY > 24) mount.classList.add("is-solid");
-      else if (!mount.classList.contains("is-open")) mount.classList.remove("is-solid");
+    /* Horloge du quai : heure locale réelle du visiteur */
+    var clock = mount.querySelector("[data-clock]");
+    function tickClock() {
+      var d = new Date();
+      clock.textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+      clock.setAttribute("datetime", clock.textContent);
     }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-
-  /* ---------- Injection footer ---------- */
-  function buildFooter() {
-    var mount = document.querySelector("[data-footer]");
-    if (!mount) return;
-    mount.className = "footer";
-    mount.innerHTML =
-      '<div class="container">' +
-        '<p class="kicker kicker--plain" style="color:var(--accent)">Logistique · Supply Chain · Amélioration continue</p>' +
-        '<a href="contact.html" class="footer__cta" style="display:block;margin-top:1.2rem;max-width:16ch">Restons en contact.</a>' +
-        '<div class="footer__grid">' +
-          '<div class="footer__col">' +
-            '<h4>Julien Duquesne</h4>' +
-            '<p>Logistique &amp; Supply Chain</p>' +
-            '<p>Bac+5 MOPL · ISTELI Wasquehal · Diplômé 2026</p>' +
-            '<p>Lys-lez-Lannoy, Hauts-de-France</p>' +
-          '</div>' +
-          '<div class="footer__col">' +
-            '<h4>Contact</h4>' +
-            '<a href="mailto:julienduq59@gmail.com">julienduq59@gmail.com</a>' +
-            '<a href="tel:+33781755879">07 81 75 58 79</a>' +
-            '<a href="https://www.linkedin.com/in/julien-duquesne-75b246226/" target="_blank" rel="noopener">LinkedIn</a>' +
-          '</div>' +
-          '<div class="footer__col">' +
-            '<h4>Navigation</h4>' +
-            PAGES.slice(1).map(function (p) { return '<a href="' + p.href + '">' + p.label + "</a>"; }).join("") +
-          '</div>' +
-        '</div>' +
-        '<div class="footer__bottom">' +
-          '<span>© ' + new Date().getFullYear() + ' Julien Duquesne</span>' +
-          '<span>Portfolio · Logistique & Supply Chain</span>' +
-        '</div>' +
-      '</div>';
-  }
-
-  /* ---------- Reveal on scroll ---------- */
-  function initReveal() {
-    var els = document.querySelectorAll("[data-reveal]");
-    if (!els.length) return;
-    if (!("IntersectionObserver" in window)) {
-      els.forEach(function (e) { e.classList.add("is-in"); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    els.forEach(function (e) { io.observe(e); });
-  }
-
-  /* ---------- Compteurs animés ---------- */
-  function animateCount(el) {
-    var target = parseFloat(el.getAttribute("data-count"));
-    var dec = parseInt(el.getAttribute("data-dec") || "0", 10);
-    var dur = 1500, start = null;
-    function tick(ts) {
-      if (!start) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      var val = target * eased;
-      el.textContent = dec ? val.toFixed(dec) : Math.round(val).toLocaleString("fr-FR");
-      if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = dec ? target.toFixed(dec) : Math.round(target).toLocaleString("fr-FR");
-    }
-    requestAnimationFrame(tick);
-  }
-  function initCounters() {
-    var els = document.querySelectorAll("[data-count]");
-    if (!els.length) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { animateCount(en.target); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.5 });
-    els.forEach(function (e) { io.observe(e); });
-  }
-
-  /* ---------- Jauges ---------- */
-  function initGauges() {
-    var els = document.querySelectorAll(".gauge__fill[data-level]");
-    if (!els.length) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.style.width = en.target.getAttribute("data-level") + "%";
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.4 });
-    els.forEach(function (e) { io.observe(e); });
-  }
-
-  /* ---------- Formulaire de contact ---------- */
-  function initForm() {
-    var form = document.querySelector("[data-contact-form]");
-    if (!form) return;
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var ok = true;
-      form.querySelectorAll("[required]").forEach(function (f) {
-        var valid = f.value.trim() !== "" && (f.type !== "email" || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
-        f.closest(".field").classList.toggle("field--error", !valid);
-        if (!valid) ok = false;
-      });
-      if (!ok) return;
-      form.style.display = "none";
-      document.querySelector("[data-form-success]").hidden = false;
-    });
-    form.querySelectorAll("[required]").forEach(function (f) {
-      f.addEventListener("input", function () { f.closest(".field").classList.remove("field--error"); });
-    });
+    tickClock();
+    setInterval(tickClock, 15000);
   }
 
   /* ---------- Panneau Tweaks (protocole hôte) ---------- */
@@ -372,83 +254,8 @@
     window.parent.postMessage({ type: "__edit_mode_available" }, "*");
   }
 
-  /* ---------- Barre de progression de lecture ---------- */
-  function initScrollProgress() {
-    var bar = document.createElement("div");
-    bar.id = "scroll-progress";
-    document.body.appendChild(bar);
-    function update() {
-      var max = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
-    }
-    window.addEventListener("scroll", update, { passive: true });
-  }
 
-  /* ---------- Parallaxe sur les mots fantômes ---------- */
-  function initParallax() {
-    var ghosts = document.querySelectorAll(".ghost-word");
-    if (!ghosts.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    function update() {
-      ghosts.forEach(function (g) {
-        var rect = g.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-        var center = rect.top + rect.height / 2 - window.innerHeight / 2;
-        g.style.transform = "translateY(" + (center * 0.07) + "px)";
-      });
-    }
-    window.addEventListener("scroll", update, { passive: true });
-    update();
-  }
 
-  /* ---------- Cascade automatique des grilles ---------- */
-  function initAutoStagger() {
-    var grids = document.querySelectorAll(".grid-3, .grid-4, .skill-cat");
-    grids.forEach(function (grid) {
-      if (grid.hasAttribute("data-reveal")) return;
-      Array.prototype.forEach.call(grid.children, function (el, i) {
-        if (el.hasAttribute("data-reveal")) return;
-        el.setAttribute("data-reveal", "");
-        var d = Math.min(i + 1, 4);
-        if (d > 0) el.setAttribute("data-reveal-delay", String(d));
-      });
-    });
-  }
-
-  /* ---------- Dots de compétences en cascade ---------- */
-  function initSkillDots() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var skillCards = document.querySelectorAll(".skill-cat .card");
-    if (!skillCards.length) return;
-    skillCards.forEach(function (card) {
-      card.querySelectorAll(".skill-line").forEach(function (line) {
-        line.classList.add("pre-anim");
-        line.querySelectorAll(".lvl i.on").forEach(function (dot) { dot.classList.add("pre-anim"); });
-      });
-    });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var lines = en.target.querySelectorAll(".skill-line.pre-anim");
-        lines.forEach(function (line, idx) {
-          setTimeout(function () {
-            line.classList.remove("pre-anim");
-            line.querySelectorAll(".lvl i.on.pre-anim").forEach(function (dot, j) {
-              setTimeout(function () { dot.classList.remove("pre-anim"); }, j * 80 + 80);
-            });
-          }, idx * 65);
-        });
-        io.unobserve(en.target);
-      });
-    }, { threshold: 0.15 });
-    skillCards.forEach(function (c) { io.observe(c); });
-  }
-
-  /* ---------- Animation flottante photo hero ---------- */
-  function initHeroFloat() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var photo = document.getElementById("photo-hero");
-    if (photo) photo.classList.add("anim-float");
-  }
 
   /* ---------- Lien canonique (SEO) ---------- */
   function initCanonical() {
@@ -574,70 +381,106 @@
     });
   }
 
-  /* ---------- Animation de la frise (timeline) ---------- */
-  function initTimeline() {
-    var tls = document.querySelectorAll(".timeline");
-    if (!tls.length) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      tls.forEach(function (t) { t.classList.add("is-in"); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          var target = en.target;
-          io.unobserve(target);
-          /* Double rAF garantit que le navigateur a peint scaleY(0) avant d'ajouter is-in */
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () { target.classList.add("is-in"); });
-          });
-        }
-      });
-    }, { threshold: 0.12 });
-    tls.forEach(function (t) { io.observe(t); });
+
+  /* ---------- Injection footer ---------- */
+  function buildFooter() {
+    var mount = document.querySelector("[data-footer]");
+    if (!mount) return;
+    mount.className = "footer";
+    /* La page Contact porte déjà « Restons en contact. » en titre */
+    var onContact = /contact\.html$/.test(location.pathname);
+    mount.innerHTML =
+      '<div class="container">' +
+        '<p class="kicker"><strong>Arrivées</strong><span>Logistique · Supply Chain · Amélioration continue</span></p>' +
+        (onContact ? "" :
+          '<div class="footer__gate">' +
+            '<a href="contact.html" class="footer__cta">Restons en contact.</a>' +
+            '<a class="btn btn--primary" href="contact.html">Embarquement · Me contacter <span class="arrow">→</span></a>' +
+          '</div>') +
+        '<div class="footer__grid">' +
+          '<div class="footer__col">' +
+            '<h4>Julien Duquesne</h4>' +
+            '<p>Logistique &amp; Supply Chain</p>' +
+            '<p>Bac+5 MOPL · ISTELI Wasquehal · Diplômé 2026</p>' +
+            '<p>Lys-lez-Lannoy, Hauts-de-France</p>' +
+          '</div>' +
+          '<div class="footer__col">' +
+            '<h4>Contact</h4>' +
+            '<a href="mailto:julienduq59@gmail.com">julienduq59@gmail.com</a>' +
+            '<a href="tel:+33781755879">07 81 75 58 79</a>' +
+            '<a href="https://www.linkedin.com/in/julien-duquesne-75b246226/" target="_blank" rel="noopener">LinkedIn</a>' +
+          '</div>' +
+          '<div class="footer__col">' +
+            '<h4>Navigation</h4>' +
+            PAGES.slice(1).map(function (p) { return '<a href="' + p.href + '">' + p.label + "</a>"; }).join("") +
+          '</div>' +
+        '</div>' +
+        '<div class="footer__bottom">' +
+          '<span>© ' + new Date().getFullYear() + ' Julien Duquesne</span>' +
+          '<span>Portfolio · Logistique & Supply Chain</span>' +
+        '</div>' +
+      '</div>';
   }
 
-  /* ---------- Transitions douces entre les pages ---------- */
-  function initPageTransitions() {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    /* Retour arrière (bfcache) : retirer le fondu de sortie */
-    window.addEventListener("pageshow", function () {
-      document.body.classList.remove("is-leaving");
+  /* ---------- Flèches : icônes dessinées à la place des glyphes ---------- */
+  var ARROWS = {
+    "→": '<path d="M4 12h15"/><path d="M13 6l6 6-6 6"/>',
+    "↗": '<path d="M7 17L17 7"/><path d="M8 7h9v9"/>'
+  };
+  function initArrows() {
+    document.querySelectorAll(".arrow").forEach(function (el) {
+      var ch = el.textContent.trim();
+      if (!ARROWS[ch]) return;
+      el.setAttribute("aria-hidden", "true");
+      el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">' + ARROWS[ch] + "</svg>";
     });
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest("a");
-      if (!a) return;
-      var href = a.getAttribute("href");
-      if (!href) return;
-      if (a.target === "_blank" || a.hasAttribute("download")) return;
-      if (/^(#|mailto:|tel:|javascript:)/i.test(href)) return;
-      /* Lien externe : laisser le comportement normal */
-      if (/^https?:\/\//i.test(href) && a.host !== location.host) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-      e.preventDefault();
-      document.body.classList.add("is-leaving");
-      setTimeout(function () { window.location.href = href; }, 230);
+  }
+
+  /* ---------- Nom en palettes (signature du panneau) ---------- */
+  var FLAP_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  function initFlap() {
+    var el = document.querySelector("[data-flap]");
+    if (!el) return;
+    var text = el.textContent.trim().toUpperCase();
+    var tiles = [];
+    var html = '<span class="sr-only">' + el.textContent.trim() + '</span><span class="flap__tiles" aria-hidden="true">';
+    text.split(/\s+/).forEach(function (word) {
+      html += '<span class="flap__word">';
+      word.split("").forEach(function (ch) { html += '<span class="flap__tile" data-ch="' + ch + '"><span>' + ch + "</span></span>"; });
+      html += "</span>";
+    });
+    el.innerHTML = html + "</span>";
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    tiles = Array.prototype.slice.call(el.querySelectorAll(".flap__tile"));
+    tiles.forEach(function (t, i) {
+      var target = t.getAttribute("data-ch");
+      var start = FLAP_CHARS.indexOf("A");
+      var end = FLAP_CHARS.indexOf(target);
+      var steps = end >= 0 ? (end - start + FLAP_CHARS.length) % FLAP_CHARS.length : 0;
+      steps = Math.min(steps, 10 + (i % 5));       /* au plus ~15 rotations par palette */
+      var pos = (end - steps + FLAP_CHARS.length) % FLAP_CHARS.length;
+      var inner = t.firstChild;
+      inner.textContent = FLAP_CHARS[pos];
+      var n = 0;
+      setTimeout(function step() {
+        if (n >= steps) { inner.textContent = target; t.classList.remove("is-turning"); return; }
+        pos = (pos + 1) % FLAP_CHARS.length; n++;
+        t.classList.remove("is-turning"); void t.offsetWidth; t.classList.add("is-turning");
+        inner.textContent = FLAP_CHARS[pos];
+        setTimeout(step, 62);
+      }, 250 + i * 55);
     });
   }
 
   function initAll() {
     buildNav();
     buildFooter();
+    initFlap();
+    initArrows();
     initCanonical();
-    initScrollProgress();
-    initAutoStagger();   /* avant initReveal pour que les nouveaux [data-reveal] soient observés */
-    initReveal();
-    initCounters();
-    initGauges();
-    initSkillDots();
-    initForm();
-    initParallax();
-    initHeroFloat();
     initBackToTop();
     initLightbox();
     initCopyContact();
-    initTimeline();
-    initPageTransitions();
     buildTweaks();
   }
   if (document.readyState === "loading") {
