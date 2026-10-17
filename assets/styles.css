@@ -191,6 +191,7 @@ p { max-width: 70ch; }
 .kicker--plain { background: none !important; box-shadow: none !important; padding: 0; margin-bottom: 0; width: auto; color: var(--muted) !important; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.12em; }
 .section-head { display: flex; flex-direction: column; gap: 1rem; margin-bottom: clamp(2.2rem, 5vw, 3.6rem); }
 .section-head .h2 { max-width: 20ch; }
+.section-head > .kicker:only-child { margin-bottom: 0; }
 
 /* En-tête des pages intérieures : bandeau d'affiche */
 section.section.pad-top-nav { padding-bottom: clamp(2rem, 5vw, 3.5rem); border-bottom: 3px solid var(--ink); }
@@ -355,11 +356,11 @@ section.section.pad-top-nav .display + .lede { margin-top: 1.4rem; }
 .departures--poster .state--ok { color: #1F6E45; }
 .departures tr.is-boarding td { background: var(--tile); }
 .departures tr.is-boarding td:first-child { padding-left: 0.7rem; }
-.departures .state--boarding a, .departures .state--cancelled {
+.departures .state--boarding a {
   display: inline-flex; align-items: center; gap: 0.4em; min-height: 44px;
   color: var(--on-signal); background: var(--signal); padding: 0.35rem 0.75rem; border-radius: 2px;
 }
-.departures .state--cancelled { min-height: 0; }
+.departures .state--cancelled { display: inline-block; color: var(--paper); background: var(--ink); padding: 0.3rem 0.7rem; border-radius: 2px; }
 .departures .state--boarding a:hover { background: #A21F14; }
 @media (max-width: 640px) {
   .departures thead { display: none; }

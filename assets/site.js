@@ -53,10 +53,7 @@
     document.documentElement.style.setProperty("--font-display", fonts[name] || fonts["Instrument Serif"]);
   }
   function initTheme() {
-    applyAccent(localStorage.getItem("jd_accent") || "argile");
     applyTheme(localStorage.getItem("jd_theme") || "light");
-    var f = localStorage.getItem("jd_font");
-    if (f) applyDisplayFont(f);
   }
   initTheme();
   window.JD = window.JD || {};
@@ -67,16 +64,15 @@
     localStorage.setItem("jd_theme", n);
     /* Mise à jour de theme-color pour la barre du navigateur mobile */
     var tc = document.querySelector('meta[name="theme-color"]');
-    if (tc) tc.setAttribute("content", n === "dark" ? "#1e1c19" : "#f7f4ee");
+    if (tc) tc.setAttribute("content", "#0F1112");
   };
 
   /* ---------- Injections <head> dynamiques ---------- */
   (function () {
-    /* theme-color : barre du navigateur mobile */
-    var dark = document.documentElement.getAttribute("data-theme") === "dark";
+    /* theme-color : barre du navigateur mobile, alignée sur le bandeau de navigation */
     var tc = document.createElement("meta");
     tc.name = "theme-color";
-    tc.content = dark ? "#1e1c19" : "#f7f4ee";
+    tc.content = "#0F1112";
     document.head.appendChild(tc);
 
     /* JSON-LD schema.org/Person */
@@ -299,7 +295,7 @@
     box.setAttribute("aria-label", "Image agrandie");
     box.setAttribute("aria-hidden", "true");
     box.innerHTML =
-      '<button class="lightbox__close" aria-label="Fermer">&times;</button>' +
+      '<button class="lightbox__close" aria-label="Fermer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>' +
       '<img class="lightbox__img" alt="" />';
     document.body.appendChild(box);
     var boxImg = box.querySelector(".lightbox__img");
