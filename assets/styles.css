@@ -261,7 +261,7 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
   animation: label-apply .55s cubic-bezier(.16, 1, .3, 1) both;
 }
 @keyframes label-apply { from { transform: translateY(-10px) rotate(-2.4deg); box-shadow: 0 26px 30px -14px rgb(0 0 0 / 0.4); } }
-.ship-label__top { display: flex; justify-content: space-between; gap: 0.6rem 1rem; flex-wrap: wrap; background: #141210; color: #FFFFFF; padding: 0.45rem 1rem; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.ship-label__top { display: flex; justify-content: space-between; gap: 0.6rem 1rem; flex-wrap: wrap; text-wrap: balance; background: #141210; color: #FFFFFF; padding: 0.45rem 1rem; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .zone { padding: 0.65rem 1rem; border-bottom: var(--rule) solid var(--line); min-width: 0; }
 .zone:last-child { border-bottom: 0; }
 .zone-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; border-bottom: var(--rule) solid var(--line); }
@@ -279,7 +279,7 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
 .contents li { display: grid; grid-template-columns: 0.9rem minmax(0, 1fr); align-items: baseline; gap: 0.5rem; }
 .contents li::before { content: ""; width: 0.55rem; height: 0.55rem; background: #141210; transform: translateY(-0.05rem); }
 .field b { display: block; font-size: var(--step-2); font-weight: 800; line-height: 1; letter-spacing: -0.03em; margin-top: 0.2rem; }
-.field span { display: block; font-size: 0.85rem; line-height: 1.3; color: var(--muted); margin-top: 0.3rem; }
+.field span { display: block; text-wrap: balance; font-size: 0.85rem; line-height: 1.3; color: var(--muted); margin-top: 0.3rem; }
 .code { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 1.4rem; align-items: end; }
 .barcode { width: 100%; max-width: 340px; height: 66px; color: #141210; }
 .code small { display: block; font-size: 0.78rem; letter-spacing: 0.16em; margin-top: 0.3rem; }
@@ -291,6 +291,7 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
   .field b { font-size: 1.6rem; }
   .field span { font-size: 0.72rem; }
   .ship-label__top span + span { display: none; }
+  .ship-label__top { letter-spacing: 0.08em; font-size: 0.72rem; }
   .ship-label { display: flex; flex-direction: column; }
   .ship-label > .ship-label__top { order: 0; }
   .ship-label > .zone-row:not(.zone-row--3) { order: 1; }
@@ -357,9 +358,12 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
 @media (max-width: 760px) { .xp__row { grid-template-columns: 1fr auto; } .xp__row .xp__dest { grid-column: 1 / -1; grid-row: 2; } }
 /* Type de contrat : service de transport, couleur constante */
 .line-badge { font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.7rem; white-space: nowrap; justify-self: end; }
-.line-badge--alternance { background: #141210; color: #FFFFFF; }
-.line-badge--stage { background: #0B4EA2; color: #FFFFFF; }
-.line-badge--interim { background: #1F6E45; color: #FFFFFF; }
+.line-badge { border: 2px solid #141210; }
+.line-badge--cdd { background: #141210; color: #FFFFFF; }
+.line-badge--alternance { background: #FFFFFF; color: #141210; }
+.line-badge--stage { background: #C29563; color: #141210; }
+.line-badge--interim { background: #FFFFFF; color: #141210; border-style: dashed; }
+.xp__row:last-child { border-bottom: 0; }
 
 /* ---------- Bordereau de formation (frise) ---------- */
 .timeline { background: var(--label); border: var(--rule) solid var(--line); }

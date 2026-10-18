@@ -15,16 +15,23 @@ ligne). En cas de doute sur une information, poser la question plutôt que de co
 - LinkedIn : https://www.linkedin.com/in/julien-duquesne-75b246226/
 - Permis B + véhicule personnel
 
+### Poste actuel (public)
+
+**Chef de projet logistique · Texdecor · CDD** (depuis 2026). Affiché sur le portfolio
+à la demande de Julien : en tête du Parcours, dans l'étiquette d'accueil et dans le JSON-LD.
+
 ### Confidentialité
 
-**Ne jamais publier d'information confidentielle** sur le portfolio, les CV, Canva ou ce
-dépôt (qui est public et dont chaque fichier est servi par GitHub Pages) : situation
-professionnelle actuelle, contrats, rémunération, noms de collègues ou de responsables.
-Ces éléments ne sont consignés que dans `.claude/CLAUDE.md`, fichier local non versionné.
-Le portfolio affiche « Ouvert aux opportunités » tant que Julien n'a pas demandé autre chose.
+**Ce qui est confidentiel, ce sont les informations internes à Texdecor** : missions et
+projets, organisation, noms de collègues ou de responsables, rémunération, détails du
+contrat (dates exactes, statut). Ne jamais les publier sur le portfolio, les CV, Canva
+ou dans ce dépôt (public, et chaque fichier est servi par GitHub Pages). Seuls le
+poste, l'entreprise et le type de contrat sont publics. Les détails sont dans
+`.claude/CLAUDE.md`, fichier local non versionné.
 
 ### Parcours
 
+- **Depuis 2026** — Chef de projet logistique, Texdecor (CDD)
 - **2022–2026** — Logisticien en alternance, LSI (Groupe Delquignies), Leers
 - **2021** — Stage opérateur logistique, Proditex, Leers (6 semaines)
 - **2021** — Agent logistique (intérim), LSI, Leers

@@ -48,8 +48,8 @@ sans framework ni étape de build.
 ## Brand Commitments
 
 - Nom affiché : Julien Duquesne.
-- Statut affiché : « Ouvert aux opportunités ». Aucune autre information professionnelle
-  n'est publiée sans l'accord explicite de Julien.
+- Poste actuel affiché : Chef de projet logistique · Texdecor · CDD. Rien d'autre sur ce
+  poste : les informations internes à Texdecor sont confidentielles.
 - **Ne jamais inventer de données** : aucun chiffre, témoignage, entreprise ou résultat
   qui ne vienne pas de Julien.
 
