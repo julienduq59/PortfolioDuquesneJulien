@@ -17,7 +17,7 @@ ligne). En cas de doute sur une information, poser la question plutôt que de co
 
 ### Poste actuel (public)
 
-**Chef de projet logistique · Texdecor · CDD** (depuis 2026). Affiché sur le portfolio
+**Chef de projet logistique · Texdecor · CDD**, affiché sans date. Affiché sur le portfolio
 à la demande de Julien : en tête du Parcours, dans l'étiquette d'accueil et dans le JSON-LD.
 
 ### Confidentialité
@@ -31,7 +31,7 @@ poste, l'entreprise et le type de contrat sont publics. Les détails sont dans
 
 ### Parcours
 
-- **Depuis 2026** — Chef de projet logistique, Texdecor (CDD)
+- **Actuellement** — Chef de projet logistique, Texdecor (CDD)
 - **2022–2026** — Logisticien en alternance, LSI (Groupe Delquignies), Leers
 - **2021** — Stage opérateur logistique, Proditex, Leers (6 semaines)
 - **2021** — Agent logistique (intérim), LSI, Leers
