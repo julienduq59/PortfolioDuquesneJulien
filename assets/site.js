@@ -64,7 +64,7 @@
     localStorage.setItem("jd_theme", n);
     /* Mise à jour de theme-color pour la barre du navigateur mobile */
     var tc = document.querySelector('meta[name="theme-color"]');
-    if (tc) tc.setAttribute("content", "#0F1112");
+    if (tc) tc.setAttribute("content", n === "dark" ? "#2A2016" : "#C29563");
   };
 
   /* ---------- Injections <head> dynamiques ---------- */
@@ -72,7 +72,7 @@
     /* theme-color : barre du navigateur mobile, alignée sur le bandeau de navigation */
     var tc = document.createElement("meta");
     tc.name = "theme-color";
-    tc.content = "#0F1112";
+    tc.content = document.documentElement.getAttribute("data-theme") === "dark" ? "#2A2016" : "#C29563";
     document.head.appendChild(tc);
 
     /* JSON-LD schema.org/Person */
@@ -129,7 +129,6 @@
           '<a class="btn btn--primary nav__cta" href="contact.html">Me contacter</a>' +
         '</nav>' +
         '<div class="nav__actions">' +
-          '<time class="nav__clock" data-clock aria-label="Heure locale">--:--</time>' +
           '<button class="nav__theme-toggle" aria-label="Basculer le thème" title="Mode clair / sombre">' +
             '<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>' +
             '<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>' +
@@ -163,15 +162,6 @@
       });
     });
 
-    /* Horloge du quai : heure locale réelle du visiteur */
-    var clock = mount.querySelector("[data-clock]");
-    function tickClock() {
-      var d = new Date();
-      clock.textContent = String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
-      clock.setAttribute("datetime", clock.textContent);
-    }
-    tickClock();
-    setInterval(tickClock, 15000);
   }
 
   /* ---------- Panneau Tweaks (protocole hôte) ---------- */
@@ -385,13 +375,15 @@
     mount.className = "footer";
     /* La page Contact porte déjà « Restons en contact. » en titre */
     var onContact = /contact\.html$/.test(location.pathname);
+    var tapeText = "Logistique · Supply Chain · Amélioration continue";
     mount.innerHTML =
+      '<div class="footer__tape" aria-hidden="true">' + new Array(6).join('<span>' + tapeText + '</span>') + '</div>' +
+      '<p class="sr-only">' + tapeText + '</p>' +
       '<div class="container">' +
-        '<p class="kicker"><strong>Arrivées</strong><span>Logistique · Supply Chain · Amélioration continue</span></p>' +
         (onContact ? "" :
           '<div class="footer__gate">' +
             '<a href="contact.html" class="footer__cta">Restons en contact.</a>' +
-            '<a class="btn btn--primary" href="contact.html">Embarquement · Me contacter <span class="arrow">→</span></a>' +
+            '<a class="btn btn--primary" href="contact.html">Me contacter <span class="arrow">→</span></a>' +
           '</div>') +
         '<div class="footer__grid">' +
           '<div class="footer__col">' +
@@ -432,46 +424,9 @@
     });
   }
 
-  /* ---------- Nom en palettes (signature du panneau) ---------- */
-  var FLAP_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  function initFlap() {
-    var el = document.querySelector("[data-flap]");
-    if (!el) return;
-    var text = el.textContent.trim().toUpperCase();
-    var tiles = [];
-    var html = '<span class="sr-only">' + el.textContent.trim() + '</span><span class="flap__tiles" aria-hidden="true">';
-    text.split(/\s+/).forEach(function (word) {
-      html += '<span class="flap__word">';
-      word.split("").forEach(function (ch) { html += '<span class="flap__tile" data-ch="' + ch + '"><span>' + ch + "</span></span>"; });
-      html += "</span>";
-    });
-    el.innerHTML = html + "</span>";
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    tiles = Array.prototype.slice.call(el.querySelectorAll(".flap__tile"));
-    tiles.forEach(function (t, i) {
-      var target = t.getAttribute("data-ch");
-      var start = FLAP_CHARS.indexOf("A");
-      var end = FLAP_CHARS.indexOf(target);
-      var steps = end >= 0 ? (end - start + FLAP_CHARS.length) % FLAP_CHARS.length : 0;
-      steps = Math.min(steps, 10 + (i % 5));       /* au plus ~15 rotations par palette */
-      var pos = (end - steps + FLAP_CHARS.length) % FLAP_CHARS.length;
-      var inner = t.firstChild;
-      inner.textContent = FLAP_CHARS[pos];
-      var n = 0;
-      setTimeout(function step() {
-        if (n >= steps) { inner.textContent = target; t.classList.remove("is-turning"); return; }
-        pos = (pos + 1) % FLAP_CHARS.length; n++;
-        t.classList.remove("is-turning"); void t.offsetWidth; t.classList.add("is-turning");
-        inner.textContent = FLAP_CHARS[pos];
-        setTimeout(step, 62);
-      }, 250 + i * 55);
-    });
-  }
-
   function initAll() {
     buildNav();
     buildFooter();
-    initFlap();
     initArrows();
     initCanonical();
     initBackToTop();
