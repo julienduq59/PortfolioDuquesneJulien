@@ -15,7 +15,7 @@
 <meta property="og:description" content="Portfolio de Julien Duquesne, diplômé Bac+5 MOPL en Logistique & Supply Chain. Optimisation du stockage, des process et de la performance logistique." />
 <meta property="og:image" content="https://julienduq59.github.io/PortfolioDuquesneJulien/assets/og-banner.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="stylesheet" href="assets/styles.css?v=20261018-5" />
+<link rel="stylesheet" href="assets/styles.css?v=20261018-7" />
 </head>
 <body>
 
@@ -49,12 +49,12 @@
         <div class="zone">
           <p class="kicker kicker--plain">Destination</p>
           <p class="dest-big">Ouvert aux opportunités</p>
+          <p class="dest-note">Actuellement en poste : Chef de projet logistique · Texdecor&nbsp;(CDD)</p>
         </div>
         <div class="zone">
           <p class="kicker kicker--plain">Contenu</p>
           <p class="ship-sub">Diplômé Bac+5 MOPL · Logistique &amp; Supply Chain</p>
           <ul class="contents">
-            <li>Chef de projet logistique · Texdecor&nbsp;(CDD)</li>
             <li>Bac+5 MOPL · ISTELI Wasquehal</li>
             <li>Alternance chez LSI (Groupe Delquignies)</li>
             <li>Green Belt Lean · CACES 3 · 5 · 6</li>
@@ -75,6 +75,7 @@
       </div>
 
       <figure class="pouch">
+        <span class="pouch__tape" aria-hidden="true"></span>
         <image-slot id="photo-hero" shape="rect" src="assets/photo-julien.jpg"
           placeholder="Déposez votre photo professionnelle (portrait)"></image-slot>
         <figcaption>Diplômé 2026</figcaption>
@@ -91,8 +92,9 @@
 <!-- ===================== POSITIONNEMENT ===================== -->
 <section class="section">
   <div class="container">
+    <div class="sheet">
     <p class="kicker">Positionnement</p>
-    <div class="grid-2 grid-2--asym" style="align-items:start;">
+    <div class="sheet__body grid-2 grid-2--asym" style="align-items:start;">
       <div>
         <h2 class="h2" style="max-width:16ch;">De l'opérationnel terrain au pilotage de la performance.</h2>
       </div>
@@ -110,14 +112,16 @@
         <a class="btn btn--ghost" href="a-propos.html" style="margin-top:0.5rem;">Mon parcours <span class="arrow">→</span></a>
       </div>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- ===================== DESTINATIONS ===================== -->
-<section class="section" style="background:var(--paper-2);">
+<section class="section" style="padding-top:0;">
   <div class="container">
-    <div class="section-head">
-      <p class="kicker">Explorer le portfolio</p>
+    <div class="sheet">
+    <p class="kicker">Explorer le portfolio</p>
+    <div class="sheet__body">
       <h2 class="h2">Mon parcours, mes compétences, mes réalisations.</h2>
     </div>
     <nav class="dest-list" aria-label="Pages du portfolio">
@@ -142,13 +146,14 @@
         <span class="arrow">→</span>
       </a>
     </nav>
+    </div>
   </div>
 </section>
 </main>
 
 <footer data-footer></footer>
 
-<script src="assets/image-slot.js?v=20261018-5"></script>
-<script src="assets/site.js?v=20261018-5"></script>
+<script src="assets/image-slot.js?v=20261018-7"></script>
+<script src="assets/site.js?v=20261018-7"></script>
 </body>
 </html>
