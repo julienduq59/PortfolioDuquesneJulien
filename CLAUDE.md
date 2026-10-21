@@ -68,11 +68,13 @@ Designs Canva correspondants :
 
 - Pages : `index.html`, `a-propos.html`, `parcours.html`, `competences.html`,
   `realisations.html`, `contact.html`
-- Design : monde « Tableau des départs » (refonte Impeccable, octobre 2026). Thème clair =
-  affiche jaune des départs, thème sombre = panneau à palettes. Une seule animation
-  signature : le nom en palettes sur l'accueil. Produit : `PRODUCT.md`.
-- `assets/site.js` injecte la navigation (avec l'horloge), le footer et le JSON-LD,
-  anime le nom en palettes et remplace les flèches → ↗ par des icônes SVG.
+- Design : monde « Étiquette d'expédition » (refonte Impeccable, octobre 2026, direction
+  choisie par Julien sur aperçu). Fond carton kraft (texture `assets/materiaux/`), sections
+  en étiquettes blanches à bord noir avec barre d'en-tête, rouge réservé à l'action,
+  police Bricolage Grotesque auto-hébergée. Système détaillé : `DESIGN.md` ; produit :
+  `PRODUCT.md`. Toujours montrer un aperçu à Julien avant de publier une refonte.
+- `assets/site.js` injecte la navigation, le pied de page (ruban adhésif imprimé) et le
+  JSON-LD, et remplace les flèches → ↗ par des icônes SVG.
 - Vocabulaire : en logistique on écrit **implantation**, jamais « implémentation ».
 - Cache : les pages chargent `assets/styles.css`, `site.js` et `image-slot.js` avec un
   paramètre `?v=AAAAMMJJ` (suffixe `-2`, `-3`… s'il y a plusieurs versions le même jour). **À chaque modification de ces fichiers, mettre à jour la date
