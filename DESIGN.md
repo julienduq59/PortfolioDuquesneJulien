@@ -1,374 +1,322 @@
 ---
 name: Julien Duquesne · Portfolio
-description: Le tableau des départs d'un quai d'expédition — affiche jaune le jour, panneau à palettes la nuit.
+description: Une étiquette d'expédition blanche collée sur du carton kraft — le portfolio comme un colis prêt à partir.
 colors:
-  poster-yellow: "#FFD32A"
-  poster-yellow-dense: "#F5C400"
-  sheet-white: "#FFFDF4"
-  ink: "#141414"
-  ink-soft: "#3B3424"
-  ink-muted: "#4A4232"
-  rule-ink: "rgb(20 20 20 / 0.82)"
-  rule-ink-soft: "rgb(20 20 20 / 0.22)"
-  signal-red: "#C42A1C"
-  signal-red-deep: "#A21F14"
-  on-signal: "#FFFDF4"
-  board: "#16181A"
-  board-deep: "#0F1112"
-  board-band: "#1C1F22"
-  tile: "#222528"
-  tile-top: "#2A2D31"
-  tile-raised: "#2B2F33"
-  letters: "#F2EEE3"
-  letters-soft: "#D8D3C6"
-  board-muted: "#A8A396"
-  rule-board: "rgb(242 238 227 / 0.16)"
-  amber: "#F3B22E"
-  board-green: "#4CC38A"
-  poster-green: "#1F6E45"
-  line-blue: "#0B4EA2"
+  kraft: "#C29563"
+  kraft-2: "#B3844F"
+  kraft-deep: "#4A3420"
+  kraft-night: "#2A2016"
+  kraft-night-2: "#231A11"
+  kraft-night-deep: "#17110B"
+  label: "#FFFFFF"
+  ink: "#141210"
+  ink-soft-kraft: "#2A1F14"
+  ink-soft-label: "#2B2620"
+  muted-label: "#555049"
+  row-hover: "#F4EEE4"
+  red: "#C21F15"
+  red-hover: "#9E170F"
+  on-red: "#FFFFFF"
+  night-ink: "#F2E8DA"
+  night-ink-soft: "#E6D8C3"
+  night-muted: "#CBB89D"
+  tape-ink: "#3A2814"
 typography:
-  display-flap:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "clamp(2.4rem, 0.6rem + 9.5vw, 5.3rem)"
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "0"
   display:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "clamp(3rem, 2rem + 5vw, 6rem)"
-    fontWeight: 700
-    lineHeight: 0.95
-    letterSpacing: "0"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.8rem, 1.8rem + 5vw, 5.8rem)"
+    fontWeight: 800
+    lineHeight: 0.9
+    letterSpacing: "-0.03em"
   headline:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "clamp(2.5rem, 1.8rem + 3.6vw, 4.4rem)"
-    fontWeight: 600
-    lineHeight: 0.98
-    letterSpacing: "-0.005em"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.4rem, 1.7rem + 3.4vw, 4.3rem)"
+    fontWeight: 800
+    lineHeight: 0.95
+    letterSpacing: "-0.02em"
   title:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
     fontSize: "clamp(1.9rem, 1.5rem + 2vw, 2.9rem)"
-    fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "0.005em"
+    fontWeight: 800
+    lineHeight: 0.98
+    letterSpacing: "-0.025em"
   title-sm:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
     fontSize: "clamp(1.45rem, 1.25rem + 1vw, 2rem)"
-    fontWeight: 600
-    lineHeight: 1.08
-  board-row:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem)"
-    fontWeight: 500
-    lineHeight: 1.2
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.015em"
   lede:
-    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem)"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.18rem, 1.08rem + 0.5vw, 1.42rem)"
     fontWeight: 400
-    lineHeight: 1.5
+    lineHeight: 1.45
   body:
-    fontFamily: "Barlow, system-ui, -apple-system, Segoe UI, sans-serif"
-    fontSize: "clamp(1rem, 0.96rem + 0.2vw, 1.12rem)"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1rem, 0.96rem + 0.2vw, 1.1rem)"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.55
     fontFeature: "\"tnum\" 1"
-  sign:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "1.05rem"
+  label-bar:
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.95rem"
     fontWeight: 700
     lineHeight: 1.3
-    letterSpacing: "0.16em"
-  label:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "clamp(0.84rem, 0.82rem + 0.1vw, 0.92rem)"
-    fontWeight: 600
-    lineHeight: 1.2
     letterSpacing: "0.12em"
+  label-key:
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.72rem"
+    fontWeight: 700
+    letterSpacing: "0.14em"
   button:
-    fontFamily: "Barlow Condensed, Arial Narrow, Roboto Condensed, sans-serif"
-    fontSize: "1.02rem"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "0.08em"
+    fontFamily: "Bricolage Grotesque, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.98rem"
+    fontWeight: 800
+    letterSpacing: "0.05em"
 rounded:
-  sign: "2px"
-  sign-lg: "3px"
-  tile: "0.06em"
+  none: "0"
 spacing:
-  gutter: "clamp(1.25rem, 5vw, 4.5rem)"
-  section: "clamp(3.5rem, 8vw, 7rem)"
-  section-tight: "clamp(2rem, 4vw, 3.2rem)"
-  stack: "1.4rem"
-  stack-sm: "0.9rem"
-  container: "1240px"
-  nav-height: "64px"
-  touch-target: "44px"
+  rule: "3px"
+  rule-small: "2px"
+  gutter: "clamp(1.1rem, 5vw, 4rem)"
+  sheet-pad: "clamp(1.1rem, 2.8vw, 1.9rem)"
+  row-pad: "clamp(0.9rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.6rem)"
+  section: "clamp(3rem, 7vw, 6rem)"
+  maxw: "1200px"
+  nav-h: "66px"
 components:
   button-primary:
-    backgroundColor: "{colors.signal-red}"
-    textColor: "{colors.on-signal}"
+    backgroundColor: "{colors.red}"
+    textColor: "{colors.on-red}"
     typography: "{typography.button}"
-    rounded: "{rounded.sign}"
-    padding: "0.7em 1.35em"
+    rounded: "{rounded.none}"
+    padding: "0.65em 1.25em"
     height: "48px"
   button-primary-hover:
-    backgroundColor: "{colors.signal-red-deep}"
-    textColor: "{colors.on-signal}"
+    backgroundColor: "{colors.red-hover}"
+    textColor: "{colors.on-red}"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
     typography: "{typography.button}"
-    rounded: "{rounded.sign}"
-    padding: "0.7em 1.35em"
+    rounded: "{rounded.none}"
+    padding: "0.65em 1.25em"
     height: "48px"
   button-ghost-hover:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.poster-yellow}"
-  station-band:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.poster-yellow}"
-    typography: "{typography.sign}"
-    rounded: "{rounded.sign}"
-    padding: "0.55rem 0.9rem"
-  station-band-board:
-    backgroundColor: "{colors.tile}"
-    textColor: "{colors.amber}"
-    typography: "{typography.sign}"
-    rounded: "{rounded.sign}"
-    padding: "0.55rem 0.9rem"
-  field-label:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink-muted}"
-    typography: "{typography.label}"
-  departure-tile:
-    backgroundColor: "{colors.tile}"
-    textColor: "{colors.letters}"
-    rounded: "{rounded.sign}"
-    padding: "0.25rem 0.55rem"
-  boarding-state:
-    backgroundColor: "{colors.signal-red}"
-    textColor: "{colors.on-signal}"
-    rounded: "{rounded.sign}"
-    padding: "0.35rem 0.75rem"
-    height: "44px"
-  line-badge-alternance:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.poster-yellow}"
-    rounded: "{rounded.sign}"
-    padding: "0.3rem 0.7rem"
-  line-badge-alternance-board:
-    backgroundColor: "{colors.amber}"
+    textColor: "{colors.label}"
+  sheet:
+    backgroundColor: "{colors.label}"
     textColor: "{colors.ink}"
-  line-badge-stage:
-    backgroundColor: "{colors.line-blue}"
-    textColor: "#FFFFFF"
-    rounded: "{rounded.sign}"
-    padding: "0.3rem 0.7rem"
-  line-badge-interim:
-    backgroundColor: "{colors.poster-green}"
-    textColor: "#FFFFFF"
-    rounded: "{rounded.sign}"
-    padding: "0.3rem 0.7rem"
+    rounded: "{rounded.none}"
+    padding: "{spacing.sheet-pad}"
+  sheet-bar:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.label}"
+    typography: "{typography.label-bar}"
+    padding: "0.5rem 0.85rem"
   chip:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    typography: "{typography.label}"
-    rounded: "{rounded.sign}"
-    padding: "0.3em 0.6em"
+    rounded: "{rounded.none}"
+    padding: "0.28em 0.55em"
   chip-accent:
     backgroundColor: "{colors.ink}"
-    textColor: "{colors.poster-yellow}"
-  chip-accent-board:
-    backgroundColor: "{colors.amber}"
+    textColor: "{colors.label}"
+    rounded: "{rounded.none}"
+    padding: "0.28em 0.55em"
+  date-tag:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.label}"
+    padding: "0.3rem 0.6rem"
+  badge-cdd:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.label}"
+    padding: "0.35rem 0.7rem"
+  badge-alternance:
+    backgroundColor: "{colors.label}"
     textColor: "{colors.ink}"
-  nav-bar:
-    backgroundColor: "{colors.board-deep}"
-    textColor: "{colors.letters}"
-    height: "{spacing.nav-height}"
-  nav-clock:
-    backgroundColor: "{colors.tile}"
-    textColor: "{colors.amber}"
-    rounded: "{rounded.sign}"
-    padding: "0.2rem 0.55rem"
+    padding: "0.35rem 0.7rem"
+  badge-stage:
+    backgroundColor: "{colors.kraft}"
+    textColor: "{colors.ink}"
+    padding: "0.35rem 0.7rem"
+  badge-interim:
+    backgroundColor: "{colors.label}"
+    textColor: "{colors.ink}"
+    padding: "0.35rem 0.7rem"
+  pouch-header:
+    backgroundColor: "{colors.red}"
+    textColor: "{colors.on-red}"
+    padding: "0.35rem 0"
 ---
 
 # Design System: Julien Duquesne · Portfolio
 
 ## Overview
 
-**Creative North Star: "Le tableau des départs du quai"**
+**Creative North Star: "L'étiquette d'expédition"**
 
-Le site se lit comme la signalétique d'un quai d'expédition. Deux matières seulement, et elles ne se mélangent pas : l'**affiche jaune des départs** (jaune plein, encre noire, tableaux réglés de filets noirs) et le **panneau à palettes** (anthracite, tuiles fendues à l'horizontale, lettres blanc cassé, ambre). Le thème clair est l'affiche ; le thème sombre est le panneau partout. En thème clair, le panneau reste présent là où il a un rôle d'affichage : la barre de navigation, le haut de l'accueil, la bande d'informations, le panneau d'action de Contact et le pied de page.
+Chaque page est une étiquette logistique blanche collée sur du carton kraft. Le carton est le sol : une teinte kraft unie, sur laquelle une texture de fibres en niveaux de gris est fusionnée en `soft-light`. Les étiquettes sont du papier blanc cerné d'un bord noir de 3 px et découpé en zones par des filets noirs de 3 px, comme un bordereau qu'on lit d'un coup d'œil sur un quai. Les clés de champ sont en petites capitales grises, les valeurs en Bricolage Grotesque très gras.
 
-La structure vient des filets, pas des boîtes. Les listes sont des lignes de tableau séparées par des règles d'encre ; les dates sont des tuiles de palettes ; les sections portent un bandeau de gare. La typographie est celle de la signalétique transport : une condensée (Barlow Condensed) en capitales pour tout ce qui s'affiche, une linéale (Barlow) pour lire, chiffres tabulaires partout. Densité d'horaire : beaucoup d'information alignée, peu de décor.
+Le système est dense et franc : angles vifs, aucun dégradé, aucun arrondi, un seul rouge réservé à l'action. Les matériaux physiques (carton, pochette plastique, adhésif) sont des rasters générés et posés en surimpression ; tout le reste est du CSS plat. Le thème sombre éteint la lumière sur le carton (brun très foncé) sans toucher aux étiquettes : le papier reste blanc, l'encre reste noire.
 
-Une seule couleur agit : le rouge signal, réservé à l'action (contacter, embarquer, télécharger). L'ambre est la couleur d'affichage du panneau. Un seul mouvement d'auteur : le nom défile en palettes à l'arrivée, et se fige si le visiteur demande moins de mouvement.
+La page d'accueil porte l'objet signature : une grande étiquette d'expédition légèrement de travers (expéditeur, département, destination, contenu, champs chiffrés, code-barres réel de l'adresse email), accompagnée de la photo glissée dans une pochette « Documents ci-joints ». Les pages intérieures reprennent la même grammaire en étiquettes de section droites.
 
 **Key Characteristics:**
-- Deux matières : affiche jaune imprimée et panneau à palettes ; le panneau peut s'inviter dans l'affiche, jamais l'inverse.
-- Structure par filets d'encre (3 px en tête de liste, 2 px sous les en-têtes, 1 px entre les lignes), pas de cartes à fond.
-- Barlow Condensed en capitales pour l'affichage, Barlow pour le texte, chiffres tabulaires.
-- Rouge signal pour l'action, ambre pour la mise en évidence sur le panneau.
-- Angles de panneau émaillé : 2 px, jamais d'arrondi doux.
-- Un seul mouvement signé (les palettes du nom), désactivé en mouvement réduit.
+- Sol en carton kraft fibreux, étiquettes en papier blanc à bord noir 3 px.
+- Zones réglées : les cellules sont séparées par des filets, jamais par des espaces.
+- Une seule famille typographique, très grasse, capitales pour les titres d'objets et les clés.
+- Rouge d'expédition réservé à l'action ; tout le reste est noir, blanc et kraft.
+- Rayon zéro partout ; ombres douces uniquement sous les objets posés sur le carton.
+- Thème sombre : le carton fonce, les étiquettes ne changent pas.
 
 ## Colors
 
-Une palette de signalétique : un jaune d'affiche saturé, une encre presque noire, un anthracite de panneau, et deux couleurs de fonction (rouge d'action, ambre d'affichage) qui ne se remplacent jamais l'une l'autre.
+Une palette d'emballage : carton kraft, papier blanc, encre noire chaude, et un rouge d'expédition.
 
 ### Primary
-- **Rouge signal** (signal-red) : l'action, et rien d'autre. Bouton principal, état « Embarquement » du tableau des départs, lien d'évitement, contour de focus clavier sur l'affiche, `accent-color` du navigateur. Texte blanc cassé dessus (on-signal). Au survol, il fonce en **rouge signal profond** (signal-red-deep).
-
-### Secondary
-- **Ambre de panneau** (amber) : la mise en évidence sur le panneau. Dates de départ du tableau, onglet actif de la navigation, horloge, suffixe des chiffres clés, titres de colonnes du pied de page, bandeau de gare en version panneau, pastille de ligne Alternance et pastilles d'accent en thème sombre, contour de focus sur le panneau. Côté code, `--accent` vaut l'encre sur l'affiche et l'ambre sur le panneau : la mise en évidence change de matière, pas de rôle.
-
-### Tertiary
-- **Couleurs de ligne** : une couleur par type de contrat, comme une ligne de transport. **Encre sur jaune** (ink / poster-yellow) pour Alternance, **bleu de ligne** (line-blue) pour Stage, **vert de ligne** (poster-green) pour Intérimaire, texte blanc pur sur les deux derniers. Le vert de ligne sert aussi l'état « obtenu » sur l'affiche ; sur le panneau, cet état passe en **vert de panneau** (board-green).
+- **Rouge d'expédition** (`red`) : boutons d'action principaux, contour de focus, survol des titres de lignes cliquables, survol du bouton « retour en haut », fond du panneau d'action de la page Contact, et bandeau « Documents ci-joints » de la pochette. Survol : **Rouge d'expédition foncé** (`red-hover`). Texte posé dessus : blanc (`on-red`).
 
 ### Neutral
-- **Jaune d'affiche** (poster-yellow) : le fond du thème clair. **Jaune dense** (poster-yellow-dense) pour une bande d'affiche plus chargée (section Destinations de l'accueil, piste de la barre de défilement).
-- **Feuille blanche** (sheet-white) : surface claire de réserve (`--surface`), la feuille des arrivées.
-- **Encre** (ink) : texte, filets, bandeau de gare sur l'affiche, fond du bouton fantôme au survol. **Encre douce** (ink-soft) pour les sous-titres et organismes, **encre atténuée** (ink-muted) pour les libellés et le texte secondaire.
-- **Filet d'encre** (rule-ink) et **filet léger** (rule-ink-soft) : règles du tableau, des listes, des niveaux de compétence éteints.
-- **Panneau** (board) : fond du thème sombre et des zones panneau. **Panneau profond** (board-deep) : barre de navigation, pied de page, bande d'informations, bouton retour en haut ; toujours bordé de 2 px noir. **Bande de panneau** (board-band) : la bande dense en thème sombre.
-- **Tuile** (tile), **haut de tuile** (tile-top), **tuile relevée** (tile-raised) : les palettes. Une palette = moitié haute tile-top, moitié basse tile ; tile-raised sert au survol des commandes du panneau.
-- **Lettres** (letters), **lettres douces** (letters-soft), **gris de panneau** (board-muted), **filet de panneau** (rule-board) : texte, texte de chapô, libellés et règles sur le panneau.
+- **Carton kraft** (`kraft`) : le sol de toutes les pages en thème clair, sous la texture `kraft-fibres.png`. Sert aussi de fond au badge « Stage ».
+- **Kraft ombré** (`kraft-2`) : piste de la barre de défilement.
+- **Carton foncé** (`kraft-deep`) : bandes sombres (`.section--dark`) et pied de page en thème clair.
+- **Carton de nuit** (`kraft-night`, `kraft-night-2`, `kraft-night-deep`) : les trois mêmes rôles en thème sombre.
+- **Papier d'étiquette** (`label`) : fond de toute étiquette, carte, ligne de bordereau, tableau et bouton de copie, dans les deux thèmes.
+- **Encre** (`ink`) : texte sur papier, bords et filets de 3 px, barres d'en-tête, pastilles pleines, cases de niveau remplies, sélection de texte.
+- **Encre douce sur carton** (`ink-soft-kraft`) : texte secondaire et clés posés directement sur le kraft clair.
+- **Encre douce sur papier** (`ink-soft-label`) et **Gris de clé** (`muted-label`) : texte courant secondaire et clés de champ à l'intérieur des étiquettes.
+- **Papier froissé** (`row-hover`) : survol des lignes du bordereau de navigation.
+- **Encre de nuit** (`night-ink`, `night-ink-soft`, `night-muted`) : texte, filets et clés posés sur le carton foncé ; `night-ink` sert aussi de couleur de focus en thème sombre et de barre d'en-tête claire hors étiquette.
+- **Encre d'adhésif** (`tape-ink`) : texte imprimé sur le ruban du pied de page.
 
 ### Named Rules
-**The Signal Red Rule.** Le rouge signal marque ce qu'on peut faire, jamais ce qu'on veut souligner. Si un élément rouge ne mène nulle part, il n'est pas rouge.
+**La règle du rouge d'expédition.** Le rouge signifie « agir ». Il est réservé aux boutons d'action, au focus, aux survols de liens et au seul bandeau de la pochette. Aucun titre, fond de section ou décor n'est rouge.
 
-**The Amber Belongs To The Board Rule.** L'ambre ne s'affiche que sur une matière panneau (fond board, tile, board-deep). Sur l'affiche jaune, la mise en évidence est l'encre.
+**La règle du papier constant.** Une étiquette est toujours papier blanc et encre noire, quel que soit le thème ou la bande sur laquelle elle est posée. Seul le carton change de couleur.
 
-**The Board Scope Rule.** Pour poser du panneau dans l'affiche, on re-scope les jetons (`.section--dark`, `.footer`, `.board-scope`) au lieu de recolorer à la main : à l'intérieur, `--paper`, `--ink`, `--line` et `--accent` deviennent ceux du panneau.
-
-**The Constant Line Rule.** Une couleur de ligne désigne un type de contrat et ne change pas d'une page à l'autre. Seule exception : Alternance passe en ambre sur encre en thème sombre, parce que l'encre disparaîtrait sur le panneau.
+**La règle des couleurs d'étiquette.** Les états et catégories (type de contrat, pastilles) se distinguent uniquement avec les matériaux de l'étiquette : noir plein, contour noir, kraft, contour pointillé. Pas de teinte de catégorie.
 
 ## Typography
 
-**Display Font:** Barlow Condensed (avec Arial Narrow, Roboto Condensed, sans-serif), auto-hébergée en 500 / 600 / 700
-**Body Font:** Barlow (avec system-ui, -apple-system, Segoe UI, sans-serif), auto-hébergée en 400 / 500 / 600
-**Label/Mono Font:** Barlow Condensed (`--font-mono` pointe sur la condensée ; il n'y a pas de chasse fixe)
+**Display Font:** Bricolage Grotesque, auto-hébergée, variable 400–800 (avec Helvetica Neue, Arial, sans-serif)
+**Body Font:** la même
+**Label/Mono Font:** la même ; les chiffres sont tabulaires sur tout le site (`font-variant-numeric: tabular-nums`)
 
-**Character:** la condensée est la voix du panneau, serrée, en capitales, faite pour être lue de loin ; Barlow en est la version de lecture, même dessin, plus ouverte. Chiffres tabulaires sur tout le corps (`font-variant-numeric: tabular-nums`), pour que les dates s'alignent comme un horaire.
+**Character:** Une grotesque d'imprimerie d'étiquettes, compacte et très grasse dans les titres, lisible et neutre dans le texte. Toute la hiérarchie se fait par graisse, taille, casse et interlettrage, jamais par changement de famille.
 
 ### Hierarchy
-L'échelle est fluide, de `--step--1` à `--step-5` (rapport ≈ 1.25, affichage plafonné à 6 rem).
-- **Display palettes** (700, display-flap, 1) : le nom sur la page d'accueil, en tuiles, capitales.
-- **Display** (700, display, 0.95, capitales) : titre de page ; les pages intérieures le ramènent à `--step-4` avec 16 à 22 ch de large.
-- **Headline** (600, headline, 0.98) : titres de section `.h2`, 16 à 22 ch de large, `text-wrap: balance`.
-- **Title** (700, title, 1, capitales) : destinations de l'accueil, intitulés de poste du parcours. `.h3` en 600 à la même taille pour les titres de bloc.
-- **Title small** (600, title-sm, 1.08) : `.h4`, intitulés de formation, valeurs de contact.
-- **Board row** (500, board-row, 1.2) : cellules du tableau des départs.
-- **Lede** (400, lede, 1.5) : chapô, 52 à 58 ch.
-- **Body** (400, body, 1.6) : texte courant, 70 ch maximum (62 à 75 ch dans les listes du parcours).
-- **Sign** (700, 1.05 rem, 0.16em, capitales) : bandeau de gare.
-- **Label** (600, label, 0.12 à 0.14em, capitales) : en-têtes de tableau, libellés de champ, états, légendes, pastilles.
-- **Button** (600, 1.02 rem, 0.08em, capitales) : boutons et liens de navigation (500 en navigation).
+- **Display** (800, `display`, interligne 0.9, capitales) : le titre de page, seul dans son étiquette d'en-tête.
+- **Headline** (800, `headline`, interligne 0.95) : titre principal d'une étiquette de section, en casse de phrase.
+- **Title** (800, `title`, capitales pour les lignes de bordereau et les expériences) : nom d'une destination, intitulé d'un poste.
+- **Title small** (800, `title-sm`) : titres de cellules, de domaines de compétences, d'éléments de formation, valeurs de contact.
+- **Lede** (400, `lede`, 56ch max) : chapeau d'une étiquette.
+- **Body** (400, `body`, 70ch max) : texte courant.
+- **Label bar** (700, 0.95rem, +0.12em, capitales) : texte blanc de la barre noire d'en-tête d'une étiquette.
+- **Label key** (700, 0.72rem, +0.14em, capitales, gris) : clés de champ (« Expéditeur », « Destination », « Contenu »), en-têtes de colonne, titres de colonnes du pied de page.
+- **Valeurs de champ** (800, très grandes, interlettrage serré −0.03 à −0.04em) : nombres et destination de l'étiquette d'accueil.
 
 ### Named Rules
-**The Signage Case Rule.** Tout ce qui s'affiche (titres de tableau, boutons, libellés, états, navigation) est en condensée capitale, interlettrée entre 0.04em et 0.16em. Le texte qu'on lit reste en Barlow, casse normale.
+**La règle de la clé et de la valeur.** Une donnée s'écrit en deux temps : une clé minuscule, grise, espacée, en capitales ; puis la valeur en 800, grande. Jamais l'inverse, jamais une clé aussi grasse que sa valeur.
 
-**The Timetable Figures Rule.** Les dates et les nombres sont tabulaires et, quand ils portent une ligne, posés sur une tuile.
+**La règle de la famille unique.** Bricolage Grotesque seule. Pas de serif, pas de monospace, pas de police système en titre.
 
 ## Layout
 
-Conteneur de 1240 px, gouttière fluide (`clamp(1.25rem, 5vw, 4.5rem)`). Sections à `clamp(3.5rem, 8vw, 7rem)` en hauteur, version serrée à `clamp(2rem, 4vw, 3.2rem)` pour les bandes d'information. Rythme vertical par empilement : 1.4 rem (`.stack`) et 0.9 rem (`.stack-sm`).
+Conteneur centré de `maxw` (1200 px) avec une gouttière fluide (`gutter`). Les sections respirent verticalement (`section`) et chaque section contient en général une seule étiquette pleine largeur. La navigation fixe fait `nav-h` (66 px) ; la première section compense sa hauteur.
 
-Le modèle spatial est l'horaire : des lignes pleine largeur alignées sur une colonne de date fixe. Le parcours et la formation utilisent une colonne de date de 10.5 rem puis le contenu ; la ligne d'expérience ajoute une troisième colonne pour la pastille de ligne. Les destinations de l'accueil sont une grille titre / description / flèche. L'accueil pose le tableau des départs à gauche et la photo dans un cadre de quai à droite (`clamp(260px, 26vw, 340px)`).
+À l'intérieur d'une étiquette, le découpage est un quadrillage réglé : les grilles de cellules (`.sheet__cells`, `.sheet-grid`) utilisent un espacement égal à l'épaisseur du filet (`rule`) sur fond noir, ce qui dessine des traits de 3 px entre cellules blanches. Les lignes de bordereau (destinations, expériences, formation) sont des rangées pleine largeur séparées par un filet de 3 px, avec le rembourrage `row-pad`.
 
-La navigation fixe fait 64 px ; les pages intérieures décalent leur en-tête d'autant et le ferment par un filet d'encre de 3 px.
+L'accueil est une scène à deux colonnes : l'étiquette (fluide) et la pochette photo (200–260 px). Sous 860 px, la pochette passe sous l'étiquette ; sous 640 px, les zones de l'étiquette se réordonnent (expéditeur, destination, code et actions, contenu, champs chiffrés).
 
-Responsive : la navigation passe en tiroir sous 1024 px, l'horloge disparaît sous 1100 px. Les grilles à deux colonnes passent en une colonne entre 880 et 680 px selon le composant ; le cadre photo passe sous le tableau à 900 px. Sous 640 px, le tableau des départs perd son en-tête et chaque ligne devient une grille date / contenu ; la colonne de date du parcours remonte au-dessus de l'intitulé. Toutes les cibles tactiles font au moins 44 px (48 px pour les boutons).
+Points de rupture observés : 1024 px (navigation en tiroir), 980 / 880 / 860 / 820 / 760 / 720 / 680 / 640 / 560 / 480 px (grilles qui passent à une colonne). Les grilles 2, 3 et 4 colonnes se replient toutes sur une colonne au mobile.
 
 ## Elevation & Depth
 
-Le système est plat. `--shadow` vaut `none` et aucune surface ne flotte. La profondeur vient de deux choses propres au monde : le changement de matière (affiche contre panneau, panneau profond bordé de 2 px noir) et le relief des palettes, rendu par des ombres **internes** qui imitent le bord et la fente d'une tuile, jamais par une ombre portée.
+Le système est plat à l'intérieur des étiquettes : la profondeur vient du matériau, pas des ombres. Seuls les objets physiquement posés sur le carton portent une ombre douce et verticale, comme un papier qui touche une surface. Les étiquettes de section, elles, sont à plat et sans ombre.
 
 ### Shadow Vocabulary
-- **Bord de palette** (`box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.55)`) : tuiles de date, chiffres clés, palettes du nom (avec `0 0.04em 0 rgb(0 0 0 / 0.6)` sous la tuile).
-- **Cadre de quai** (`box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.6)`) : cadre de la photo, bandeau de gare sur le panneau (0.5).
-- **Biseau d'horloge** (`box-shadow: inset 0 -1px 0 #000, inset 0 1px 0 rgb(255 255 255 / 0.04)`) : l'horloge de la navigation.
+- **Étiquette posée** (`box-shadow: 0 12px 18px -10px rgb(0 0 0 / 0.35)`) : la grande étiquette de l'accueil.
+- **Tirage photo** (`box-shadow: 0 10px 16px -10px rgb(0 0 0 / 0.35)`) : photos du contenu, encadrées d'un bord blanc de 8 px.
+- **Pochette** (`filter: drop-shadow(0 8px 10px rgb(0 0 0 / 0.28))`) : la pochette plastique, ombre qui suit sa silhouette.
 
 ### Named Rules
-**The Flat Poster Rule.** Rien ne flotte au-dessus de l'affiche. Le relief n'existe que dans l'épaisseur d'une palette, en ombre interne.
+**La règle du papier à plat.** Une étiquette de section n'a jamais d'ombre. L'ombre est réservée à l'objet posé (étiquette d'accueil, pochette, tirage photo) et elle est toujours douce, verticale, sans décalage latéral.
+
+**La règle de l'inclinaison rare.** Trois objets seulement sont de travers : l'étiquette d'accueil (−0.6°), la pochette (1.2°) et le ruban du pied de page (−0.4°). Tout le reste est d'équerre.
 
 ## Shapes
 
-Des angles de panneau émaillé : 2 px partout (boutons, bandeaux, pastilles, tuiles de date, cadre photo, image-slot, champs), 3 px pour les chiffres clés et les grandes images, 0.06em pour les palettes du nom. Aucun arrondi doux, aucune pilule.
-
-Les formes récurrentes sont la **palette** (rectangle partagé en deux tons par une fente horizontale de 0.035em) et le **filet** : 3 px d'encre en tête de liste, de carte et de domaine de compétences, 2 px sous un en-tête de tableau et en séparation de zones panneau, 1 px entre les lignes. Les cartes n'ont pas de fond : une carte est un filet de 3 px et ce qui suit.
-
-Les icônes sont dessinées en SVG, trait de 2 à 2.2 px ; les flèches d'action sont tracées en angles vifs (`stroke-linecap: square`, `stroke-linejoin: miter`) et remplacent au chargement les glyphes → et ↗ écrits dans le HTML.
+Angles vifs partout (`rounded.none`). Les bords sont la forme : 3 px noirs pour toute étiquette, ligne et séparateur structurel ; 2 px pour les petits objets (pastilles, badges de contrat, bouton de copie, cases de niveau) ; 1 px atténué (`line-soft`) seulement pour les subdivisions internes légères (lignes de compétences, liens du tiroir mobile, bas du pied de page). Les puces de liste sont de petits carrés noirs pleins. Le code-barres est un vrai Code 128 de l'adresse email, dessiné en SVG.
 
 ## Components
 
 ### Buttons
-Des commandes de quai, nettes et franches.
-- **Shape :** angles de panneau (2 px), bordure de 2 px, hauteur minimale de 48 px, libellé en capitales condensées.
-- **Primary :** rouge signal, texte blanc cassé, `0.7em 1.35em`. Le seul bouton qui porte l'action : contacter, embarquer, voir une attestation.
-- **Hover / Focus :** le primaire fonce en rouge profond ; la flèche glisse de 3 px vers la droite. Focus clavier : contour de 3 px décalé de 3 px, rouge signal sur l'affiche, ambre sur le panneau et la navigation.
-- **Ghost :** bordure et texte à l'encre, transparent ; au survol il se remplit d'encre et le texte prend la couleur du fond. Sur le panneau de l'accueil, la bordure passe aux lettres blanc cassé.
+Des boutons d'étiquette : rectangulaires, en capitales, gras.
+- **Shape :** angles vifs, bord de 3 px, hauteur minimale 48 px.
+- **Primary :** fond `red`, texte blanc, typographie `button`.
+- **Hover / Focus :** fond `red-hover` ; la flèche SVG glisse de 3 px vers la droite. Focus : contour de 3 px décalé de 3 px, rouge sur fond clair, noir sur fond rouge, `night-ink` en thème sombre.
+- **Ghost :** bord de 3 px à la couleur de l'encre courante, fond transparent ; au survol il se remplit d'encre.
+- **Sur le panneau rouge (Contact) :** le primaire s'inverse (fond blanc, texte rouge, survol noir) et le ghost passe en contour blanc.
+- **Flèches :** les glyphes → et ↗ du HTML sont remplacés au chargement par des icônes SVG dessinées (trait 2.2, extrémités carrées).
 
 ### Chips
-- **Style :** pastille rectangulaire, bordure de 1.5 px à l'encre, libellé condensé en capitales (`--step--1`). Elles listent des outils et des compétences, sans état.
-- **Accent :** fond d'encre sur l'affiche ; ambre sur encre sur le panneau. Réservée à un statut acquis (« Diplôme obtenu »).
+- **Style :** capitales 0.8rem en 700, bord de 2 px à l'encre, fond transparent.
+- **Accent :** fond noir, texte blanc à l'intérieur des étiquettes.
 
-### Cards / Containers
-- **Corner Style :** aucun, la carte n'a pas de contour.
-- **Background :** transparent, toujours.
-- **Shadow Strategy :** aucune (voir Elevation & Depth).
-- **Border :** un filet d'encre de 3 px en tête, rien d'autre.
-- **Internal Padding :** 1.2 rem au-dessus du contenu, 0 sur les côtés. Au survol d'une carte cliquable, le titre se souligne (2 px).
+### Cards / Containers : l'étiquette de section (`.sheet`)
+- **Corner Style :** angles vifs.
+- **Background :** `label`, encre forcée en noir quel que soit le thème.
+- **Shadow Strategy :** aucune (voir la règle du papier à plat).
+- **Border :** 3 px `ink`.
+- **Header :** une barre noire pleine largeur collée au bord supérieur, texte blanc en `label-bar` ; elle peut porter un intitulé fort à gauche et une mention secondaire à droite.
+- **Internal Padding :** `sheet-pad` pour le corps ; cellules en grille réglée (`.sheet__cells`), pied séparé par un filet (`.sheet__foot`), listes de bordereau qui s'enchaînent sous le corps.
 
-### Inputs / Fields
-Le style existe mais aucun formulaire n'est publié : champ sur feuille blanche, bordure d'encre de 2 px, angles de 2 px, libellé condensé en capitales atténuées. Le contact passe par des lignes de coordonnées (libellé, valeur en condensée `--step-2`, bouton de copie de 44 px bordé d'encre qui affiche « Copié »).
+### Bordereau (lignes de destination, d'expérience, de formation)
+- Rangées pleine largeur séparées par des filets de 3 px, titre en capitales `title`, description grise, flèche à droite.
+- Survol (destinations) : fond `row-hover`, titre en rouge.
+- Expériences : étiquette de date noire à gauche, poste et organisation au centre, badge de contrat à droite ; détail des missions sous un filet.
+
+### Badges de type de contrat
+Capitales 0.85rem 800, bord 2 px noir. **CDD** noir plein ; **Alternance** contour noir sur blanc ; **Stage** fond kraft ; **Intérimaire** contour pointillé sur blanc.
 
 ### Navigation
-Le bandeau du panneau, identique dans les deux thèmes : fond panneau profond, filet noir de 2 px en bas, 64 px de haut. Marque « JD » sur une palette jaune (ambre en thème sombre). Liens en condensée capitale 500, gris de panneau, lettres au survol ; la page active prend les lettres et un trait ambre de 3 px. À droite : bouton primaire « Me contacter », horloge en ambre sur tuile (heure locale du visiteur, rafraîchie toutes les 15 s), bascule clair / sombre en SVG soleil / lune. Sous 1024 px, tiroir déroulant pleine largeur, liens en 1.5 rem séparés par des filets de panneau, lien actif en ambre.
+- Barre fixe sur le carton fibreux, filet bas de 3 px. Monogramme « JD » en carré d'encre, nom en 800.
+- Liens en capitales 0.92rem 700, `ink-soft` au repos ; survol avec soulignement atténué de 3 px ; page active soulignée d'un filet plein de 3 px.
+- Bouton « Me contacter » primaire dans la barre, bascule de thème soleil / lune.
+- Sous 1024 px : burger trois barres de 3 px qui se croise en X, tiroir plein écran sur carton avec liens en 1.35rem séparés par des filets de 1 px.
 
-### Bandeau de gare et libellés de champ
-Le panneau qui nomme une zone. Bande pleine largeur, angles de 2 px, condensée 700 en capitales interlettrée à 0.16em : encre et jaune sur l'affiche, tuile et ambre sur le panneau. Elle peut porter un nom et une précision alignée à droite (« Arrivées » · rubrique, nom du projet · entreprise). Le bandeau est l'en-tête de sa zone : il remplace un titre de section, il ne se pose pas au-dessus d'un titre qui dit autre chose.
+### Étiquette d'expédition (signature, accueil)
+Étiquette blanche inclinée (−0.6°), bande noire supérieure, zones réglées : Expéditeur (nom en h1, ville, téléphone) avec le département en très grand à droite ; Destination en capitales géantes avec le poste actuel sur une seule ligne ; Contenu avec puces carrées ; trois champs chiffrés ; zone code avec code-barres réel et les deux boutons. À l'arrivée, l'étiquette se pose (`label-apply`, 0.55 s, `cubic-bezier(.16, 1, .3, 1)`) : elle descend de 10 px en se redressant de −2.4° à −0.6°. C'est la seule animation d'entrée du site ; elle est supprimée en mouvement réduit.
 
-La variante `.kicker--plain` est un **libellé de champ** : sans fond, condensée 600 en capitales, gris atténué, `--step--1`. Elle nomme un bloc de contenu (« Missions & actions », « Contexte », « Résultat ») ou légende une image, comme un en-tête de colonne d'horaire.
+### Pochette « Documents ci-joints »
+Photo au format 3:4 glissée sous un film plastique (`pochette.png`, pleine surface, au-dessus de la photo), inclinée de 1.2°, tenue par un morceau d'adhésif déchiré (`adhesif.png`) au centre du bord haut. Un bandeau rouge « Documents ci-joints » en capitales 0.66rem 800 coiffe la photo ; une petite étiquette blanche en légende dessous.
 
-### Tableau des départs (composant signature)
-Un vrai `<table>` légendé pour les lecteurs d'écran. En-têtes condensés en capitales atténuées sur filet de 2 px, lignes en condensée `--step-1` séparées par des filets légers. Première colonne (départ) en mise en évidence (`--accent`), colonne « Via » atténuée, colonne « État » en capitales : atténuée pour « Terminé », verte pour un acquis, et la ligne courante en **embarquement** : fond tuile, état en bouton rouge signal de 44 px avec flèche. Variante affiche (`.departures--poster`) sur fond jaune, vert de ligne pour les acquis. Sous 640 px, chaque ligne devient une fiche date / contenu.
+### Pied de page
+Carton foncé, ouvert par une bande d'adhésif imprimé (`adhesif-bande.png`, répétée horizontalement, légèrement inclinée, texte `tape-ink` en capitales espacées +0.18em). Appel « Restons en contact. » en `headline` capitales, puis trois colonnes (identité, contact, navigation) sous un filet.
 
-### Palettes (composant signature)
-- **Nom en palettes :** chaque lettre est une tuile (0.78em × 1.12em) à deux tons et fente centrale. À l'arrivée, chaque palette défile depuis une lettre antérieure, au plus une quinzaine de rotations, 62 ms par rotation, départs décalés de 55 ms, compression verticale de 70 ms par changement. Le texte réel reste en `sr-only`. En `prefers-reduced-motion: reduce`, les tuiles s'affichent directement à leur lettre finale.
-- **Tuile de date :** la date d'une ligne du parcours posée sur une palette, lettres blanc cassé, 700 en capitales.
-- **Chiffre clé :** nombre en palette 700 `--step-3`, suffixe en ambre, libellé condensé en capitales à côté, une information par ligne.
-
-### Pastilles de ligne
-Indicateur de type de contrat sur chaque expérience du parcours : Alternance (encre / jaune ; ambre / encre en thème sombre), Stage (bleu de ligne / blanc), Intérimaire (vert de ligne / blanc). Condensée 700 1 rem, interlettrage 0.08em, angles de 2 px, alignée à droite de la ligne.
-
-### Liste des destinations
-Navigation de l'accueil en lignes d'horaire : titre condensé 700 en capitales, description atténuée, flèche dessinée de 1.8 rem. Filet de 3 px en tête, 1 px entre les lignes. Au survol, la ligne prend un fond d'accent léger, se décale de 0.8 rem et son titre passe à la couleur d'accent.
-
-### Cadre de quai
-La photo dans un cadre de tuile (10 px de marge, filet interne), légende condensée en capitales sous l'image avec une étiquette ambre à droite.
+### Tirages photo
+Toute photo du contenu porte un bord blanc de 8 px et l'ombre « tirage photo », angles vifs. La visionneuse plein écran les affiche sur un voile d'encre à 94 % avec un bouton de fermeture rouge.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** réserver le rouge signal (#C42A1C) aux actions : bouton principal, état Embarquement, focus sur l'affiche.
-- **Do** poser l'ambre uniquement sur une matière panneau ; sur le jaune, mettre en évidence à l'encre.
-- **Do** introduire du panneau dans l'affiche par re-scope des jetons (`.section--dark`, `.board-scope`), pas par des couleurs codées en dur.
-- **Do** structurer par filets : 3 px d'encre en tête de liste, 2 px sous un en-tête, 1 px entre les lignes.
-- **Do** écrire tout ce qui s'affiche en Barlow Condensed capitale interlettrée, et lire en Barlow avec chiffres tabulaires.
-- **Do** garder les angles à 2 px (3 px pour les grandes images et chiffres clés).
-- **Do** utiliser le bandeau de gare comme en-tête d'une zone, et le libellé de champ pour nommer un bloc de contenu.
-- **Do** conserver une couleur fixe par type de contrat sur les pastilles de ligne.
-- **Do** tenir les cibles tactiles à 44 px minimum et respecter `prefers-reduced-motion` pour tout mouvement.
-- **Do** incrémenter le paramètre `?v=` de `styles.css`, `site.js` et `image-slot.js` dans toutes les pages à chaque modification de ces fichiers.
+- **Do** poser chaque section sur une seule étiquette `.sheet` : papier blanc, bord 3 px noir, barre noire d'en-tête collée au bord supérieur.
+- **Do** séparer les cellules d'une étiquette par des filets de 3 px (espacement égal à `rule` sur fond noir), jamais par des espaces de carton.
+- **Do** écrire chaque donnée en paire clé grise espacée / valeur très grasse.
+- **Do** garder le rouge `red` pour l'action ; un seul bouton primaire par zone.
+- **Do** laisser les étiquettes blanches et noires dans le thème sombre ; ne foncer que le carton.
+- **Do** distinguer les types de contrat par noir plein, contour, kraft et pointillé.
+- **Do** composer le sol par `kraft-fibres.png` (tuile 512 px) en `soft-light` sur la couleur de carton du thème.
+- **Do** garder les cibles tactiles à 44 px minimum et neutraliser l'animation de pose en mouvement réduit.
 
 ### Don't:
-- **Don't** utiliser le rouge signal pour souligner, décorer ou signaler un titre.
-- **Don't** mettre de l'ambre ou du texte clair sur le jaune d'affiche.
-- **Don't** donner un fond, un contour complet ou une ombre portée à une carte : une carte est un filet de 3 px.
-- **Don't** ajouter d'ombre portée ; le seul relief est l'ombre interne des palettes.
-- **Don't** empiler un bandeau de gare au-dessus d'un titre de section qui le reformule : le bandeau est l'en-tête, pas un sur-titre.
-- **Don't** ajouter un second mouvement signé : les palettes du nom sont le seul mouvement d'auteur ; le reste se limite à des transitions d'état de 0.2 à 0.25 s.
-- **Don't** utiliser des glyphes typographiques comme icônes ; les flèches et pictos sont des SVG dessinés.
-- **Don't** introduire une police à empattements, une police système d'affichage ou des arrondis doux : ce n'est plus le monde du quai.
+- **Don't** arrondir un angle : rayon 0 partout.
+- **Don't** mettre une ombre sous une étiquette de section ni utiliser d'ombre décalée dure ; l'ombre douce est réservée aux objets posés.
+- **Don't** incliner autre chose que l'étiquette d'accueil, la pochette et le ruban du pied de page.
+- **Don't** faire flotter une barre noire d'en-tête seule sur le carton au-dessus d'un titre : elle n'existe que comme bord supérieur d'une étiquette.
+- **Don't** introduire une deuxième famille typographique (serif, monospace ou police système en titre).
+- **Don't** colorer une catégorie ou un état avec une teinte hors palette d'étiquette.
+- **Don't** utiliser de glyphe Unicode comme icône ; les flèches et pictogrammes sont des SVG dessinés.
+- **Don't** ajouter de dégradé ni de second accent coloré.

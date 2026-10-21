@@ -49,6 +49,9 @@
   --step-5:  clamp(2.8rem, 1.8rem + 5vw, 5.8rem);
 
   --rule: 3px;
+  --shadow: 0 10px 16px -10px rgb(0 0 0 / 0.35);
+  --radius-lg: 0;
+  --tile: var(--kraft-deep);
   --radius: 2px;
   --maxw: 1200px;
   --gutter: clamp(1.1rem, 5vw, 4rem);
@@ -182,6 +185,7 @@ p { max-width: 70ch; }
 .section-head { display: flex; flex-direction: column; gap: 0.9rem; margin-bottom: clamp(2rem, 4.5vw, 3.2rem); }
 .section-head .h2 { max-width: 20ch; }
 .section-head > .kicker:only-child { margin-bottom: 0; }
+.section-title { font-size: var(--step-3); text-transform: uppercase; letter-spacing: -0.025em; }
 
 /* Étiquette de section : papier blanc, bord noir, barre d'en-tête, zones réglées */
 .sheet {
@@ -189,7 +193,7 @@ p { max-width: 70ch; }
   --ink: #141210; --ink-soft: #2B2620; --muted: #555049; --line: #141210; --line-soft: rgb(20 18 16 / 0.22); --accent: var(--red);
   background: var(--label); color: var(--ink); border: var(--rule) solid #141210;
 }
-.sheet > .kicker { margin: 0; background: #141210 !important; color: #FFFFFF !important; }
+.sheet > .kicker { margin: 6px 6px 0; width: auto; background: #141210 !important; color: #FFFFFF !important; }
 .sheet__body { padding: var(--pad); }
 .sheet > .dest-list, .sheet > .timeline { border: 0; border-top: var(--rule) solid #141210; }
 .sheet__cells { gap: var(--rule) !important; background: #141210; border-top: var(--rule) solid #141210; }
@@ -227,7 +231,7 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
 .btn--primary:hover { background: var(--red-hover); border-color: var(--red-hover); }
 .btn--ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
 .btn--ghost:hover { background: var(--ink); color: var(--ground); }
-.card .btn--ghost:hover, .ship-label .btn--ghost:hover { color: #FFFFFF; }
+.card .btn--ghost:hover, .ship-label .btn--ghost:hover, .sheet .btn--ghost:hover { color: #FFFFFF; background: #141210; }
 .arrow { display: inline-flex; }
 .arrow svg { width: 1em; height: 1em; transition: transform .18s; }
 .btn:hover .arrow svg, a:hover > .arrow svg { transform: translateX(3px); }
