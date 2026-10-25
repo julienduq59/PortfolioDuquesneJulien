@@ -31,7 +31,7 @@
   /* ---------- Mesure d'audience (GoatCounter : anonyme, sans cookie) ----------
      Renseigner le code du compte GoatCounter de Julien pour l'activer.
      Les visites arrivant avec ?ref=nom-entreprise apparaissent comme provenance. */
-  var GOATCOUNTER_CODE = "";
+  var GOATCOUNTER_CODE = "duquesnejulien";
   function initStats() {
     if (!GOATCOUNTER_CODE) return;
     var s = document.createElement("script");

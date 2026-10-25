@@ -96,9 +96,11 @@ Les anciens designs (avant le poste chez Texdecor) sont périmés.
   JSON-LD, et remplace les flèches → ↗ par des icônes SVG.
 - Vocabulaire : en logistique on écrit **implantation**, jamais « implémentation ».
 - Compteur d'accueil : « 5 » années en environnement entrepôt & supply chain (2021 → 2026).
-- Statistiques : GoatCounter (anonyme, sans cookie). En attente du code du compte de Julien :
-  le renseigner dans `GOATCOUNTER_CODE` (`assets/site.js`), ce qui active aussi la mention
-  « Mesure d'audience anonyme, sans cookie » du pied de page. Liens de candidature :
+- Statistiques : GoatCounter (anonyme, sans cookie), compte `duquesnejulien`, tableau de bord
+  https://duquesnejulien.goatcounter.com — code renseigné dans `GOATCOUNTER_CODE`
+  (`assets/site.js`), ce qui affiche aussi « Mesure d'audience anonyme, sans cookie » en pied
+  de page. Pour ne pas compter ses propres visites : ouvrir le site une fois avec
+  `#toggle-goatcounter` à la fin de l'adresse, sur chacun de ses appareils. Liens de candidature :
   ajouter `?ref=nom-entreprise` à l'adresse du portfolio pour voir quelle entreprise l'a ouvert.
 - Images : WebP, avec leur origine dans des fichiers `.json` voisins.
 - Cache : les pages chargent `assets/styles.css` et `site.js` avec un
