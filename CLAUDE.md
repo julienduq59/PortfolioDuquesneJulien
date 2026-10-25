@@ -65,9 +65,13 @@ Contraintes de CV posées par Julien :
 - Rester sur une seule page A4, bien remplie.
 - Power BI retiré du CV et du portfolio (Julien ne le maîtrise pas assez).
 
-Designs Canva correspondants :
-- Avec portfolio : https://www.canva.com/d/DAHUPabg3sc
-- Sans portfolio : https://www.canva.com/d/eM26ad_kJWIFymA
+Générateur : une seule source HTML produit les deux versions et ajuste l'espacement pour
+remplir une page A4 (reconstruit le 25/10/2026 à partir du PDF ; non versionné).
+
+Designs Canva correspondants (importés le 25/10/2026, version chef de projet logistique) :
+- Avec portfolio : https://www.canva.com/d/qhF2rvZrnongQvI
+- Sans portfolio : https://www.canva.com/d/3r3Rgdju3IXuMWX
+Les anciens designs (avant le poste chez Texdecor) sont périmés.
 
 ## Conventions du dépôt
 
