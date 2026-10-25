@@ -179,7 +179,7 @@ Une palette d'emballage : carton kraft, papier blanc, encre noire chaude, et un 
 - **Rouge d'expédition** (`red`) : boutons d'action principaux, contour de focus, survol des titres de lignes cliquables, survol du bouton « retour en haut », fond du panneau d'action de la page Contact, et bandeau « Documents ci-joints » de la pochette. Survol : **Rouge d'expédition foncé** (`red-hover`). Texte posé dessus : blanc (`on-red`).
 
 ### Neutral
-- **Carton kraft** (`kraft`) : le sol de toutes les pages en thème clair, sous la texture `kraft-fibres.png`. Sert aussi de fond au badge « Stage ».
+- **Carton kraft** (`kraft`) : le sol de toutes les pages en thème clair, sous la texture `kraft-fibres.webp`. Sert aussi de fond au badge « Stage ».
 - **Kraft ombré** (`kraft-2`) : piste de la barre de défilement.
 - **Carton foncé** (`kraft-deep`) : bandes sombres (`.section--dark`) et pied de page en thème clair.
 - **Carton de nuit** (`kraft-night`, `kraft-night-2`, `kraft-night-deep`) : les trois mêmes rôles en thème sombre.
@@ -291,10 +291,10 @@ Capitales 0.85rem 800, bord 2 px noir. **CDD** noir plein ; **Alternance** conto
 Étiquette blanche inclinée (−0.6°), bande noire supérieure, zones réglées : Expéditeur (nom en h1, ville, téléphone) avec le département en très grand à droite ; Destination en capitales géantes avec le poste actuel sur une seule ligne ; Contenu avec puces carrées ; trois champs chiffrés ; zone code avec code-barres réel et les deux boutons. À l'arrivée, l'étiquette se pose (`label-apply`, 0.55 s, `cubic-bezier(.16, 1, .3, 1)`) : elle descend de 10 px en se redressant de −2.4° à −0.6°. C'est la seule animation d'entrée du site ; elle est supprimée en mouvement réduit.
 
 ### Pochette « Documents ci-joints »
-Photo au format 3:4 glissée sous un film plastique (`pochette.png`, pleine surface, au-dessus de la photo), inclinée de 1.2°, tenue par un morceau d'adhésif déchiré (`adhesif.png`) au centre du bord haut. Un bandeau rouge « Documents ci-joints » en capitales 0.66rem 800 coiffe la photo ; une petite étiquette blanche en légende dessous.
+Photo au format 3:4 glissée sous un film plastique (`pochette.webp`, pleine surface, au-dessus de la photo), inclinée de 1.2°, tenue par un morceau d'adhésif déchiré (`adhesif.webp`) au centre du bord haut. Un bandeau rouge « Documents ci-joints » en capitales 0.66rem 800 coiffe la photo ; une petite étiquette blanche en légende dessous.
 
 ### Pied de page
-Carton foncé, ouvert par une bande d'adhésif imprimé (`adhesif-bande.png`, répétée horizontalement, légèrement inclinée, texte `tape-ink` en capitales espacées +0.18em). Appel « Restons en contact. » en `headline` capitales, puis trois colonnes (identité, contact, navigation) sous un filet.
+Carton foncé, ouvert par une bande d'adhésif imprimé (`adhesif-bande.webp`, répétée horizontalement, légèrement inclinée, texte `tape-ink` en capitales espacées +0.18em). Appel « Restons en contact. » en `headline` capitales, puis trois colonnes (identité, contact, navigation) sous un filet.
 
 ### Tirages photo
 Toute photo du contenu porte un bord blanc de 8 px et l'ombre « tirage photo », angles vifs. La visionneuse plein écran les affiche sur un voile d'encre à 94 % avec un bouton de fermeture rouge.
@@ -308,7 +308,7 @@ Toute photo du contenu porte un bord blanc de 8 px et l'ombre « tirage photo »
 - **Do** garder le rouge `red` pour l'action ; un seul bouton primaire par zone.
 - **Do** laisser les étiquettes blanches et noires dans le thème sombre ; ne foncer que le carton.
 - **Do** distinguer les types de contrat par noir plein, contour, kraft et pointillé.
-- **Do** composer le sol par `kraft-fibres.png` (tuile 512 px) en `soft-light` sur la couleur de carton du thème.
+- **Do** composer le sol par `kraft-fibres.webp` (tuile 512 px) en `soft-light` sur la couleur de carton du thème.
 - **Do** garder les cibles tactiles à 44 px minimum et neutraliser l'animation de pose en mouvement réduit.
 
 ### Don't:

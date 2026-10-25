@@ -55,13 +55,14 @@ sans framework ni étape de build.
 
 ## Evidence on Hand
 
-- Photo portrait : `assets/photo-julien.jpg`.
-- Capture de l'application Excel de réapprovisionnement : `assets/projet-excel-reappro.png`.
-- Photos du parc de racks : `assets/racks-vue.jpg`, `assets/racks-charge.jpg`,
-  `assets/racks-harnais.jpg`.
-- Photos de badminton (Hem Badminton) : `assets/badminton-action.jpg`,
-  `assets/badminton-team.jpg`.
+- Photo portrait : `assets/photo-julien.webp`.
+- Capture de l'application Excel de réapprovisionnement : `assets/projet-excel-reappro.webp`.
+- Photos du parc de racks : `assets/racks-vue.webp`, `assets/racks-charge.webp`,
+  `assets/racks-harnais.webp`.
+- Photos de badminton (Hem Badminton) : `assets/badminton-action.webp`,
+  `assets/badminton-team.webp`.
 - CV : `assets/cv-julien-duquesne.pdf` ; attestation : `assets/certification-green-belt-lean.pdf`.
+- Fiche de poste résumée (publique) : `assets/fiche-de-poste-chef-de-projet-logistique.pdf`.
 - Chiffres réels déjà publiés : descentes LR15 de 50 à 25 par jour ; productivité de 50 à
   26 bobines/heure entre 2013 et 2023 (mémoire BUT) ; implantation sur 6 jours.
 - **Absents, à ne pas fabriquer** : témoignages, recommandations, logos clients, autres
