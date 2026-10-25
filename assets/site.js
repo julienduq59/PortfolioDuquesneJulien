@@ -41,6 +41,37 @@
     document.body.appendChild(s);
   }
 
+  /* ---------- Alerte sur le téléphone de Julien (application ntfy) ----------
+     Quand une page est ouverte depuis un lien de candidature (?ref=entreprise),
+     une notification part vers le canal ntfy de Julien. Une seule alerte par
+     visite et par entreprise ; aucune alerte depuis les appareils de Julien
+     marqués avec #toggle-goatcounter (même réglage que les statistiques). */
+  var NTFY_CANAL = "jd-portfolio-38341cdb34";
+  function initAlertes() {
+    if (!NTFY_CANAL || !window.fetch || !window.URLSearchParams) return;
+    var params = new URLSearchParams(location.search);
+    var ref = params.get("ref") || params.get("utm_source") || params.get("source") || "";
+    ref = ref.replace(/[^0-9A-Za-zÀ-ÿ .'_-]/g, "").trim().slice(0, 60);
+    if (!ref) return;
+    try {
+      if (localStorage.getItem("skipgc") === "t") return;
+      var cle = "jd_alerte_" + ref.toLowerCase();
+      if (sessionStorage.getItem(cle)) return;
+      sessionStorage.setItem(cle, "1");
+    } catch (e) { /* stockage indisponible : on alerte quand même */ }
+    var accueil = /\/$|\/index\.html$/.test(location.pathname);
+    var page = accueil ? "Accueil" : ((document.title.split("·")[0] || "").trim() || location.pathname);
+    var adresse = "https://ntfy.sh/" + NTFY_CANAL +
+      "?title=" + encodeURIComponent("Portfolio ouvert : " + ref) +
+      "&tags=package" +
+      (GOATCOUNTER_CODE ? "&click=" + encodeURIComponent("https://" + GOATCOUNTER_CODE + ".goatcounter.com") : "");
+    fetch(adresse, {
+      method: "POST",
+      body: ref + " vient d'ouvrir ton portfolio (page : " + page + ").",
+      keepalive: true
+    }).catch(function () { /* l'alerte est un bonus : jamais d'erreur visible */ });
+  }
+
   /* ---------- Thème persisté ---------- */
   function applyTheme(name) {
     if (name === "dark") document.documentElement.setAttribute("data-theme", "dark");
@@ -350,6 +381,7 @@
     initLightbox();
     initCopyContact();
     initStats();
+    initAlertes();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initAll);

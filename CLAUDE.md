@@ -102,6 +102,10 @@ Les anciens designs (avant le poste chez Texdecor) sont périmés.
   de page. Pour ne pas compter ses propres visites : ouvrir le site une fois avec
   `#toggle-goatcounter` à la fin de l'adresse, sur chacun de ses appareils. Liens de candidature :
   ajouter `?ref=nom-entreprise` à l'adresse du portfolio pour voir quelle entreprise l'a ouvert.
+- Alertes : quand une page est ouverte avec `?ref=entreprise`, une notification part vers
+  l'application ntfy de Julien (canal `jd-portfolio-38341cdb34` sur ntfy.sh, constante
+  `NTFY_CANAL` dans `assets/site.js`). Une alerte par visite et par entreprise ; pas d'alerte
+  depuis ses appareils marqués `#toggle-goatcounter`. Vider `NTFY_CANAL` pour désactiver.
 - Images : WebP, avec leur origine dans des fichiers `.json` voisins.
 - Cache : les pages chargent `assets/styles.css` et `site.js` avec un
   paramètre `?v=AAAAMMJJ` (suffixe `-2`, `-3`… s'il y a plusieurs versions le même jour). **À chaque modification de ces fichiers, mettre à jour la date
