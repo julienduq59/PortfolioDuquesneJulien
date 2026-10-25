@@ -162,7 +162,6 @@ h1, h2, h3, h4 { font-family: var(--font); font-weight: 800; line-height: 0.98; 
 .muted { color: var(--muted); }
 p { max-width: 70ch; }
 .serif-num { font-family: var(--font); }
-.ghost-word { display: none !important; }
 
 /* Bandeau d'étiquette : barre noire pleine largeur (« PRIORITAIRE »), libellé en capitales blanches */
 .kicker {
@@ -438,7 +437,6 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
 .skill-cat { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 2.4vw, 1.6rem); }
 @media (max-width: 900px) { .skill-cat { grid-template-columns: 1fr; } }
 .domain-head { display: block; margin: calc(-1 * clamp(1.1rem, 2.6vw, 1.7rem)) calc(-1 * clamp(1.1rem, 2.6vw, 1.7rem)) 0.9rem; padding: 0.7rem clamp(1.1rem, 2.6vw, 1.7rem); border-bottom: var(--rule) solid var(--line); }
-.domain-head .num { display: none; }
 .domain-head h2 { font-size: var(--step-2); text-transform: uppercase; letter-spacing: -0.02em; }
 .skill-line { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px solid var(--line-soft); }
 .skill-line:last-child { border-bottom: 0; padding-bottom: 0; }
@@ -534,25 +532,6 @@ main img:not(.lightbox__img):not(.barcode), main image-slot:not(.pouch image-slo
 :root[data-theme="dark"] :focus-visible { outline-color: #F2E8DA; }
 :focus:not(:focus-visible) { outline: none; }
 html { caret-color: #141210; accent-color: var(--red); scrollbar-color: #141210 var(--kraft-2); }
-
-/* ---------- Panneau Tweaks (outil d'édition) ---------- */
-.tw-panel { position: fixed; top: 16px; right: 16px; z-index: 1000; width: 290px; max-width: calc(100vw - 32px); background: #FFFFFF; color: #141210; border: var(--rule) solid #141210; }
-.tw-panel[hidden] { display: none; }
-.tw-head { display: flex; align-items: center; justify-content: space-between; padding: 0.7rem 1rem; border-bottom: var(--rule) solid #141210; }
-.tw-head h4 { font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; }
-.tw-close { width: 32px; height: 32px; display: grid; place-items: center; }
-.tw-body { padding: 1rem; display: flex; flex-direction: column; gap: 1rem; }
-.tw-group > .tw-label { display: block; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.5rem; }
-.tw-swatches { display: flex; gap: 0.5rem; }
-.tw-swatch { width: 30px; height: 30px; border: 2px solid transparent; }
-.tw-swatch.is-on { border-color: #141210; }
-.tw-seg { display: flex; gap: 4px; }
-.tw-seg button { flex: 1; padding: 0.45em; border: 2px solid #141210; font-size: 0.75rem; text-transform: uppercase; }
-.tw-seg button.is-on { background: #141210; color: #FFFFFF; }
-.tw-toggle { display: flex; align-items: center; justify-content: space-between; }
-.tw-switch { width: 42px; height: 24px; background: rgb(20 18 16 / 0.2); position: relative; }
-.tw-switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; background: #141210; transition: transform .2s; }
-.tw-switch.is-on::after { transform: translateX(18px); }
 
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion: reduce) {

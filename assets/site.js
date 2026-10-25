@@ -28,37 +28,16 @@
     { id: "contact",      label: "Contact",      href: "contact.html" }
   ];
 
-  /* ---------- Thème & accent persistés ---------- */
-  var ACCENTS = {
-    // -l : fonds clairs, -d : fonds sombres (contraste AA vérifié pour chaque ton)
-    argile:  { "--accent-l": "oklch(0.54 0.15 45)",  "--accent-d": "oklch(0.72 0.14 45)",  "--accent-ink-l": "oklch(0.30 0.10 47)", "--accent-ink-d": "oklch(0.86 0.07 45)",  "--accent-soft": "oklch(0.54 0.15 45 / 0.12)" },
-    bleu:    { "--accent-l": "oklch(0.52 0.16 255)", "--accent-d": "oklch(0.74 0.12 255)", "--accent-ink-l": "oklch(0.34 0.12 255)", "--accent-ink-d": "oklch(0.88 0.06 255)", "--accent-soft": "oklch(0.52 0.16 255 / 0.12)" },
-    foret:   { "--accent-l": "oklch(0.49 0.11 158)", "--accent-d": "oklch(0.74 0.12 158)", "--accent-ink-l": "oklch(0.33 0.09 158)", "--accent-ink-d": "oklch(0.88 0.06 158)", "--accent-soft": "oklch(0.49 0.11 158 / 0.12)" },
-    prune:   { "--accent-l": "oklch(0.50 0.16 348)", "--accent-d": "oklch(0.74 0.13 348)", "--accent-ink-l": "oklch(0.34 0.13 348)", "--accent-ink-d": "oklch(0.88 0.06 348)", "--accent-soft": "oklch(0.50 0.16 348 / 0.12)" }
-  };
-  function applyAccent(name) {
-    var a = ACCENTS[name] || ACCENTS.argile;
-    for (var k in a) document.documentElement.style.setProperty(k, a[k]);
-  }
+  /* ---------- Thème persisté ---------- */
   function applyTheme(name) {
     if (name === "dark") document.documentElement.setAttribute("data-theme", "dark");
     else document.documentElement.removeAttribute("data-theme");
-  }
-  function applyDisplayFont(name) {
-    var fonts = {
-      "Instrument Serif": '"Instrument Serif", Georgia, serif',
-      "Libre Caslon Display": '"Libre Caslon Display", Georgia, serif',
-      "Archivo": '"Archivo", system-ui, sans-serif'
-    };
-    document.documentElement.style.setProperty("--font-display", fonts[name] || fonts["Instrument Serif"]);
   }
   function initTheme() {
     applyTheme(localStorage.getItem("jd_theme") || "light");
   }
   initTheme();
   window.JD = window.JD || {};
-  window.JD.applyAccent = function (n) { applyAccent(n); localStorage.setItem("jd_accent", n); };
-  window.JD.applyDisplayFont = function (n) { applyDisplayFont(n); localStorage.setItem("jd_font", n); };
   window.JD.applyTheme = function (n) {
     applyTheme(n);
     localStorage.setItem("jd_theme", n);
@@ -95,7 +74,7 @@
       },
       "sameAs": ["https://www.linkedin.com/in/julien-duquesne-75b246226/"],
       "url": "https://julienduq59.github.io/PortfolioDuquesneJulien/",
-      "image": "https://julienduq59.github.io/PortfolioDuquesneJulien/assets/photo-julien.jpg",
+      "image": "https://julienduq59.github.io/PortfolioDuquesneJulien/assets/photo-julien.webp",
       "alumniOf": [
         { "@type": "EducationalOrganization", "name": "ISTELI Wasquehal" },
         { "@type": "EducationalOrganization", "name": "IUT de Tourcoing · Université de Lille" }
@@ -163,82 +142,6 @@
       });
     });
 
-  }
-
-  /* ---------- Panneau Tweaks (protocole hôte) ---------- */
-  function buildTweaks() {
-    var accents = [
-      { id: "argile", c: "oklch(0.54 0.15 45)" },
-      { id: "bleu",   c: "oklch(0.52 0.16 255)" },
-      { id: "foret",  c: "oklch(0.49 0.11 158)" },
-      { id: "prune",  c: "oklch(0.50 0.16 348)" }
-    ];
-    var fonts = ["Instrument Serif", "Libre Caslon Display", "Archivo"];
-    var fontShort = { "Instrument Serif": "Serif", "Libre Caslon Display": "Caslon", "Archivo": "Sans" };
-    var curAccent = localStorage.getItem("jd_accent") || "argile";
-    var curFont = localStorage.getItem("jd_font") || "Instrument Serif";
-    var curTheme = localStorage.getItem("jd_theme") || "light";
-
-    var panel = document.createElement("div");
-    panel.className = "tw-panel";
-    panel.hidden = true;
-    panel.innerHTML =
-      '<div class="tw-head"><h4>Tweaks</h4><button class="tw-close" aria-label="Fermer">✕</button></div>' +
-      '<div class="tw-body">' +
-        '<div class="tw-group"><span class="tw-label">Couleur d\'accent</span><div class="tw-swatches" data-tw="accent">' +
-          accents.map(function (a) { return '<button class="tw-swatch' + (a.id === curAccent ? " is-on" : "") + '" data-val="' + a.id + '" style="background:' + a.c + '" aria-label="' + a.id + '"></button>'; }).join("") +
-        '</div></div>' +
-        '<div class="tw-group"><span class="tw-label">Police des titres</span><div class="tw-seg" data-tw="font">' +
-          fonts.map(function (f) { return '<button class="' + (f === curFont ? "is-on" : "") + '" data-val="' + f + '">' + fontShort[f] + '</button>'; }).join("") +
-        '</div></div>' +
-        '<div class="tw-group tw-toggle"><span class="tw-label">Mode sombre</span><button class="tw-switch' + (curTheme === "dark" ? " is-on" : "") + '" data-tw="theme" role="switch" aria-label="Mode sombre"></button></div>' +
-      '</div>';
-    document.body.appendChild(panel);
-
-    panel.querySelectorAll('[data-tw="accent"] .tw-swatch').forEach(function (b) {
-      b.addEventListener("click", function () {
-        window.JD.applyAccent(b.getAttribute("data-val"));
-        panel.querySelectorAll('[data-tw="accent"] .tw-swatch').forEach(function (x) { x.classList.remove("is-on"); });
-        b.classList.add("is-on");
-      });
-    });
-    panel.querySelectorAll('[data-tw="font"] button').forEach(function (b) {
-      b.addEventListener("click", function () {
-        window.JD.applyDisplayFont(b.getAttribute("data-val"));
-        panel.querySelectorAll('[data-tw="font"] button').forEach(function (x) { x.classList.remove("is-on"); });
-        b.classList.add("is-on");
-      });
-    });
-    var sw = panel.querySelector('[data-tw="theme"]');
-    sw.addEventListener("click", function () {
-      var on = !sw.classList.contains("is-on");
-      sw.classList.toggle("is-on", on);
-      window.JD.applyTheme(on ? "dark" : "light");
-    });
-
-    function close() { panel.hidden = true; window.parent.postMessage({ type: "__edit_mode_dismissed" }, "*"); }
-    panel.querySelector(".tw-close").addEventListener("click", close);
-
-    // Drag panel
-    var head = panel.querySelector(".tw-head"), drag = null;
-    head.addEventListener("mousedown", function (e) {
-      drag = { x: e.clientX, y: e.clientY, r: panel.getBoundingClientRect() };
-      e.preventDefault();
-    });
-    window.addEventListener("mousemove", function (e) {
-      if (!drag) return;
-      panel.style.left = (drag.r.left + e.clientX - drag.x) + "px";
-      panel.style.top = (drag.r.top + e.clientY - drag.y) + "px";
-      panel.style.right = "auto";
-    });
-    window.addEventListener("mouseup", function () { drag = null; });
-
-    window.addEventListener("message", function (e) {
-      var t = e && e.data && e.data.type;
-      if (t === "__activate_edit_mode") panel.hidden = false;
-      else if (t === "__deactivate_edit_mode") panel.hidden = true;
-    });
-    window.parent.postMessage({ type: "__edit_mode_available" }, "*");
   }
 
 
@@ -433,7 +336,6 @@
     initBackToTop();
     initLightbox();
     initCopyContact();
-    buildTweaks();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initAll);

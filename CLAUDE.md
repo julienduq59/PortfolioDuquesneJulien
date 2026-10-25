@@ -17,21 +17,26 @@ ligne). En cas de doute sur une information, poser la question plutôt que de co
 
 ### Poste actuel (public)
 
-**Chef de projet logistique · Texdecor · CDD**, affiché sans date. Affiché sur le portfolio
-à la demande de Julien : en tête du Parcours, dans l'étiquette d'accueil et dans le JSON-LD.
+**Chef de projet logistique · Texdecor · CDD · sept. 2026 – mars 2027**, avec des missions
+génériques (choix de Julien, 25/10/2026) : pilotage de projets de déménagement et de transfert
+d'activités logistiques ; coordination des équipes internes et des prestataires ; continuité
+de service et fiabilité des stocks pendant les transitions ; suivi des indicateurs délais,
+coûts et qualité. Affiché en tête du Parcours, dans l'étiquette d'accueil, dans le JSON-LD
+et sur les deux CV.
 
 ### Confidentialité
 
-**Ce qui est confidentiel, ce sont les informations internes à Texdecor** : missions et
-projets, organisation, noms de collègues ou de responsables, rémunération, détails du
-contrat (dates exactes, statut). Ne jamais les publier sur le portfolio, les CV, Canva
+**Ce qui est confidentiel, ce sont les informations internes à Texdecor** : projets précis
+(quels produits ou activités sont transférés, vers quel prestataire), organisation, noms de
+collègues ou de responsables, rémunération, statut et organisation du travail. Ne jamais les publier sur le portfolio, les CV, Canva
 ou dans ce dépôt (public, et chaque fichier est servi par GitHub Pages). Seuls le
-poste, l'entreprise et le type de contrat sont publics. Les détails sont dans
+poste, l'entreprise, le type et les dates du contrat et les missions génériques ci-dessus
+sont publics. Les détails sont dans
 `.claude/CLAUDE.md`, fichier local non versionné.
 
 ### Parcours
 
-- **Actuellement** — Chef de projet logistique, Texdecor (CDD)
+- **Sept. 2026 – mars 2027** — Chef de projet logistique, Texdecor (CDD)
 - **2022–2026** — Logisticien en alternance, LSI (Groupe Delquignies), Leers
 - **2021** — Stage opérateur logistique, Proditex, Leers (6 semaines)
 - **2021** — Agent logistique (intérim), LSI, Leers
@@ -58,7 +63,7 @@ Contraintes de CV posées par Julien :
 - **Pas de chiffres** (aucun résultat chiffré).
 - Pas de texte en gras dans la partie LSI.
 - Rester sur une seule page A4, bien remplie.
-- Power BI retiré du CV (encore présent sur la page Compétences).
+- Power BI retiré du CV et du portfolio (Julien ne le maîtrise pas assez).
 
 Designs Canva correspondants :
 - Avec portfolio : https://www.canva.com/d/DAHUPabg3sc

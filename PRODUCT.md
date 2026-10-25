@@ -48,8 +48,8 @@ sans framework ni étape de build.
 ## Brand Commitments
 
 - Nom affiché : Julien Duquesne.
-- Poste actuel affiché : Chef de projet logistique · Texdecor · CDD. Rien d'autre sur ce
-  poste : les informations internes à Texdecor sont confidentielles.
+- Poste actuel affiché : Chef de projet logistique · Texdecor · CDD (sept. 2026 – mars 2027),
+  avec des missions génériques uniquement : les projets internes de Texdecor sont confidentiels.
 - **Ne jamais inventer de données** : aucun chiffre, témoignage, entreprise ou résultat
   qui ne vienne pas de Julien.
 
