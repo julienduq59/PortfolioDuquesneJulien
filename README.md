@@ -1,8 +1,12 @@
 # Portfolio — Julien Duquesne
 
-Portfolio professionnel de Julien Duquesne, alternant Logistique & Supply Chain (Bac+5 MOPL).
+Portfolio professionnel de Julien Duquesne, chef de projet logistique chez Texdecor (CDD),
+diplômé d'un Bac+5 MOPL (Manager des organisations et processus logistiques).
 
-Site statique en HTML / CSS / JavaScript, sans dépendance ni build — il fonctionne en ouvrant simplement `index.html`.
+**Site en ligne : https://julienduq59.github.io/PortfolioDuquesneJulien/**
+
+Site statique en HTML / CSS / JavaScript, sans dépendance ni étape de build : il
+fonctionne en ouvrant simplement `index.html`.
 
 ## Structure
 
@@ -14,27 +18,26 @@ Site statique en HTML / CSS / JavaScript, sans dépendance ni build — il fonct
 ├── competences.html    → Compétences
 ├── realisations.html   → Réalisations / projets
 ├── contact.html        → Contact
+├── 404.html            → Page introuvable
+├── PRODUCT.md          → À qui s'adresse le site et ce qu'il doit accomplir
+├── DESIGN.md           → Système visuel « Étiquette d'expédition »
 └── assets/
     ├── styles.css      → Tous les styles
-    ├── site.js         → Navigation, footer, animations, compteurs
-    ├── image-slot.js   → Composant d'image
-    ├── photo-julien.jpg
-    ├── badminton-action.jpg
-    ├── badminton-team.jpg
-    ├── projet-excel-reappro.png
-    ├── racks-harnais.jpg
-    ├── racks-vue.jpg
-    └── racks-charge.jpg
+    ├── site.js         → Navigation, pied de page, visionneuse, données structurées
+    ├── fonts/          → Bricolage Grotesque (auto-hébergée)
+    ├── materiaux/      → Textures du carton, de la pochette et de l'adhésif (WebP)
+    ├── *.webp          → Photos (WebP, origine enregistrée dans les fichiers .json voisins)
+    ├── cv-julien-duquesne.pdf
+    └── fiche-de-poste-chef-de-projet-logistique.pdf
 ```
 
-## Mise en ligne avec GitHub Pages
+## Design
 
-1. Pousser ces fichiers à la racine du dépôt `PortfolioDuquesneJulien`.
-2. Dans le dépôt : **Settings → Pages**.
-3. Source : **Deploy from a branch**, branche `main`, dossier `/ (root)`.
-4. Le site sera disponible à l'adresse `https://<utilisateur>.github.io/PortfolioDuquesneJulien/`.
+Monde « Étiquette d'expédition » : chaque page est une étiquette logistique collée sur du
+carton kraft. Détails dans `DESIGN.md`.
 
-## À compléter
+## Mise en ligne
 
-- **CV** : ajouter le fichier `assets/cv-julien-duquesne.pdf` pour activer le bouton « Télécharger mon CV ».
-- **LinkedIn** : remplacer le lien `#` par l'URL réelle dans `assets/site.js` (pied de page) et `contact.html`.
+Le site est publié par GitHub Pages depuis la branche `main`, dossier racine. Après chaque
+modification de `styles.css` ou `site.js`, mettre à jour le paramètre `?v=` dans toutes les
+pages pour que les visiteurs reçoivent la nouvelle version.

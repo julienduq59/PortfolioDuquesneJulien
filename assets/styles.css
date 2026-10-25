@@ -102,7 +102,7 @@ body {
   font-size: var(--step-0);
   line-height: 1.55;
   color: var(--ink);
-  background: url("materiaux/kraft-fibres.png") 0 0 / 512px 512px, var(--ground);
+  background: url("materiaux/kraft-fibres.webp") 0 0 / 512px 512px, var(--ground);
   background-blend-mode: soft-light;
   -webkit-font-smoothing: antialiased;
   font-variant-numeric: tabular-nums;
@@ -127,7 +127,7 @@ ul, ol { list-style: none; padding: 0; }
 .section { padding-block: clamp(3rem, 7vw, 6rem); }
 .section--tight { padding-block: clamp(2rem, 4vw, 3rem); }
 .section--dark, .footer, .nav, .nav__links {
-  background: url("materiaux/kraft-fibres.png") 0 0 / 512px 512px, var(--ground);
+  background: url("materiaux/kraft-fibres.webp") 0 0 / 512px 512px, var(--ground);
   background-blend-mode: soft-light;
 }
 .section--dark { color: var(--ink); }
@@ -337,11 +337,11 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
   filter: drop-shadow(0 8px 10px rgb(0 0 0 / 0.28));
 }
 /* film plastique transparent posé par-dessus la photo */
-.pouch::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: url("materiaux/pochette.png") center / 100% 100% no-repeat; }
+.pouch::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: url("materiaux/pochette.webp") center / 100% 100% no-repeat; }
 /* morceau d'adhésif qui tient la pochette sur le carton */
-.pouch__tape { position: absolute; z-index: 3; top: -14px; left: 50%; width: 130px; height: 32px; margin-left: -65px; transform: rotate(-4deg); background: url("materiaux/adhesif.png") center / 100% 100% no-repeat; pointer-events: none; }
+.pouch__tape { position: absolute; z-index: 3; top: -14px; left: 50%; width: 130px; height: 32px; margin-left: -65px; transform: rotate(-4deg); background: url("materiaux/adhesif.webp") center / 100% 100% no-repeat; pointer-events: none; }
 .pouch::before { content: "Documents ci-joints"; position: absolute; z-index: 1; inset: 0.85rem 0.85rem auto; padding: 0.35rem 0; text-align: center; background: var(--red); color: #FFFFFF; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-.pouch image-slot { display: block; width: 100%; aspect-ratio: 3 / 4; height: auto !important; }
+.pouch img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 20%; }
 .pouch figcaption { display: inline-block; margin-top: 0.5rem; background: #FFFFFF; padding: 0.15rem 0.45rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #141210; }
 @media (max-width: 860px) { .pouch { max-width: 280px; } }
 
@@ -384,6 +384,9 @@ section.section.pad-top-nav + .section { padding-top: clamp(1.4rem, 3.5vw, 2.6re
 .xp__detail { padding: clamp(0.9rem, 2.2vw, 1.3rem) clamp(1rem, 2.4vw, 1.6rem) clamp(1rem, 2.4vw, 1.5rem); }
 .xp__list { margin-top: 0.5rem; display: grid; gap: 0.5rem; max-width: 76ch; }
 .xp__list li, .xp__text { color: var(--ink-soft); }
+/* Listes à puces : carré d'encre, comme les lignes du bordereau */
+.xp__list li, .bullets li { position: relative; padding-left: 1.15rem; }
+.xp__list li::before, .bullets li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.45rem; height: 0.45rem; background: currentColor; }
 @media (max-width: 760px) { .xp__row { grid-template-columns: 1fr auto; } .xp__row .xp__dest { grid-column: 1 / -1; grid-row: 2; } }
 /* Type de contrat : service de transport, couleur constante */
 .line-badge { font-weight: 800; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.7rem; white-space: nowrap; justify-self: end; }
@@ -483,7 +486,7 @@ a.contact-row:hover .contact-row__value { color: var(--red); }
 .footer { color: var(--ink); padding-block: 0 2rem; overflow-x: clip; }
 .footer__tape {
   overflow: hidden; white-space: nowrap;
-  background: url("materiaux/adhesif-bande.png") 0 50% / auto 100% repeat-x;
+  background: url("materiaux/adhesif-bande.webp") 0 50% / auto 100% repeat-x;
   color: #3A2814; margin-top: -1.2rem; position: relative; z-index: 2; transform: rotate(-0.4deg); width: 102%; margin-left: -1%;
   font-weight: 800; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
   padding: 0.55rem 0;
@@ -502,10 +505,9 @@ a.contact-row:hover .contact-row__value { color: var(--red); }
 @media (max-width: 760px) { .footer__grid { grid-template-columns: 1fr; gap: 1.5rem; } }
 
 /* ---------- Photos : tirages posés sur le carton ---------- */
-image-slot { overflow: hidden; }
 /* Étiquette volante posée sur une photo */
 .photo-tag { position: absolute; left: -0.6rem; bottom: 1.4rem; background: #141210; color: #FFFFFF; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5em 0.9em; }
-main img:not(.lightbox__img):not(.barcode), main image-slot:not(.pouch image-slot) { border: 8px solid #FFFFFF; border-radius: 0 !important; box-shadow: 0 10px 16px -10px rgb(0 0 0 / 0.35); background: #FFFFFF; }
+main img:not(.lightbox__img):not(.barcode):not(.pouch img) { border: 8px solid #FFFFFF; border-radius: 0 !important; box-shadow: 0 10px 16px -10px rgb(0 0 0 / 0.35); background: #FFFFFF; }
 .photo-print { background: #FFFFFF; padding: 8px; box-shadow: 0 10px 16px -10px rgb(0 0 0 / 0.35); }
 
 /* ---------- Retour en haut ---------- */

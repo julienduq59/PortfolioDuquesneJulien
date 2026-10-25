@@ -26,8 +26,12 @@ ligne). En cas de doute sur une information, poser la question plutôt que de co
 génériques (choix de Julien, 25/10/2026) : pilotage de projets de déménagement et de transfert
 d'activités logistiques ; coordination des équipes internes et des prestataires ; continuité
 de service et fiabilité des stocks pendant les transitions ; suivi des indicateurs délais,
-coûts et qualité. Affiché en tête du Parcours, dans l'étiquette d'accueil, dans le JSON-LD
-et sur les deux CV.
+coûts et qualité. Affiché en tête du Parcours, dans l'étiquette d'accueil, dans les textes
+d'accueil et d'À propos (« Depuis septembre 2026, je suis chef de projet logistique chez
+Texdecor, en CDD… »), dans le JSON-LD et sur les deux CV.
+Fiche de poste publique : `assets/fiche-de-poste-chef-de-projet-logistique.pdf`, version
+RÉSUMÉE choisie par Julien (intitulé, entreprise, dates, missions génériques, compétences,
+indicateurs). Ne jamais y mettre la fiche Texdecor originale.
 
 ### Confidentialité
 
@@ -90,6 +94,12 @@ Les anciens designs (avant le poste chez Texdecor) sont périmés.
 - `assets/site.js` injecte la navigation, le pied de page (ruban adhésif imprimé) et le
   JSON-LD, et remplace les flèches → ↗ par des icônes SVG.
 - Vocabulaire : en logistique on écrit **implantation**, jamais « implémentation ».
-- Cache : les pages chargent `assets/styles.css`, `site.js` et `image-slot.js` avec un
+- Compteur d'accueil : « 5 » années en environnement entrepôt & supply chain (2021 → 2026).
+- Statistiques : GoatCounter (anonyme, sans cookie). En attente du code du compte de Julien :
+  le renseigner dans `GOATCOUNTER_CODE` (`assets/site.js`), ce qui active aussi la mention
+  « Mesure d'audience anonyme, sans cookie » du pied de page. Liens de candidature :
+  ajouter `?ref=nom-entreprise` à l'adresse du portfolio pour voir quelle entreprise l'a ouvert.
+- Images : WebP, avec leur origine dans des fichiers `.json` voisins.
+- Cache : les pages chargent `assets/styles.css` et `site.js` avec un
   paramètre `?v=AAAAMMJJ` (suffixe `-2`, `-3`… s'il y a plusieurs versions le même jour). **À chaque modification de ces fichiers, mettre à jour la date
   dans toutes les pages**, sinon les visiteurs gardent l'ancienne version en cache.

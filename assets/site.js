@@ -28,6 +28,19 @@
     { id: "contact",      label: "Contact",      href: "contact.html" }
   ];
 
+  /* ---------- Mesure d'audience (GoatCounter : anonyme, sans cookie) ----------
+     Renseigner le code du compte GoatCounter de Julien pour l'activer.
+     Les visites arrivant avec ?ref=nom-entreprise apparaissent comme provenance. */
+  var GOATCOUNTER_CODE = "";
+  function initStats() {
+    if (!GOATCOUNTER_CODE) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count");
+    document.body.appendChild(s);
+  }
+
   /* ---------- Thème persisté ---------- */
   function applyTheme(name) {
     if (name === "dark") document.documentElement.setAttribute("data-theme", "dark");
@@ -63,7 +76,7 @@
       "name": "Julien Duquesne",
       "jobTitle": "Chef de projet logistique",
       "worksFor": { "@type": "Organization", "name": "Texdecor" },
-      "description": "Diplômé d'un Bac+5 MOPL à l'ISTELI Wasquehal, formé en alternance chez LSI (Groupe Delquignies). Optimisation du stockage et des process logistiques.",
+      "description": "Chef de projet logistique chez Texdecor (CDD), diplômé d'un Bac+5 MOPL à l'ISTELI Wasquehal, formé en alternance chez LSI (Groupe Delquignies).",
       "email": "julienduq59@gmail.com",
       "telephone": "+33781755879",
       "address": {
@@ -309,7 +322,7 @@
         '</div>' +
         '<div class="footer__bottom">' +
           '<span>© ' + new Date().getFullYear() + ' Julien Duquesne</span>' +
-          '<span>Portfolio · Logistique & Supply Chain</span>' +
+          '<span>Portfolio · Logistique & Supply Chain' + (GOATCOUNTER_CODE ? ' · Mesure d’audience anonyme, sans cookie' : '') + '</span>' +
         '</div>' +
       '</div>';
   }
@@ -336,6 +349,7 @@
     initBackToTop();
     initLightbox();
     initCopyContact();
+    initStats();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initAll);
