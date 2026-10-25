@@ -101,7 +101,9 @@ Les anciens designs (avant le poste chez Texdecor) sont périmés.
   (`assets/site.js`), ce qui affiche aussi « Mesure d'audience anonyme, sans cookie » en pied
   de page. Pour ne pas compter ses propres visites : ouvrir le site une fois avec
   `#toggle-goatcounter` à la fin de l'adresse, sur chacun de ses appareils. Liens de candidature :
-  ajouter `?ref=nom-entreprise` à l'adresse du portfolio pour voir quelle entreprise l'a ouvert.
+  ajouter `?ref=nom-entreprise` à l'adresse du portfolio : le site transmet lui-même ce nom à
+  GoatCounter comme provenance (« Principaux référents ») et comme événement « Candidature :
+  nom » dans la liste des pages (la lecture automatique de `?ref=` par GoatCounter ne suffisait pas).
 - Alertes : quand une page est ouverte avec `?ref=entreprise`, une notification part vers
   l'application ntfy de Julien (canal `jd-portfolio-38341cdb34` sur ntfy.sh, constante
   `NTFY_CANAL` dans `assets/site.js`). Une alerte par visite et par entreprise ; pas d'alerte

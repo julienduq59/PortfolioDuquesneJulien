@@ -32,12 +32,46 @@
      Renseigner le code du compte GoatCounter de Julien pour l'activer.
      Les visites arrivant avec ?ref=nom-entreprise apparaissent comme provenance. */
   var GOATCOUNTER_CODE = "duquesnejulien";
+
+  /* Nom de l'entreprise dans un lien de candidature (?ref=entreprise), nettoyé */
+  function refCandidature() {
+    if (!window.URLSearchParams) return "";
+    var params = new URLSearchParams(location.search);
+    var ref = params.get("ref") || params.get("utm_source") || params.get("source") || "";
+    return ref.replace(/[^0-9A-Za-zÀ-ÿ .'_-]/g, "").trim().slice(0, 60);
+  }
+  function estAppareilDeJulien() {
+    try { return localStorage.getItem("skipgc") === "t"; } catch (e) { return false; }
+  }
+  /* Vrai une seule fois par visite et par clé (évite les doublons en naviguant) */
+  function premiereFois(cle) {
+    try {
+      if (sessionStorage.getItem(cle)) return false;
+      sessionStorage.setItem(cle, "1");
+    } catch (e) { /* stockage indisponible : on compte quand même */ }
+    return true;
+  }
+
   function initStats() {
     if (!GOATCOUNTER_CODE) return;
+    var ref = refCandidature();
+    /* Le nom de l'entreprise devient la provenance de la visite (« Principaux référents ») */
+    if (ref) window.goatcounter = { referrer: ref };
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://gc.zgo.at/count.js";
     s.setAttribute("data-goatcounter", "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count");
+    /* … et un événement « Candidature : entreprise » visible dans la liste des pages */
+    if (ref) s.onload = function () {
+      if (estAppareilDeJulien() || !premiereFois("jd_stat_" + ref.toLowerCase())) return;
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({
+          path: "candidature-" + ref.toLowerCase().replace(/[^0-9a-zà-ÿ]+/g, "-"),
+          title: "Candidature : " + ref,
+          event: true
+        });
+      }
+    };
     document.body.appendChild(s);
   }
 
@@ -48,17 +82,9 @@
      marqués avec #toggle-goatcounter (même réglage que les statistiques). */
   var NTFY_CANAL = "jd-portfolio-38341cdb34";
   function initAlertes() {
-    if (!NTFY_CANAL || !window.fetch || !window.URLSearchParams) return;
-    var params = new URLSearchParams(location.search);
-    var ref = params.get("ref") || params.get("utm_source") || params.get("source") || "";
-    ref = ref.replace(/[^0-9A-Za-zÀ-ÿ .'_-]/g, "").trim().slice(0, 60);
-    if (!ref) return;
-    try {
-      if (localStorage.getItem("skipgc") === "t") return;
-      var cle = "jd_alerte_" + ref.toLowerCase();
-      if (sessionStorage.getItem(cle)) return;
-      sessionStorage.setItem(cle, "1");
-    } catch (e) { /* stockage indisponible : on alerte quand même */ }
+    if (!NTFY_CANAL || !window.fetch) return;
+    var ref = refCandidature();
+    if (!ref || estAppareilDeJulien() || !premiereFois("jd_alerte_" + ref.toLowerCase())) return;
     var accueil = /\/$|\/index\.html$/.test(location.pathname);
     var page = accueil ? "Accueil" : ((document.title.split("·")[0] || "").trim() || location.pathname);
     var adresse = "https://ntfy.sh/" + NTFY_CANAL +
