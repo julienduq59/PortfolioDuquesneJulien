@@ -3,6 +3,11 @@
 Site statique (HTML/CSS/JS) publié via GitHub Pages depuis la branche `main` :
 https://julienduq59.github.io/PortfolioDuquesneJulien/
 
+## Langue
+
+**Toujours répondre à Julien en français** : messages, questions, descriptions des
+commandes et des outils, commits. Aucun texte en anglais visible par Julien.
+
 ## Règle absolue
 
 **Ne jamais inventer de données.** Tout contenu ajouté au portfolio ou aux CV doit
