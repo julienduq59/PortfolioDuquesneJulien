@@ -5,8 +5,9 @@ https://julienduq59.github.io/PortfolioDuquesneJulien/
 
 ## Langue
 
-**Toujours répondre à Julien en français** : messages, questions, descriptions des
-commandes et des outils, commits. Aucun texte en anglais visible par Julien.
+**Toujours répondre à Julien en français** : messages, questions, réflexion affichée,
+descriptions des commandes, requêtes envoyées aux outils (recherches web, agents),
+commits. Aucun texte en anglais visible par Julien.
 
 ## Règle absolue
 
