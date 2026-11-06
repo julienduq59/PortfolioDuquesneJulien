@@ -37,44 +37,109 @@
   </div>
 </section>
 
-<!-- Texdecor : réalisations décrites de façon générique, aucune information interne
-     (projets, produits, prestataires, personnes, chiffres). Ancre #texdecor depuis le Parcours. -->
+<!-- Texdecor : réalisations décrites sans information interne (ni site, ni prestataire, ni produit,
+     ni personne, ni volume de stock). Les seuls chiffres sont ceux des livrables de Julien.
+     Ancre #texdecor depuis le Parcours. -->
 <section class="section" id="texdecor" style="padding-top:0;scroll-margin-top:calc(var(--nav-h) + 1rem);">
   <div class="container">
     <div class="sheet">
       <p class="kicker"><strong>Texdecor</strong><span>Depuis septembre 2026 · en cours</span></p>
       <div class="sheet__body">
         <h2 class="h2" style="max-width:24ch;">Transférer une activité logistique sans arrêter les expéditions.</h2>
-        <p class="lede" style="margin-top:1.2rem;max-width:62ch;">Chef de projet logistique en CDD, je pilote des transferts d'activités logistiques vers des entrepôts prestataires. Les projets internes de Texdecor sont confidentiels : voici le type de travail que je mène, sans les détails.</p>
+        <p class="lede" style="margin-top:1.2rem;max-width:62ch;">Chef de projet logistique en CDD, je pilote des transferts d'activités logistiques vers des entrepôts prestataires. Les projets internes de Texdecor restent confidentiels : voici ce que je fais, avec les livrables et les repères que je peux montrer.</p>
       </div>
+
+      <!-- Repères : les chiffres des livrables, pas ceux de l'entreprise -->
+      <div class="sheet__cells grid-4">
+        <div class="card"><div class="kpi"><span class="kpi__num" style="font-size:var(--step-3);">1</span><span class="kpi__label">lot de palettes transféré par semaine</span></div></div>
+        <div class="card"><div class="kpi"><span class="kpi__num" style="font-size:var(--step-3);">105</span><span class="kpi__label">pages pour le manuel principal</span></div></div>
+        <div class="card"><div class="kpi"><span class="kpi__num" style="font-size:var(--step-3);">47</span><span class="kpi__label">fiches et 9 logigrammes</span></div></div>
+        <div class="card"><div class="kpi"><span class="kpi__num" style="font-size:var(--step-3);">10</span><span class="kpi__label">étapes pour mettre un lot en stock</span></div></div>
+      </div>
+
       <div class="sheet__cells card-grid card-grid--2">
 
         <article class="card card--hover">
           <span class="tl-date">Transfert · Coordination</span>
           <h3 class="h4" style="margin-top:0.5rem;">Transfert d'un stock vers un prestataire, lot par lot</h3>
-          <p class="muted" style="margin-top:0.8rem;">Chaque semaine, un lot de palettes change d'entrepôt. Je prépare la liste des palettes avec leur magasin et leur adresse d'arrivée, j'écris le process de mise en stock pour les opérateurs du prestataire et je fais le lien avec le transport et le service client, pour que les commandes continuent de partir pendant le transfert.</p>
+          <p class="muted" style="margin-top:0.8rem;">Chaque semaine, un lot de palettes change d'entrepôt, et les commandes continuent de partir pendant le transfert.</p>
+          <p class="kicker kicker--plain" style="margin-top:1rem;">Concrètement</p>
+          <ul class="stack-sm muted bullets">
+            <li>La liste du lot : référence, marque, type, magasin et adresse de départ, date FIFO, nombre d'unités, complétée par le magasin et l'adresse d'arrivée de chaque palette (le picking selon le plan d'implantation, la réserve sinon).</li>
+            <li>Un onglet « process de mise en stock » en 10 étapes, avec 3 captures du WMS, pour les opérateurs du prestataire.</li>
+            <li>Un mail de préconisation aux équipes des deux sociétés, le besoin de transport transmis, les références du lot signalées au service client pour les exclure des lancements pendant le transfert.</li>
+            <li>Avant envoi : contrôle des totaux (lignes, picking, réserve, unités) et comparaison avec le planning du lot.</li>
+          </ul>
           <div class="tl-tags"><span class="chip">Gestion de projet</span><span class="chip">Continuité de service</span><span class="chip">WMS</span><span class="chip">Coordination</span></div>
+        </article>
+
+        <article class="card card--hover">
+          <span class="tl-date">Transport · Flux</span>
+          <h3 class="h4" style="margin-top:0.5rem;">Gestion des transports</h3>
+          <p class="muted" style="margin-top:0.8rem;">Un transfert ne tient que si les camions suivent : le transport fait partie de chaque lot et de chaque process.</p>
+          <p class="kicker kicker--plain" style="margin-top:1rem;">Concrètement</p>
+          <ul class="stack-sm muted bullets">
+            <li>Pour chaque lot, le besoin de transport défini et transmis au transporteur pour la demande de prix : nombre de palettes, dates, sites de départ et d'arrivée.</li>
+            <li>Des transferts par semi-remorque entre entrepôts pour les gros volumes, un transporteur express pour les envois ponctuels.</li>
+            <li>Dans les process du prestataire : l'expédition quotidienne transporteur par transporteur, l'étiquetage dans le TMS, le tri par transporteur et par quai, la palettisation.</li>
+          </ul>
+          <div class="tl-tags"><span class="chip">Transport</span><span class="chip">TMS</span><span class="chip">Expédition</span><span class="chip">Demandes de prix</span></div>
         </article>
 
         <article class="card card--hover">
           <span class="tl-date">Process · Formation</span>
           <h3 class="h4" style="margin-top:0.5rem;">Manuels de process illustrés</h3>
-          <p class="muted" style="margin-top:0.8rem;">Pour qu'une équipe prestataire reprenne une activité sans perte de qualité, j'ai rédigé des manuels complets sur le WMS, l'ERP et le TMS : logigrammes cliquables, une fiche par action, captures d'écran annotées, du lancement des commandes à l'expédition, en passant par les ruptures, les annulations et les consommables. Relus et validés en interne avant diffusion, puis mis à jour à chaque remarque du terrain.</p>
+          <p class="muted" style="margin-top:0.8rem;">Pour qu'une équipe prestataire reprenne une activité sans perte de qualité : plusieurs manuels sur le WMS, l'ERP et le TMS, dont le principal fait 105 pages (version 5.6 au 4 novembre 2026).</p>
+          <p class="kicker kicker--plain" style="margin-top:1rem;">Concrètement</p>
+          <ul class="stack-sm muted bullets">
+            <li>Un sommaire sur une page, 9 logigrammes cliquables reliés entre eux, 47 fiches : une action par étape, avec les libellés exacts de l'écran.</li>
+            <li>Des captures d'écran annotées : un cadre sur l'élément à toucher, une pastille avec le numéro de l'étape, aucun encadré coupé entre deux pages.</li>
+            <li>Tout le cycle : lancement des vacations et réapprovisionnement du picking, préparation et étiquettes colis, étiquetage transporteur dans le TMS, expédition, entrées en stock, annulations, consommables.</li>
+            <li>Relus et validés en interne avant diffusion, puis mis à jour à chaque remarque du terrain. Un second manuel de 72 pages pour un autre stock, un process pour l'ERP, un autre pour un stock annexe chez un prestataire.</li>
+          </ul>
           <div class="tl-tags"><span class="chip">Rédaction de process</span><span class="chip">Logigrammes</span><span class="chip">WMS · ERP · TMS</span><span class="chip">Conduite du changement</span></div>
         </article>
 
         <article class="card card--hover">
           <span class="tl-date">Implantation · Outils</span>
           <h3 class="h4" style="margin-top:0.5rem;">Plan d'implantation du picking</h3>
-          <p class="muted" style="margin-top:0.8rem;">Un outil Excel d'aide à la décision pour implanter les références dans l'entrepôt d'arrivée : réglages par listes déroulantes, places prises et marge par zone, plan automatique avec une case par emplacement et les classes de rotation, alerte en cas de conflit. Le plan sert ensuite de référence pour adresser chaque palette transférée.</p>
+          <p class="muted" style="margin-top:0.8rem;">Un outil Excel d'aide à la décision pour implanter les références dans l'entrepôt d'arrivée, qui donne ensuite l'adresse de chaque palette picking transférée.</p>
+          <p class="kicker kicker--plain" style="margin-top:1rem;">Concrètement</p>
+          <ul class="stack-sm muted bullets">
+            <li>Des onglets Réglages, Plan, Détail, Emplacements et Contrôles ; les résultats en haut d'écran : places prises, places disponibles, marge par zone, en vert ou en rouge.</li>
+            <li>Un plan automatique, une case par emplacement : les références placées par formules selon leur classe de rotation, les zones partagées remplies par les deux bouts, les conflits comptés.</li>
+            <li>Des réglages par listes déroulantes, et un contrôle contre un calcul indépendant avant diffusion.</li>
+          </ul>
           <div class="tl-tags"><span class="chip">Excel avancé</span><span class="chip">Implantation</span><span class="chip">Classes de rotation</span><span class="chip">Aide à la décision</span></div>
         </article>
 
         <article class="card card--hover">
           <span class="tl-date">Pilotage · Data</span>
           <h3 class="h4" style="margin-top:0.5rem;">Fichiers de pilotage sur les exports du WMS</h3>
-          <p class="muted" style="margin-top:0.8rem;">Synthèses des réceptions et des préparations, listes de référence des magasins et des contenants, suivis de stock : des fichiers qui se mettent à jour en collant un nouvel export, avec un onglet de contrôles qui vérifie les totaux. Pour l'intranet, des fichiers partagés et protégés, où le prestataire ne saisit que ses colonnes.</p>
+          <p class="muted" style="margin-top:0.8rem;">Synthèses des réceptions et des préparations, listes de référence des magasins et des contenants, suivis de stock : des fichiers qui se mettent à jour en collant un nouvel export.</p>
+          <p class="kicker kicker--plain" style="margin-top:1rem;">Concrètement</p>
+          <ul class="stack-sm muted bullets">
+            <li>Une structure fixe : Synthèse pour la direction, Détail filtrable, Contrôles masqués, un onglet brut par export.</li>
+            <li>Tout résultat est une formule qui remonte au brut ; les correspondances (contenant, magasin, seuils) vivent dans un onglet de référence modifiable, et une valeur inconnue est signalée « À vérifier ».</li>
+            <li>Des contrôles automatiques : rapprochement des lignes de l'export (période, périmètre, exclues, retenues, écart nul) et cohérence entre synthèse, détail et brut.</li>
+            <li>Pour l'intranet : mode d'emploi en premier onglet, feuilles protégées, plage de saisie réservée au prestataire avec son code, colonne d'alerte sur chaque ligne.</li>
+          </ul>
           <div class="tl-tags"><span class="chip">Excel avancé</span><span class="chip">Exports WMS</span><span class="chip">Contrôles</span><span class="chip">Intranet</span></div>
+        </article>
+
+        <article class="card card--hover">
+          <span class="tl-date">Quotidien · Prestataires</span>
+          <h3 class="h4" style="margin-top:0.5rem;">Ce que je gère au quotidien</h3>
+          <p class="muted" style="margin-top:0.8rem;">En parallèle des transferts, le fonctionnement courant d'un stock et le lien avec les prestataires.</p>
+          <p class="kicker kicker--plain" style="margin-top:1rem;">Concrètement</p>
+          <ul class="stack-sm muted bullets">
+            <li>Le suivi d'un stock dans le WMS : simulations de lancement, ruptures au picking, ajustements, remise des commandes à l'état initial après un test.</li>
+            <li>Les demandes des services sur les lots de stock : réservation d'un lot pour un usage, réponse argumentée quand le stock manque.</li>
+            <li>Les consommables du nouvel entrepôt, le fichier d'entrées et de sorties d'un stock annexe chez un prestataire, un fichier de suivi de productivité repris d'un collègue et fiabilisé.</li>
+            <li>Les échanges avec les prestataires : des mails de préconisation, le problème d'abord puis la demande, et des déplacements réguliers sur leurs sites.</li>
+            <li>Un exemple : des bons de livraison qui sortaient en recto verso chez le prestataire. Test croisé sur les deux sites, diagnostic (le réglage d'impression, pas l'édition du document), réglé avec leur responsable d'exploitation.</li>
+          </ul>
+          <div class="tl-tags"><span class="chip">Gestion des stocks</span><span class="chip">Gestion de prestataires</span><span class="chip">Communication</span><span class="chip">Résolution de problèmes</span></div>
         </article>
 
       </div>

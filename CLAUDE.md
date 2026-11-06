@@ -47,6 +47,14 @@ d'un stock dans le WMS ; interface prestataires / transporteurs / services ; gab
 produits avec l'IA générative. Outils nommés : WMS Geode GX, ERP Dynamics 365 (Julien le cite
 lui-même dans son profil de recherche d'emploi) ; le TMS reste sans nom d'éditeur. Pas encore
 reportées sur les CV (une page A4 déjà pleine).
+Enrichies le 06/11/2026 à la demande de Julien (« montrer quelques résultats, une partie du
+process, ce que je gère, et la gestion des transports ») : repères chiffrés sur ses livrables
+seulement (1 lot par semaine ; manuel principal 105 pages, 47 fiches, 9 logigrammes, version 5.6
+au 04/11/2026 ; second manuel 72 pages ; process de mise en stock en 10 étapes et 3 captures),
+détail « Concrètement » de chaque carte, carte « Gestion des transports », carte « Ce que je gère
+au quotidien » avec un exemple d'incident anonymisé (BL en recto verso). Toujours exclus, même à sa
+demande : noms des prestataires, des sites, des collègues, des produits et des marques, codes du
+WMS (magasins, mouvements, lots), volumes de stock, coûts, tout chiffre de l'entreprise.
 
 ### Confidentialité
 
