@@ -28,7 +28,9 @@ réalisations concrètes. Succès : le visiteur **contacte Julien** (email ou t�
 Un profil qui a commencé sur le terrain (préparateur, agent logistique, cariste CACES
 3·5·6) avant d'évoluer vers l'optimisation des opérations : il conçoit des améliorations
 applicables par les équipes, parce qu'il a fait leur travail. Les réalisations sont
-réelles, issues d'un entrepôt de bobines de tissu (stock haut LR15, zone de picking LR04).
+réelles, issues d'un entrepôt de bobines de tissu (stock haut LR15, zone de picking LR04), puis,
+depuis septembre 2026, du poste de chef de projet logistique chez Texdecor (transferts de stock,
+manuels de process, fichiers de pilotage), décrites sans détail interne.
 
 ## Operating Context
 
@@ -49,7 +51,8 @@ sans framework ni étape de build.
 
 - Nom affiché : Julien Duquesne.
 - Poste actuel affiché : Chef de projet logistique · Texdecor · CDD (sept. 2026 – mars 2027),
-  avec des missions génériques uniquement : les projets internes de Texdecor sont confidentiels.
+  avec des missions et des réalisations génériques uniquement (aucun projet, produit, prestataire,
+  collègue ni chiffre interne) : les projets internes de Texdecor sont confidentiels.
 - **Ne jamais inventer de données** : aucun chiffre, témoignage, entreprise ou résultat
   qui ne vienne pas de Julien.
 
@@ -63,6 +66,8 @@ sans framework ni étape de build.
   `assets/badminton-team.webp`.
 - CV : `assets/cv-julien-duquesne.pdf` ; attestation : `assets/certification-green-belt-lean.pdf`.
 - Fiche de poste résumée (publique) : `assets/fiche-de-poste-chef-de-projet-logistique.pdf`.
+- Réalisations Texdecor : texte générique seulement (étiquette « Texdecor » de la page
+  Réalisations), sans capture, photo ni chiffre : rien d'interne ne doit être montré.
 - Chiffres réels déjà publiés : descentes LR15 de 50 à 25 par jour ; productivité de 50 à
   26 bobines/heure entre 2013 et 2023 (mémoire BUT) ; implantation sur 6 jours.
 - **Absents, à ne pas fabriquer** : témoignages, recommandations, logos clients, autres

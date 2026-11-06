@@ -34,14 +34,28 @@ Fiche de poste publique : `assets/fiche-de-poste-chef-de-projet-logistique.pdf`,
 RÉSUMÉE choisie par Julien (intitulé, entreprise, dates, missions génériques, compétences,
 indicateurs). Ne jamais y mettre la fiche Texdecor originale.
 
+**Réalisations génériques** (ajoutées le 06/11/2026 à la demande de Julien, rédigées à partir de
+ses skills Texdecor) : liste « Ce que j'ai fait depuis septembre 2026 » dans le Parcours, étiquette
+« Texdecor » en tête des Réalisations (`realisations.html#texdecor`, 4 cartes + « Ma méthode »),
+une phrase à l'accueil et dans À propos, outils dans Compétences, « Postes visés » dans Contact.
+Toujours formulées sans nom de prestataire, de projet, de produit, de collègue ni chiffre interne :
+transfert d'un stock lot par lot (listes de palettes, adresses d'arrivée, process de mise en stock,
+transport, service client) ; plan d'implantation du picking (outil Excel d'aide à la décision) ;
+manuels de process illustrés sur le WMS, l'ERP et le TMS (logigrammes cliquables, fiches, captures
+annotées) ; fichiers Excel de pilotage sur les exports du WMS et fichiers intranet protégés ; suivi
+d'un stock dans le WMS ; interface prestataires / transporteurs / services ; gabarits de livrables
+produits avec l'IA générative. Outils nommés : WMS Geode GX, ERP Dynamics 365 (Julien le cite
+lui-même dans son profil de recherche d'emploi) ; le TMS reste sans nom d'éditeur. Pas encore
+reportées sur les CV (une page A4 déjà pleine).
+
 ### Confidentialité
 
 **Ce qui est confidentiel, ce sont les informations internes à Texdecor** : projets précis
 (quels produits ou activités sont transférés, vers quel prestataire), organisation, noms de
 collègues ou de responsables, rémunération, statut et organisation du travail. Ne jamais les publier sur le portfolio, les CV, Canva
 ou dans ce dépôt (public, et chaque fichier est servi par GitHub Pages). Seuls le
-poste, l'entreprise, le type et les dates du contrat et les missions génériques ci-dessus
-sont publics. Les détails sont dans
+poste, l'entreprise, le type et les dates du contrat, les missions génériques et les
+réalisations génériques ci-dessus sont publics. Les détails sont dans
 `.claude/CLAUDE.md`, fichier local non versionné.
 
 ### Parcours

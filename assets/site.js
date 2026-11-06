@@ -5,13 +5,16 @@
   "use strict";
 
   /* Empêcher le navigateur de restaurer la position de scroll :
-     chaque page s'ouvre bien tout en haut (barre transparente sur le hero) */
+     chaque page s'ouvre bien tout en haut (barre transparente sur le hero),
+     sauf quand l'adresse vise une ancre (ex. realisations.html#texdecor) :
+     on se place alors sur la section visée. */
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   function scrollTop() {
     var html = document.documentElement;
+    var cible = location.hash.length > 1 ? document.getElementById(location.hash.slice(1)) : null;
     var prev = html.style.scrollBehavior;
     html.style.scrollBehavior = "auto"; /* instantané, pas d'animation */
-    window.scrollTo(0, 0);
+    if (cible) cible.scrollIntoView(); else window.scrollTo(0, 0);
     html.style.scrollBehavior = prev;
   }
   scrollTop();
