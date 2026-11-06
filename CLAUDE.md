@@ -35,7 +35,7 @@ RÉSUMÉE choisie par Julien (intitulé, entreprise, dates, missions générique
 indicateurs). Ne jamais y mettre la fiche Texdecor originale.
 
 **Réalisations génériques** (ajoutées le 06/11/2026 à la demande de Julien, rédigées à partir de
-ses skills Texdecor) : liste « Ce que j'ai fait depuis septembre 2026 » dans le Parcours, étiquette
+ses skills Texdecor, validées par lui le même jour, « Postes visés » et « Ma méthode » compris) : liste « Ce que j'ai fait depuis septembre 2026 » dans le Parcours, étiquette
 « Texdecor » en tête des Réalisations (`realisations.html#texdecor`, 4 cartes + « Ma méthode »),
 une phrase à l'accueil et dans À propos, outils dans Compétences, « Postes visés » dans Contact.
 Toujours formulées sans nom de prestataire, de projet, de produit, de collègue ni chiffre interne :
