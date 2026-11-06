@@ -51,7 +51,8 @@ Enrichies le 06/11/2026 à la demande de Julien (« montrer quelques résultats,
 process, ce que je gère, et la gestion des transports ») : repères chiffrés sur ses livrables
 seulement (1 lot par semaine ; manuel principal 105 pages, 47 fiches, 9 logigrammes, version 5.6
 au 04/11/2026 ; second manuel 72 pages ; process de mise en stock en 10 étapes et 3 captures),
-détail « Concrètement » de chaque carte, carte « Gestion des transports », carte « Ce que je gère
+détail « Concrètement » de chaque carte, carte « Gestion des transports » (périmètre précisé par
+Julien : la gestion des transports et les demandes de transport, rien d'autre), carte « Ce que je gère
 au quotidien » avec un exemple d'incident anonymisé (BL en recto verso). Toujours exclus, même à sa
 demande : noms des prestataires, des sites, des collègues, des produits et des marques, codes du
 WMS (magasins, mouvements, lots), volumes de stock, coûts, tout chiffre de l'entreprise.
